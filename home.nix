@@ -83,18 +83,6 @@ in {
     '';
   };
 
-  # KDE Connect
-  home-manager.users.shaked.services.kdeconnect.enable = true;
-  networking.firewall = rec {
-    allowedTCPPortRanges = [
-      {
-        from = 1714;
-        to = 1764;
-      }
-    ];
-    allowedUDPPortRanges = allowedTCPPortRanges;
-  };
-
   # Home Manager can also manage your environment variables through
   # 'home.sessionVariables'. These will be explicitly sourced when using a
   # shell provided by Home Manager. If you don't want to manage your shell
@@ -117,6 +105,9 @@ in {
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
+
+  # KDE Connect
+  programs.home-manager.users.shaked.services.kdeconnect.enable = true;
 
   services.clipman = {
     enable = true;
