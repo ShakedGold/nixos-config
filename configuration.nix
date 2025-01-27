@@ -247,7 +247,6 @@
     waylock
     xdg-desktop-portal-gtk
     man-pages
-    kdePackages.kdeconnect-kde
   ];
 
   # environment for ulauncher
