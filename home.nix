@@ -5,9 +5,9 @@
 }: let
   nixos-build = pkgs.writeShellScriptBin "nixos-build" ''
     pushd $HOME/.config/home-manager
-    sudoedit configuration.nix
+    $EDITOR configuration.nix
     alejandra . &>/dev/null
-    sudo git --no-pager diff -U0 main
+    git --no-pager diff -U0 main
     read -p "Do you want to nixos-rebuild [Y/n]: " -n 1 -r
     if [[ $REPLY =~ ^[Nn]$ ]]; then
         echo
@@ -30,8 +30,7 @@
     sudo git commit -am "$(nixos-rebuild list-generations | grep current) - $(date)"
     popd
   '';
-in
-let
+in let
   # onePassPath = "~/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock";
   onePassPath = "~/.1password/agent.sock";
 in {
@@ -163,6 +162,15 @@ in {
     extraConfig = ''
       Host *
           IdentityAgent ${onePassPath}
+      Host shaked-mac
+          User shakedgold
+          HostName 192.168.1.148
+          IdentityAgent ${onePassPath}
+          LocalForward localhost:3380 localhost:3380
+          LocalForward localhost:3381 localhost:3381
+          LocalForward localhost:5173 localhost:5173
+          LocalForward localhost:5174 localhost:5174
+          LocalForward localhost:33443 localhost:33443
     '';
   };
 

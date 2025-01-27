@@ -1,10 +1,11 @@
 # Edit this configuration file to define what should be installed on
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
-
-{ config, pkgs, ... }:
-
 {
+  config,
+  pkgs,
+  ...
+}: {
   hardware.graphics.enable32Bit = true;
   hardware.graphics.enable = true;
 
@@ -12,13 +13,12 @@
   services.xserver.videoDrivers = ["nvidia"];
 
   hardware.nvidia = {
-
     # Modesetting is required.
     modesetting.enable = true;
 
     # Nvidia power management. Experimental, and can cause sleep/suspend to fail.
     # Enable this if you have graphical corruption issues or application crashes after waking
-    # up from sleep. This fixes it by saving the entire VRAM memory to /tmp/ instead 
+    # up from sleep. This fixes it by saving the entire VRAM memory to /tmp/ instead
     # of just the bare essentials.
     powerManagement.enable = false;
 
@@ -28,9 +28,9 @@
 
     # Use the NVidia open source kernel module (not to be confused with the
     # independent third-party "nouveau" open source driver).
-    # Support is limited to the Turing and later architectures. Full list of 
-    # supported GPUs is at: 
-    # https://github.com/NVIDIA/open-gpu-kernel-modules#compatible-gpus 
+    # Support is limited to the Turing and later architectures. Full list of
+    # supported GPUs is at:
+    # https://github.com/NVIDIA/open-gpu-kernel-modules#compatible-gpus
     # Only available from driver 515.43.04+
     # Currently alpha-quality/buggy, so false is currently the recommended setting.
     open = false;
@@ -42,22 +42,22 @@
     # Optionally, you may need to select the appropriate driver version for your specific GPU.
     package = config.boot.kernelPackages.nvidiaPackages.stable;
   };
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-    ];
+  imports = [
+    # Include the results of the hardware scan.
+    ./hardware-configuration.nix
+  ];
 
   # Bootloader.
   # boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
   boot.loader.grub.enable = true;
-  boot.loader.grub.devices = [ "nodev" ];
+  boot.loader.grub.devices = ["nodev"];
   boot.loader.grub.efiSupport = true;
   boot.loader.grub.useOSProber = true;
   boot.kernelParams = [
     "nvidia-drm.fbdev=1"
     "nvidia-drm.modset=1"
-#    "initcall_blacklist=simpledrm_platform_driver_init"
+    #    "initcall_blacklist=simpledrm_platform_driver_init"
   ];
 
   security.sudo.configFile = ''
@@ -164,7 +164,7 @@
     description = "Shaked Gold";
     shell = pkgs.zsh;
     useDefaultShell = true;
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = ["networkmanager" "wheel"];
     packages = with pkgs; [
       kdePackages.kate
     ];
@@ -183,14 +183,14 @@
     enable = true;
     # Certain features, including CLI integration and system authentication support,
     # require enabling PolKit integration on some desktop environments (e.g. Plasma).
-    polkitPolicyOwners = [ "Shaked" ];
+    polkitPolicyOwners = ["Shaked"];
   };
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
   # Fonts
-  fonts.packages = with pkgs; [ nerdfonts ];
+  fonts.packages = with pkgs; [nerdfonts];
 
   # Desktop Portals
   xdg.portal.enable = true;
@@ -212,8 +212,8 @@
     nodejs
     protonup-qt
     steam-run
-    (steam.override { 
-      extraPkgs = pkgs: with pkgs; [ gtk3 mono libgdiplus zlib ];  
+    (steam.override {
+      extraPkgs = pkgs: with pkgs; [gtk3 mono libgdiplus zlib];
     })
     spotify
     vscode
@@ -247,60 +247,64 @@
     waylock
     xdg-desktop-portal-gtk
     man-pages
+    kdePackages.kdeconnect-kde
   ];
 
   # environment for ulauncher
   systemd.user.services.ulauncher = {
-      enable = true;
-      after = [ "network.target" ];
-      wantedBy = [ "default.target" ];
+    enable = true;
+    after = ["network.target"];
+    wantedBy = ["default.target"];
 
-      unitConfig = {
-        "Description" = "Linux Application Launcher";
-        "Documentation" = ["https://ulauncher.io/"];
-      };
+    unitConfig = {
+      "Description" = "Linux Application Launcher";
+      "Documentation" = ["https://ulauncher.io/"];
+    };
 
-      environment = let
-        pydeps = pkgs.python3.withPackages (pp:
-          with pp; [
-	          # calculate anything
-            google
-            pytz # https://github.com/tchar/ulauncher-albert-calculate-anything
-            pint # https://github.com/tchar/ulauncher-albert-calculate-anything
-            simpleeval # https://github.com/tchar/ulauncher-albert-calculate-anything
-            requests # https://github.com/tchar/ulauncher-albert-calculate-anything
-            parsedatetime # https://github.com/tchar/ulauncher-albert-calculate-anything
-            google-api-python-client # https://github.com/Carlosmape/ulauncher-calendar/blob/master/requirements.txt
-            google-auth-oauthlib # https://github.com/Carlosmape/ulauncher-calendar/blob/master/requirements.txt
-            pydbus
-            pygobject3
+    environment = let
+      pydeps = pkgs.python3.withPackages (pp:
+        with pp; [
+          # calculate anything
+          google
+          pytz # https://github.com/tchar/ulauncher-albert-calculate-anything
+          pint # https://github.com/tchar/ulauncher-albert-calculate-anything
+          simpleeval # https://github.com/tchar/ulauncher-albert-calculate-anything
+          requests # https://github.com/tchar/ulauncher-albert-calculate-anything
+          parsedatetime # https://github.com/tchar/ulauncher-albert-calculate-anything
+          google-api-python-client # https://github.com/Carlosmape/ulauncher-calendar/blob/master/requirements.txt
+          google-auth-oauthlib # https://github.com/Carlosmape/ulauncher-calendar/blob/master/requirements.txt
+          pydbus
+          pygobject3
 
-	          # spotify webapi
-	          spotipy
-          ]);
-      in {
-        PYTHONPATH = "${pydeps}/${pydeps.sitePackages}";
-      };
-      serviceConfig = {
-        Type = "simple";
-        Restart = "always";
-        RestartSec = 1;
-        ExecStart = pkgs.writeShellScript "ulauncher-env-wrapper.sh" ''
-          export PATH="''${XDG_BIN_HOME}:$HOME/.nix-profile/bin:/etc/profiles/per-user/$USER/bin:/nix/var/nix/profiles/default/bin:/run/current-system/sw/bin"
-          exec ${pkgs.ulauncher}/bin/ulauncher --hide-window --verbose
-        '';
-      };
+          # spotify webapi
+          spotipy
+        ]);
+    in {
+      PYTHONPATH = "${pydeps}/${pydeps.sitePackages}";
+    };
+    serviceConfig = {
+      Type = "simple";
+      Restart = "always";
+      RestartSec = 1;
+      ExecStart = pkgs.writeShellScript "ulauncher-env-wrapper.sh" ''
+        export PATH="''${XDG_BIN_HOME}:$HOME/.nix-profile/bin:/etc/profiles/per-user/$USER/bin:/nix/var/nix/profiles/default/bin:/run/current-system/sw/bin"
+        exec ${pkgs.ulauncher}/bin/ulauncher --hide-window --verbose
+      '';
+    };
   };
 
   # add directx -> vulcan
-  nixpkgs.overlays = [ (self: super: { 
-    steam = super.steam.override {
-      extraPkgs = pkgs: with pkgs; [
-        vkd3d
-        dxvk
-      ];
-    };
-  }) ];
+  nixpkgs.overlays = [
+    (self: super: {
+      steam = super.steam.override {
+        extraPkgs = pkgs:
+          with pkgs; [
+            vkd3d
+            dxvk
+          ];
+      };
+    })
+  ];
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
