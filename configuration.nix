@@ -247,6 +247,7 @@
     waylock
     xdg-desktop-portal-gtk
     man-pages
+    killall
   ];
 
   # environment for ulauncher
