@@ -26,8 +26,9 @@
     fi
 
     echo "Committing..."
-    sudo git add -A
-    sudo git commit -am "$(nixos-rebuild list-generations | grep current) - $(date)"
+    git add -A
+    git commit -am "$(nixos-rebuild list-generations | grep current) - $(date)"
+    git push
     popd
   '';
 in let
