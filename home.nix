@@ -106,9 +106,6 @@ in {
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 
-  # KDE Connect
-  programs.home-manager.users.shaked.services.kdeconnect.enable = true;
-
   services.clipman = {
     enable = true;
   };
@@ -242,6 +239,12 @@ in {
 
     kwin = {
       edgeBarrier = 0;
+    };
+
+    kscreenlocker = {
+      autoLock = false;
+      lockOnStartup = true;
+      timeout = 0;
     };
 
     window-rules = [
