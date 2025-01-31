@@ -258,6 +258,7 @@
     btop
     tldr
     bat
+    vlc
   ];
 
   # environment for ulauncher
