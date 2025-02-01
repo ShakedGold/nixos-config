@@ -209,6 +209,7 @@
     options.programs.nix-ld.libraries.default
     ++ (with pkgs; [
       glib
+      nss
     ]);
 
   # List packages installed in system profile. To search, run:
