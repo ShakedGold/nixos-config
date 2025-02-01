@@ -220,6 +220,7 @@
       cairo
       nx-libs
       expat
+      xorg.libX11
       xorg.libxcb
       libxkbcommon
       alsa-lib
