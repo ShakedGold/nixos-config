@@ -204,6 +204,21 @@
 
   # nix-ld
   programs.nix-ld.enable = true;
+  programs.nix-ld.libraries = with pkgs; [
+    # Add libraries required by Electron
+    glib
+    gtk3
+    libGL
+    libxkbcommon
+    nss
+    nspr
+    alsa-lib
+    cups
+    dbus
+    expat
+    at-spi2-core
+    # Add other libraries as needed
+  ];
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
