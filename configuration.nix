@@ -215,6 +215,7 @@
     alsa-lib
     cups
     dbus
+    libdrm
     expat
     at-spi2-core
     # Add other libraries as needed
