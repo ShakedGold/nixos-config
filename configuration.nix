@@ -208,7 +208,7 @@
   programs.nix-ld.libraries =
     options.programs.nix-ld.libraries.default
     ++ (with pkgs; [
-      # put here missing libraries
+      glib
     ]);
 
   # List packages installed in system profile. To search, run:
