@@ -214,6 +214,15 @@
       dbus
       at-spi2-atk
       cups
+      libdrm
+      gtk3
+      pango
+      cairo
+      nx-libs
+      expat
+      xorg.libxcb
+      libxkbcommon
+      alsa-lib
     ]);
 
   # List packages installed in system profile. To search, run:
