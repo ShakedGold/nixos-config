@@ -202,6 +202,9 @@
   # Desktop Portals
   xdg.portal.enable = true;
 
+  # nix-ld
+  programs.nix-ld.enable = true;
+
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
@@ -259,6 +262,7 @@
     tldr
     bat
     vlc
+    pnpm
   ];
 
   # environment for ulauncher
