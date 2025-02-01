@@ -4,6 +4,7 @@
 {
   config,
   pkgs,
+  options,
   ...
 }: {
   hardware.graphics.enable32Bit = true;
@@ -204,22 +205,11 @@
 
   # nix-ld
   programs.nix-ld.enable = true;
-  programs.nix-ld.libraries = with pkgs; [
-    # Add libraries required by Electron
-    glib
-    gtk3
-    libGL
-    libxkbcommon
-    nss
-    nspr
-    alsa-lib
-    cups
-    dbus
-    libdrm
-    expat
-    at-spi2-core
-    # Add other libraries as needed
-  ];
+  programs.nix-ld.libraries =
+    options.programs.nix-ld.libraries.default
+    ++ (with pkgs; [
+      # put here missing libraries
+    ]);
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
