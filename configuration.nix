@@ -229,6 +229,7 @@
       xorg.libxcb
       libxkbcommon
       alsa-lib
+      mesa
     ]);
 
   # List packages installed in system profile. To search, run:
