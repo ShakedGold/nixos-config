@@ -212,6 +212,7 @@
       nss
       nspr
       dbus
+      at-spi2-atk
     ]);
 
   # List packages installed in system profile. To search, run:
