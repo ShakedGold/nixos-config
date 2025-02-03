@@ -98,7 +98,7 @@
   i18n.defaultLocale = "en_IL";
 
   i18n.extraLocaleSettings = {
-    LABG = "en_IL";
+    LANG = "en_IL";
     LC_ADDRESS = "en_IL";
     LC_IDENTIFICATION = "en_IL";
     LC_MEASUREMENT = "en_IL";
