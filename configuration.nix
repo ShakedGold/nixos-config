@@ -293,6 +293,7 @@
     pnpm
     insomnia
     chromium
+    zerotierone
   ];
 
   # environment for ulauncher
