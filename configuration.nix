@@ -172,7 +172,7 @@
     description = "Shaked Gold";
     shell = pkgs.zsh;
     useDefaultShell = true;
-    extraGroups = ["networkmanager" "wheel"];
+    extraGroups = ["networkmanager" "wheel" "geoclue"];
     packages = with pkgs; [
       kdePackages.kate
     ];
@@ -204,9 +204,7 @@
   xdg.portal.enable = true;
 
   # location service
-  services.geoclue2 = {
-    enable = true;
-  };
+  services.geoclue2.enable = true;
 
   # nix-ld
   programs.nix-ld.enable = true;
