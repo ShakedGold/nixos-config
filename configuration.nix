@@ -208,6 +208,7 @@
   services.geoclue2 = {
     enable = true;
     enableDemoAgent = true;
+    geoProviderUrl = "https://reallyfreegeoip.org/json";
     # Grant permissions to apps (example entries):
     appConfig = {
       "firefox" = {
