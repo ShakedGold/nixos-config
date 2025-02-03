@@ -297,6 +297,7 @@
     pnpm
     insomnia
     geoclue2
+    chromium
   ];
 
   # environment for ulauncher
