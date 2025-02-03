@@ -321,6 +321,7 @@
     insomnia
     geoclue2
     chromium
+    geoclue2-with-demo-agent
   ];
 
   # environment for ulauncher
