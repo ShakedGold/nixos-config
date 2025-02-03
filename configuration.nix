@@ -204,7 +204,30 @@
   xdg.portal.enable = true;
 
   # location service
-  services.geoclue2.enable = true;
+  services.geoclue2 = {
+    enable = true;
+    # Grant permissions to apps (example entries):
+    appConfig = {
+      "firefox" = {
+        # Desktop ID (e.g., "org.mozilla.firefox")
+        isAllowed = true;
+        isSystem = false;
+        users = ["shaked"];
+      };
+      "chromium" = {
+        # Desktop ID: "org.chromium.Chromium"
+        isAllowed = true;
+        isSystem = false;
+        users = ["shaked"];
+      };
+      "default" = {
+        # Fallback for apps not explicitly listed
+        isAllowed = true;
+        isSystem = false;
+        users = ["shaked"];
+      };
+    };
+  };
 
   # nix-ld
   programs.nix-ld.enable = true;
