@@ -168,6 +168,7 @@
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.shaked = {
+    uid = 1000;
     isNormalUser = true;
     description = "Shaked Gold";
     shell = pkgs.zsh;
@@ -212,19 +213,19 @@
         # Desktop ID (e.g., "org.mozilla.firefox")
         isAllowed = true;
         isSystem = false;
-        users = ["shaked"];
+        users = ["1000"];
       };
       "chromium" = {
         # Desktop ID: "org.chromium.Chromium"
         isAllowed = true;
         isSystem = false;
-        users = ["shaked"];
+        users = ["1000"];
       };
       "default" = {
         # Fallback for apps not explicitly listed
         isAllowed = true;
         isSystem = false;
-        users = ["shaked"];
+        users = ["1000"];
       };
     };
   };
