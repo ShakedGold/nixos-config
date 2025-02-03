@@ -204,6 +204,13 @@
   # Desktop Portals
   xdg.portal.enable = true;
 
+  services.zerotierone = {
+    enable = true;
+    joinNetworks = [
+      "233ccaac27ac343e"
+    ];
+  };
+
   # nix-ld
   programs.nix-ld.enable = true;
   programs.nix-ld.libraries =
