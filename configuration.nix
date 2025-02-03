@@ -204,11 +204,15 @@
   # Desktop Portals
   xdg.portal.enable = true;
 
+  location = {
+    latitude = 0;
+    longitude = 0;
+  };
+
   # location service
   services.geoclue2 = {
     enable = true;
     enableDemoAgent = true;
-    geoProviderUrl = "https://reallyfreegeoip.org/json";
     # Grant permissions to apps (example entries):
     appConfig = {
       "firefox" = {
