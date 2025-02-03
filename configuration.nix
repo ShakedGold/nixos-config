@@ -204,38 +204,6 @@
   # Desktop Portals
   xdg.portal.enable = true;
 
-  location = {
-    latitude = 0;
-    longitude = 0;
-  };
-
-  # location service
-  services.geoclue2 = {
-    enable = true;
-    enableDemoAgent = true;
-    # Grant permissions to apps (example entries):
-    appConfig = {
-      "firefox" = {
-        # Desktop ID (e.g., "org.mozilla.firefox")
-        isAllowed = true;
-        isSystem = false;
-        users = ["1000"];
-      };
-      "chromium" = {
-        # Desktop ID: "org.chromium.Chromium"
-        isAllowed = true;
-        isSystem = false;
-        users = ["1000"];
-      };
-      "default" = {
-        # Fallback for apps not explicitly listed
-        isAllowed = true;
-        isSystem = false;
-        users = ["1000"];
-      };
-    };
-  };
-
   # nix-ld
   programs.nix-ld.enable = true;
   programs.nix-ld.libraries =
@@ -324,9 +292,7 @@
     vlc
     pnpm
     insomnia
-    geoclue2
     chromium
-    geoclue2-with-demo-agent
   ];
 
   # environment for ulauncher
