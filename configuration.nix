@@ -204,23 +204,9 @@
   xdg.portal.enable = true;
 
   # location service
-  services.geoclue2.enable = true;
-  # Configure geoclue for desktop users
-  services.geoclue2.appConfig = {
-    "firefox" = {
-      isAllowed = true;
-      isSystem = false;
-      users = ["shaked"]; # Replace with your username
-    };
-    "chromium" = {
-      isAllowed = true;
-      isSystem = false;
-      users = ["shaked"]; # Replace with your username
-    };
+  services.geoclue2 = {
+    enable = true;
   };
-
-  # Allow geoclue to access location
-  services.geoclue2.enableDemoAgent = true;
 
   # nix-ld
   programs.nix-ld.enable = true;
