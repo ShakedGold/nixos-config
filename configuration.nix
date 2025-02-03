@@ -207,6 +207,7 @@
   # location service
   services.geoclue2 = {
     enable = true;
+    enableDemoAgent = true;
     # Grant permissions to apps (example entries):
     appConfig = {
       "firefox" = {
