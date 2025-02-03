@@ -203,6 +203,9 @@
   # Desktop Portals
   xdg.portal.enable = true;
 
+  # location service
+  services.geoclue2.enable = true;
+
   # nix-ld
   programs.nix-ld.enable = true;
   programs.nix-ld.libraries =
@@ -290,6 +293,7 @@
     bat
     vlc
     pnpm
+    insomnia
   ];
 
   # environment for ulauncher

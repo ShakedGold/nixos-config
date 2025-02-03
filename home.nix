@@ -20,7 +20,7 @@
     sudo nixos-rebuild switch &> ~/nixos-rebuild.log
 
     # If errors were found in the rebuild log, exit before committing
-    if grep -q "error" ~/nixos-rebuild.log; then
+    if grep -Eq "^error" ~/nixos-rebuild.log; then
         grep --color "error" ~/nixos-rebuild.log
         exit 1
     fi
