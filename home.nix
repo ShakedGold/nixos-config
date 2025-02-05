@@ -112,11 +112,12 @@ in {
 
   # environment for ulauncher
   systemd.user.services.ulauncher = {
-    enable = true;
-    after = ["network.target"];
-    wantedBy = ["default.target"];
+    Install = {
+      After = ["network.target"];
+      WantedBy = ["default.target"];
+    };
 
-    unitConfig = {
+    Unit = {
       "Description" = "Linux Application Launcher";
       "Documentation" = ["https://ulauncher.io/"];
     };
@@ -142,7 +143,7 @@ in {
     in {
       PYTHONPATH = "${pydeps}/${pydeps.sitePackages}";
     };
-    serviceConfig = {
+    Service = {
       Type = "simple";
       Restart = "always";
       RestartSec = 1;
