@@ -346,6 +346,7 @@ in {
         }
       ];
       keyboard = {
+        numlockOnStartup = true;
         layouts = [
           {
             layout = "us";

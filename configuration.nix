@@ -307,17 +307,6 @@
     kdePackages.bluedevil
   ];
 
-  systemd.services.numlock = {
-    description = "Enable NumLock at startup";
-    wantedBy = ["multi-user.target"]; # Ensure it starts with the system
-    serviceConfig = {
-      TTYPath = "/dev/tty8";
-      Type = "oneshot";
-      RemainAfterExit = "yes";
-      ExecStart = "${pkgs.kbd}/bin/setleds +num"; # Command to turn on NumLock
-    };
-  };
-
   # add directx -> vulcan
   nixpkgs.overlays = [
     (self: super: {
