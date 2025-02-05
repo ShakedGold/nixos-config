@@ -304,6 +304,7 @@
     insomnia
     chromium
     zerotierone
+    kdePackages.bluedevil
   ];
 
   # environment for ulauncher
