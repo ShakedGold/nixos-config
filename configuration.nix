@@ -208,6 +208,7 @@
   xdg.portal.enable = true;
 
   services.tailscale.enable = true;
+  services.tailscale.useRoutingFeatures = "client";
 
   services.zerotierone = {
     enable = true;
