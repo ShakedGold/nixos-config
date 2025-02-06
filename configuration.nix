@@ -207,6 +207,8 @@
   # Desktop Portals
   xdg.portal.enable = true;
 
+  services.tailscale.enable = true;
+
   services.zerotierone = {
     enable = true;
     joinNetworks = [
