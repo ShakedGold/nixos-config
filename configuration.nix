@@ -305,6 +305,7 @@
     chromium
     zerotierone
     kdePackages.bluedevil
+    unityhub
   ];
 
   # add directx -> vulcan
