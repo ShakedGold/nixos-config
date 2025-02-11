@@ -60,6 +60,7 @@
     "nvidia-drm.modset=1"
     #    "initcall_blacklist=simpledrm_platform_driver_init"
   ];
+  boot.kernelPackages = pkgs.linuxPackages_xanmod_latest;
 
   security.sudo.configFile = ''
     Defaults  !sudoedit_checkdir
