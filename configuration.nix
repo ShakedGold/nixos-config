@@ -310,7 +310,7 @@
     zerotierone
     kdePackages.bluedevil
     unityhub
-    fyne
+    busybox
   ];
 
   # add directx -> vulcan
