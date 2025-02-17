@@ -31,12 +31,6 @@
     git push
     popd
   '';
-
-  zen-pkg = pkgs.writeShellScriptBin "zen" ''
-    export MOZ_ENABLE_WAYLAND=0
-    zen.AppImage
-    unset MOZ_ENABLE_WAYLAND
-  '';
 in let
   # onePassPath = "~/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock";
   onePassPath = "~/.1password/agent.sock";
@@ -64,7 +58,6 @@ in {
   home.packages = with pkgs; [
     nixos-build
     papirus-icon-theme
-    zen-pkg
     (builtins.getFlake "github:0xc000022070/zen-browser-flake").packages."${system}".default
   ];
 

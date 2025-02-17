@@ -142,7 +142,14 @@
     ELECTRON_OZONE_PLATFORM_HINT = "wayland";
     MOZ_ENABLE_WAYLAND = 0;
   };
-
+  environment.etc = {
+    "1password/custom_allowed_browsers" = {
+      text = ''
+        .zen-wrapped
+      '';
+      mode = "0755";
+    };
+  };
   # Configure keymap in X11
   services.xserver.xkb = {
     layout = "us";
