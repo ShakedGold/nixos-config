@@ -139,7 +139,7 @@
 
   # environment.sessionVariables = {
   # };
-  environment.sessionVariables.NIXOS_OZONE_WL = "1";
+  environment.sessionVariables.NIXOS_OZONE_WL = "0";
   environment.etc = {
     "1password/custom_allowed_browsers" = {
       text = ''
