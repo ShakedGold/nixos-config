@@ -6,7 +6,7 @@
   nixos-build = pkgs.writeShellScriptBin "nixos-build" ''
     pushd $HOME/.config/home-manager
     $EDITOR configuration.nix
-    alejandra . &>/dev/null
+    alejandra . &>/dev/false
     git --no-pager diff -U0 main
     read -p "Do you want to nixos-rebuild [Y/n]: " -n 1 -r
     if [[ $REPLY =~ ^[Nn]$ ]]; then
@@ -202,22 +202,56 @@ in {
     defaultEditor = true;
   };
 
-  programs.ssh = {
-    enable = true;
-    extraConfig = ''
-      Host *
-          IdentityAgent ${onePassPath}
-      Host shaked-mac
-          User shakedgold
-          HostName 192.168.1.148
-          IdentityAgent ${onePassPath}
-          LocalForward localhost:3380 localhost:3380
-          LocalForward localhost:3381 localhost:3381
-          LocalForward localhost:5173 localhost:5173
-          LocalForward localhost:5174 localhost:5174
-          LocalForward localhost:33443 localhost:33443
-    '';
+programs.ssh = {
+  enable = true;
+  # Disable default options by setting them to false
+  matchBlocks = {
+    "*" = {
+      extraOptions = {
+        "IdentityAgent" = onePassPath;
+      };
+    };
+    "shaked-mac" = {
+      hostname = "192.168.1.148";
+      user = "shakedgold";
+      extraOptions = {
+        "IdentityAgent" = onePassPath;
+      };
+      localForwards = [
+        {
+          host.address = "localhost";
+          bind.address = "localhost";
+          host.port = 3380;
+          bind.port = 3380;
+        }
+        {
+          host.address = "localhost";
+          bind.address = "localhost";
+          host.port = 3381;
+          bind.port = 3381;
+        }
+        {
+          host.address = "localhost";
+          bind.address = "localhost";
+          host.port = 5173;
+          bind.port = 5173;
+        }
+        {
+          host.address = "localhost";
+          bind.address = "localhost";
+          host.port = 5174;
+          bind.port = 5174;
+        }
+        {
+          host.address = "localhost";
+          bind.address = "localhost";
+          host.port = 33443;
+          bind.port = 33443;
+        }
+      ];
+    };
   };
+};
 
   programs.vscode = {
     enable = true;
