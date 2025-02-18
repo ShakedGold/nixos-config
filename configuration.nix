@@ -137,11 +137,9 @@
   ];
   programs.dconf.enable = true;
 
-  environment.sessionVariables = {
-    NIXOS_OZONE_WL = "0";
-    ELECTRON_OZONE_PLATFORM_HINT = "x11";
-    MOZ_ENABLE_WAYLAND = 0;
-  };
+  # environment.sessionVariables = {
+  # };
+  environment.sessionVariables.NIXOS_OZONE_WL = "1";
   environment.etc = {
     "1password/custom_allowed_browsers" = {
       text = ''
