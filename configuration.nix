@@ -319,6 +319,7 @@
     kdePackages.bluedevil
     unityhub
     busybox
+    rpcs3
   ];
 
   # add directx -> vulcan

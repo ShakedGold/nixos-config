@@ -1,6 +1,7 @@
 {
   config,
   pkgs,
+  lib,
   ...
 }: let
   nixos-build = pkgs.writeShellScriptBin "nixos-build" ''
@@ -100,9 +101,9 @@ in {
   #
   home.sessionVariables = {
     EDITOR = "nvim";
-    # NIXOS_OZONE_WL = "0";
-    # ELECTRON_OZONE_PLATFORM_HINT = "x11";
-    # MOZ_ENABLE_WAYLAND = 0;
+    NIXOS_OZONE_WL = "1";
+    ELECTRON_OZONE_PLATFORM_HINT = "wayland";
+    MOZ_ENABLE_WAYLAND = 0;
   };
 
   # Let Home Manager install and manage itself.
@@ -190,6 +191,7 @@ in {
 
     initExtra = ''
       [[ "$TERM" == "xterm-kitty" ]] && export TERM=xterm-256color
+      ${lib.concatMapStrings (x: "${toString x}\n") (lib.mapAttrsToList(name: value: "export ${name}=${toString value}") config.home.sessionVariables)}
     '';
 
     oh-my-zsh = {
