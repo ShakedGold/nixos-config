@@ -206,63 +206,63 @@ in {
     defaultEditor = true;
   };
 
-# programs.ssh = {
-#   enable = true;
-#   # Disable default options by setting them to false
-#   matchBlocks = {
-#     "*" = {
-#       extraOptions = {
-#         "IdentityAgent" = onePassPath;
-#       };
-#     };
-#     "shaked-mac" = {
-#       hostname = "192.168.1.148";
-#       user = "shakedgold";
-#       extraOptions = {
-#         "IdentityAgent" = onePassPath;
-#       };
-#       localForwards = [
-#         {
-#           host.address = "localhost";
-#           bind.address = "localhost";
-#           host.port = 3380;
-#           bind.port = 3380;
-#         }
-#         {
-#           host.address = "localhost";
-#           bind.address = "localhost";
-#           host.port = 3381;
-#           bind.port = 3381;
-#         }
-#         {
-#           host.address = "localhost";
-#           bind.address = "localhost";
-#           host.port = 5173;
-#           bind.port = 5173;
-#         }
-#         {
-#           host.address = "localhost";
-#           bind.address = "localhost";
-#           host.port = 5174;
-#           bind.port = 5174;
-#         }
-#         {
-#           host.address = "localhost";
-#           bind.address = "localhost";
-#           host.port = 33443;
-#           bind.port = 33443;
-#         }
-#       ];
-#     };
-#   };
-# };
-  programs.ssh = {
-    enable = true;
-    extraConfig = ''
-      Host *
-          IdentityAgent ${onePassPath}
-    '';
+programs.ssh = {
+  enable = true;
+  # Disable default options by setting them to false
+  matchBlocks = {
+    "*" = {
+      extraOptions = {
+        "IdentityAgent" = onePassPath;
+      };
+    };
+    "shaked-mac" = {
+      hostname = "192.168.1.148";
+      user = "shakedgold";
+      extraOptions = {
+        "IdentityAgent" = onePassPath;
+      };
+      localForwards = [
+        {
+          host.address = "localhost";
+          bind.address = "localhost";
+          host.port = 3380;
+          bind.port = 3380;
+        }
+        {
+          host.address = "localhost";
+          bind.address = "localhost";
+          host.port = 3381;
+          bind.port = 3381;
+        }
+        {
+          host.address = "localhost";
+          bind.address = "localhost";
+          host.port = 5173;
+          bind.port = 5173;
+        }
+        {
+          host.address = "localhost";
+          bind.address = "localhost";
+          host.port = 5174;
+          bind.port = 5174;
+        }
+        {
+          host.address = "localhost";
+          bind.address = "localhost";
+          host.port = 33443;
+          bind.port = 33443;
+        }
+      ];
+    };
   };
+};
+  # programs.ssh = {
+  #   enable = true;
+  #   extraConfig = ''
+  #     Host *
+  #         IdentityAgent ${onePassPath}
+  #   '';
+  # };
 
   programs.vscode = {
     enable = true;
