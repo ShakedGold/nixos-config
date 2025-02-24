@@ -320,6 +320,20 @@
     unityhub
     busybox
     rpcs3
+    
+    (python3.withPackages (python-pkgs: [
+      python-pkgs.google
+      python-pkgs.pytz # https://github.com/tchar/ulauncher-albert-calculate-anything
+      python-pkgs.pint # https://github.com/tchar/ulauncher-albert-calculate-anything
+      python-pkgs.simpleeval # https://github.com/tchar/ulauncher-albert-calculate-anything
+      python-pkgs.requests # https://github.com/tchar/ulauncher-albert-calculate-anything
+      python-pkgs.parsedatetime # https://github.com/tchar/ulauncher-albert-calculate-anything
+      python-pkgs.google-api-python-client # https://github.com/Carlosmape/ulauncher-calendar/blob/master/requirements.txt
+      python-pkgs.google-auth-oauthlib # https://github.com/Carlosmape/ulauncher-calendar/blob/master/requirements.txt
+      python-pkgs.pydbus
+      python-pkgs.pygobject3
+      python-pkgs.spotipy
+    ]))
   ];
 
   # add directx -> vulcan
