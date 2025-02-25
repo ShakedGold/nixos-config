@@ -197,6 +197,8 @@
     preferences = {
       "widget.use-xdg-desktop-portal.file-picker" = 1;
     };
+    package = pkgs.firefox;
+    nativeMessagingHosts.packages = [ pkgs.firefoxpwa ];
   };
 
   programs._1password.enable = true;
@@ -289,8 +291,8 @@
     wine
     heroic
     qbittorrent
-    whatsie
     anydesk
+    firefoxpwa
     stremio
     util-linux
     gparted
