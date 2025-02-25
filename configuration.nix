@@ -289,7 +289,7 @@
     wine
     heroic
     qbittorrent
-    whatsapp-for-linux
+    whatsie
     anydesk
     stremio
     util-linux
