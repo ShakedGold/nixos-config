@@ -322,7 +322,7 @@
     unityhub
     busybox
     rpcs3
-    zoom
+    zoom-us
   ];
 
   # add directx -> vulcan
