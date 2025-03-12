@@ -60,7 +60,7 @@
     "nvidia-drm.modset=1"
     #    "initcall_blacklist=simpledrm_platform_driver_init"
   ];
-  boot.kernelPackages = pkgs.linuxPackages_xanmod_latest;
+  boot.kernelPackages = pkgs.linuxPackages_zen;
 
   security.sudo.configFile = ''
     Defaults  !sudoedit_checkdir
@@ -282,7 +282,6 @@
     go
     gopls
     postman
-    remmina
     vesktop
     ludusavi
     rclone
@@ -323,6 +322,7 @@
     busybox
     rpcs3
     zoom-us
+    prismlauncher
   ];
 
   # add directx -> vulcan
@@ -361,6 +361,10 @@
 
   # Enable the OpenSSH daemon.
   # services.openssh.enable = true;
+
+  security.pam.loginLimits = [
+    { domain = "*"; item = "memlock"; type = "-"; value = "unlimited"; }
+  ];
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];

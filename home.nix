@@ -279,8 +279,6 @@ programs.ssh = {
       bierner.markdown-mermaid
       davidanson.vscode-markdownlint
       pkief.material-icon-theme
-      equinusocio.vsc-material-theme
-      equinusocio.vsc-material-theme-icons
       yoavbls.pretty-ts-errors
       ms-vscode-remote.vscode-remote-extensionpack
       timonwong.shellcheck
@@ -459,11 +457,10 @@ programs.ssh = {
                 launchers = [
                   "applications:systemsettings.desktop"
                   "preferred://filemanager"
-                  "preferred://browser"
+                  "applications:zen.desktop"
                   "applications:kitty.desktop"
                   "applications:vesktop.desktop"
                   "applications:code.desktop"
-                  "applications:com.github.eneshecan.WhatsAppForLinux.desktop"
                   "applications:spotify.desktop"
                   "applications:steam.desktop"
                 ];
