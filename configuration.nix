@@ -5,6 +5,7 @@
   config,
   pkgs,
   options,
+  lib,
   ...
 }: {
   hardware.graphics.enable32Bit = true;
@@ -55,12 +56,8 @@
   boot.loader.grub.devices = ["nodev"];
   boot.loader.grub.efiSupport = true;
   boot.loader.grub.useOSProber = true;
-  boot.kernelParams = [
-    "nvidia-drm.fbdev=1"
-    "nvidia-drm.modset=1"
-    #    "initcall_blacklist=simpledrm_platform_driver_init"
-  ];
   boot.kernelPackages = pkgs.linuxPackages_zen;
+  boot.kernelParams = lib.mkAfter [ "nvidia-drm.modeset=1" "nvidia-drm.fbdev=0" ];
 
   security.sudo.configFile = ''
     Defaults  !sudoedit_checkdir
