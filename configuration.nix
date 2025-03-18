@@ -155,8 +155,8 @@
   services.printing.enable = true;
 
   # Enable sound with pipewire.
-  hardware.pulseaudio.enable = false;
   security.rtkit.enable = true;
+  services.pulseaudio.enable = false;
   services.pipewire = {
     enable = true;
     alsa.enable = true;
@@ -210,8 +210,9 @@
   nixpkgs.config.allowUnfree = true;
 
   # Fonts
-  fonts.packages = with pkgs; [nerdfonts];
-
+  fonts.packages = with pkgs; [
+    nerd-fonts.jetbrains-mono
+  ];
   # Desktop Portals
   xdg.portal.enable = true;
 
