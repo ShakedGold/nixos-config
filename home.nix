@@ -51,6 +51,7 @@ in {
   home.stateVersion = "24.05"; # Please read the comment before changing.
 
   nixpkgs.config.allowUnfree = true;
+  nixpkgs.overlays = [ (import ./overlays/1password.nix) ];
 
   # The home.packages option allows you to install Nix packages into your
   # environment.
