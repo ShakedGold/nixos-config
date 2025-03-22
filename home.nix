@@ -2,6 +2,7 @@
   config,
   pkgs,
   lib,
+  inputs,
   ...
 }: let
   nixos-build = pkgs.writeShellScriptBin "nixos-build" ''
@@ -119,6 +120,10 @@ in {
 
   services.clipman = {
     enable = true;
+  };
+
+  programs.obs-studio.package = inputs.nixpkgs-obs-nvenc.legacyPackages.${pkgs.system}.obs-studio.override {
+    cudaSupport = true;
   };
 
   # environment for ulauncher

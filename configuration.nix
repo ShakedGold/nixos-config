@@ -137,7 +137,7 @@
 
   # environment.sessionVariables = {
   # };
-  environment.sessionVariables.NIXOS_OZONE_WL = "0";
+  environment.sessionVariables.NIXOS_OZONE_WL = "1";
   environment.etc = {
     "1password/custom_allowed_browsers" = {
       text = ''
@@ -208,7 +208,10 @@
   };
 
   # Allow unfree packages
-  nixpkgs.config.allowUnfree = true;
+  nixpkgs.config = {
+    allowUnfree = true;
+    cudaSupport = true;
+  };
 
   # Fonts
   fonts.packages = with pkgs; [
