@@ -122,16 +122,12 @@ in {
     enable = true;
   };
 
-  programs.obs-studio = {
-    enable = true;
-    package = inputs.nixpkgs-obs-nvenc.legacyPackages.${pkgs.system}.obs-studio.override {
-      cudaSupport = true;
-    };
-    plugins = with pkgs.obs-studio-plugins; [
-      obs-vaapi
-    ];
+  programs.obs-studio.package = inputs.nixpkgs-obs-nvenc.legacyPackages.${pkgs.system}.obs-studio.override {
+    cudaSupport = true;
   };
-
+  programs.obs-studio.plugins = with pkgs.obs-studio-plugins; [
+    obs-pipewire-audio-capture
+  ];
   # environment for ulauncher
   systemd.user.services.ulauncher = {
     Install = {

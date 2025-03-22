@@ -328,6 +328,7 @@
     inputs.zen-browser.packages."${system}".default
     obs-studio
     nv-codec-headers-12
+    wireplumber
   ];
 
   # add directx -> vulcan
