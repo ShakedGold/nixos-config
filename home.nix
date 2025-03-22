@@ -51,7 +51,6 @@ in {
   home.stateVersion = "24.05"; # Please read the comment before changing.
 
   nixpkgs.config.allowUnfree = true;
-  nixpkgs.overlays = [ (import ./overlays/1password.nix) ];
 
   # The home.packages option allows you to install Nix packages into your
   # environment.
@@ -100,9 +99,19 @@ in {
   #
   home.sessionVariables = {
     EDITOR = "nvim";
-    NIXOS_OZONE_WL = "1";
-    ELECTRON_OZONE_PLATFORM_HINT = "wayland";
-    MOZ_ENABLE_WAYLAND = 0;
+  };
+  
+  xdg.desktopEntries = {
+    "1password" = {
+      name = "1Password";
+      exec = "1password --ozone-platform=x11 %U";
+      type = "Application";
+      icon = "1password";
+      comment = "Password manager and secure wallet";
+      mimeType = [ "x-scheme-handler/onepassword" ];
+      categories = [ "Office" ];
+      terminal = false;
+    };
   };
 
   # Let Home Manager install and manage itself.
