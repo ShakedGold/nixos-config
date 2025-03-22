@@ -323,6 +323,7 @@
     zoom-us
     prismlauncher
     inputs.zen-browser.packages."${system}".default
+    obs-studio
   ];
 
   # add directx -> vulcan
