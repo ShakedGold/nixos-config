@@ -17,22 +17,31 @@
     };
   };
 
-  outputs = { self, nixpkgs, home-manager, ... }@inputs: {
+  outputs = { self, nixpkgs, home-manager, plasma-manager, ... }@inputs:
+  let
+    # Replace with your username
+    username = "shaked";
+
+    # Replace with the fitting architecture
+    system = "x86_64-linux";
+  in
+  {
     nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
-      system = "x86_64-linux";
+      inherit system;
       modules = [
         # Import the previous configuration.nix we used,
         # so the old configuration file still takes effect
         ./configuration.nix
 
-        home-manager.nixosModules.home-manager
+          home-manager.nixosModules.home-manager
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
+            home-manager.sharedModules = [ plasma-manager.homeManagerModules.plasma-manager ];
 
-            home-manager.users.shaked = import ./home.nix;
-
-            # Optionally, use home-manager.extraSpecialArgs to pass arguments to home.nix
+            # This should point to your home.nix path of course. For an example
+            # of this see ./home.nix in this directory.
+            home-manager.users."${username}" = import ./home.nix;
           }
       ];
     };
