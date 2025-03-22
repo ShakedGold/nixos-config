@@ -323,6 +323,10 @@ programs.ssh = {
       enableMiddleClickPaste = false;
     };
 
+    session = {
+      sessionRestore.restoreOpenApplicationsOnLogin = "startWithEmptySession";
+    };
+
     kwin = {
       edgeBarrier = 0;
     };
