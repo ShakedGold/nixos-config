@@ -329,6 +329,7 @@
     obs-studio
     nv-codec-headers-12
     wireplumber
+    davinci-resolve
   ];
 
   # add directx -> vulcan
