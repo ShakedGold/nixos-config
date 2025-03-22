@@ -35,7 +35,6 @@
 in let
   onePassPath = "~/.1password/agent.sock";
 in {
-  imports = [<plasma-manager/modules>];
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
   home.username = "shaked";
@@ -58,7 +57,6 @@ in {
   home.packages = with pkgs; [
     nixos-build
     papirus-icon-theme
-    (builtins.getFlake "github:0xc000022070/zen-browser-flake").packages."${system}".default
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage

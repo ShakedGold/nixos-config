@@ -6,6 +6,7 @@
   pkgs,
   options,
   lib,
+  inputs,
   ...
 }: {
   hardware.graphics.enable32Bit = true;
@@ -321,6 +322,7 @@
     rpcs3
     zoom-us
     prismlauncher
+    inputs.zen-browser.packages."${system}".default
   ];
 
   # add directx -> vulcan

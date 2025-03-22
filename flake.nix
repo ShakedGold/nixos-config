@@ -15,12 +15,13 @@
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.home-manager.follows = "home-manager";
     };
+    zen-browser.url = "github:0xc000022070/zen-browser-flake";
   };
 
-  outputs = { self, nixpkgs, home-manager, plasma-manager, ... }@inputs:
+  outputs = inputs@{ self, nixpkgs, home-manager, plasma-manager, ... }:
   let
     # Replace with your username
-    username = "shaked";
+    username = "nixos";
 
     # Replace with the fitting architecture
     system = "x86_64-linux";
@@ -28,21 +29,22 @@
   {
     nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
       inherit system;
+      specialArgs = { inherit inputs; };
       modules = [
         # Import the previous configuration.nix we used,
         # so the old configuration file still takes effect
         ./configuration.nix
 
-          home-manager.nixosModules.home-manager
-          {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.sharedModules = [ plasma-manager.homeManagerModules.plasma-manager ];
+        home-manager.nixosModules.home-manager
+        {
+          home-manager.useGlobalPkgs = true;
+          home-manager.useUserPackages = true;
+          home-manager.sharedModules = [ plasma-manager.homeManagerModules.plasma-manager ];
 
-            # This should point to your home.nix path of course. For an example
-            # of this see ./home.nix in this directory.
-            home-manager.users."${username}" = import ./home.nix;
-          }
+          # This should point to your home.nix path of course. For an example
+          # of this see ./home.nix in this directory.
+          home-manager.users."${username}" = import ./home.nix;
+        }
       ];
     };
   };
