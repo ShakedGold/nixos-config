@@ -21,7 +21,7 @@
   outputs = inputs@{ self, nixpkgs, home-manager, plasma-manager, ... }:
   let
     # Replace with your username
-    username = "nixos";
+    username = "shaked";
 
     # Replace with the fitting architecture
     system = "x86_64-linux";
@@ -31,10 +31,10 @@
       inherit system;
       specialArgs = { inherit inputs; };
       modules = [
-        # Import the previous configuration.nix we used,
-        # so the old configuration file still takes effect
         ./configuration.nix
 
+        # Import the previous configuration.nix we used,
+        # so the old configuration file still takes effect
         home-manager.nixosModules.home-manager
         {
           home-manager.useGlobalPkgs = true;
