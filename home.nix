@@ -48,10 +48,10 @@ if [[ $# -eq 0 ]]; then
 fi
 
 # Get the input file name (without extension)
-input_file="$\{1%.*\}"
+input_file="''${1%.*}"
 
 # Get the output file name (same name as input but with .mp4 extension)
-output_file="$\{input_file\}.mp4"
+output_file="''${input_file}.mp4"
 
 # Option in Video: FFmpeg command with hardware acceleration and encoding parameters
 # For a higher bitrate try changing -qp 15 to -qp 10
