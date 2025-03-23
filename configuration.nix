@@ -330,6 +330,7 @@
     nv-codec-headers-12
     wireplumber
     davinci-resolve
+    ffmpeg
   ];
 
   # add directx -> vulcan
