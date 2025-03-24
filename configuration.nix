@@ -331,6 +331,7 @@
     wireplumber
     (pkgs.callPackage ./davinci-resolve-paid.nix  {})
     ffmpeg
+    handbrake
   ];
 
   # add directx -> vulcan
