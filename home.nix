@@ -16,16 +16,14 @@
         echo "!!! Canceled by user."
         exit 1
     fi
-    echo "Cleaning NixOS Cache..."
-    rm -rf $HOME/.cache/nix/
     echo "NixOS Rebuilding..."
-    sudo nixos-rebuild switch &> ~/nixos-rebuild.log
+    sudo nixos-rebuild switch
 
     # If errors were found in the rebuild log, exit before committing
-    if grep -Eq "^error" ~/nixos-rebuild.log; then
-        grep --color "error" ~/nixos-rebuild.log
-        exit 1
-    fi
+    # if grep -Eq "^error" ~/nixos-rebuild.log; then
+    #     grep --color "error" ~/nixos-rebuild.log
+    #     exit 1
+    # fi
 
     echo "Committing..."
     git add -A

@@ -58,7 +58,7 @@
   boot.loader.grub.efiSupport = true;
   boot.loader.grub.useOSProber = true;
   boot.kernelPackages = pkgs.linuxPackages_zen;
-  boot.kernelParams = lib.mkAfter [ "nvidia-drm.modeset=1" "nvidia-drm.fbdev=0" ];
+  boot.kernelParams = lib.mkAfter [ "nvidia-drm.modeset=1" "nvidia-drm.fbdev=0" "nvidia.NVreg_EnableGpuFirmware=0" ];
 
   security.sudo.configFile = ''
     Defaults  !sudoedit_checkdir
@@ -329,7 +329,7 @@
     obs-studio
     nv-codec-headers-12
     wireplumber
-    davinci-resolve
+    davinci-resolve-studio
     ffmpeg
   ];
 
