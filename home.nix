@@ -118,7 +118,6 @@ in {
       icon = "davinci-resolve-studio";
       name = "Davinci Resolve Studio";
       type = "Application";
-      version = 1.4;
     };
   };
 
