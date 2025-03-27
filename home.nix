@@ -114,7 +114,7 @@ in {
     "davinci-resolve-studio" = {
       categories = ["AudioVideo" "AudioVideoEditing" "Video" "Graphics"];
       comment = "Professional video editing, color, effects and audio post-processing";
-      exec = "davinci-resolve-studio";
+      exec = ''qdbus org.kde.kded6 /kded org.kde.kded6.unloadModule "appmenu" && davinci-resolve-studio %u && qdbus org.kde.kded6 /kded org.kde.kded6.loadModule "appmenu"'';
       icon = "davinci-resolve-studio";
       name = "Davinci Resolve Studio";
       type = "Application";
