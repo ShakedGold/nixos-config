@@ -332,6 +332,7 @@
     (pkgs.callPackage ./davinci-resolve-paid.nix  {})
     ffmpeg
     handbrake
+    r2modman
   ];
 
   # add directx -> vulcan
