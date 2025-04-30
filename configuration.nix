@@ -141,7 +141,6 @@
     enable = true;
     # Whether to enable XWayland
     xwayland.enable = true;
-    nvidiaPatches = true;
   };
 
   # environment.sessionVariables = {
