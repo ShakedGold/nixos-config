@@ -399,6 +399,7 @@ programs.ssh = {
           acceleration = 0;
           accelerationProfile = "none";
           scrollSpeed = 1;
+          pointerSpeed =  -0.2;
           vendorId = "1038";
           productId = "183a";
         }
@@ -407,6 +408,7 @@ programs.ssh = {
           name = "Aerox 3";
           acceleration = 0;
           accelerationProfile = "none";
+          pointerSpeed =  -0.2;
           scrollSpeed = 1;
           vendorId = "0111";
           productId = "183a";
