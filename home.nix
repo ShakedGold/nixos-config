@@ -31,7 +31,6 @@
     git push
     popd
   '';
-in let
   onePassPath = "~/.1password/agent.sock";
 in {
   # Home Manager needs a bit of information about you and the paths it should
@@ -197,6 +196,12 @@ in {
       tab_bar_style = "powerline";
     };
     shellIntegration.enableZshIntegration = true;
+    keybindings = {
+      "ctrl+j" = "send_text all \\x1b\\x5b\\x42";
+      "ctrl+k" = "send_text all \\x1b\\x5b\\x41";
+      "ctrl+h" = "send_text all \\x1b\\x5b\\x44";
+      "ctrl+l" = "send_text all \\x1b\\x5b\\x43";
+    };
   };
 
   programs.zsh = {
@@ -208,17 +213,20 @@ in {
     shellAliases = {
       ll = "ls -l";
       update = "sudo nixos-rebuild switch";
+      cat = "bat";
+      ls = "eza --icons=always";
+      pcat = "cat";
     };
 
     initExtra = ''
       [[ "$TERM" == "xterm-kitty" ]] && export TERM=xterm-256color
       ${lib.concatMapStrings (x: "${toString x}\n") (lib.mapAttrsToList(name: value: "export ${name}=${toString value}") config.home.sessionVariables)}
+      source ${config.home.homeDirectory}/.config/home-manager/custom-zsh-theme.zsh-theme
     '';
 
     oh-my-zsh = {
       enable = true;
       plugins = ["git" "thefuck"];
-      theme = "robbyrussell";
     };
   };
 
@@ -327,8 +335,72 @@ programs.ssh = {
     systemd.enable = true;
 
     settings = {
-      "$mod" = "SUPER";
+      "$mod" = "ALT";
+      bind = [
+        "$mod, Return, exec, kitty"
+        "$mod, q, killactive"
+        "$mod, m, exit"
+
+        "$mod, h, movefocus, l"
+        "$mod, j, movefocus, d"
+        "$mod, k, movefocus, u"
+        "$mod, l, movefocus, r"
+
+        "$mod CTRL, h, movewindow, l"
+        "$mod CTRL, j, movewindow, d"
+        "$mod CTRL, k, movewindow, u"
+        "$mod CTRL, l, movewindow, r"
+
+        "$mod, F, fullscreen, 1"
+
+        "$mod, Space, exec, pkill rofi || rofi -show drun -show-icons"
+      ];
+
+      monitor = [
+        "DP-4, 2560x1440@144, 0x0, 1"
+        "HDMI-A-2, 1920x1080@60, 2560x0, 1, transform, 3"
+      ];
+
+      input = {
+        kb_layout = "us,il";
+        kb_variant = "";
+        kb_model = "";
+        kb_options = "grp:alt_shift_toggle";
+        kb_rules = "";
+        sensitivity = 0;
+      };
+
+      general = {
+        border_size = 2;
+        gaps_in = 2;
+        gaps_out = 10;
+
+        "col.active_border" = "rgba(33ccffee) rgba(00ff99ee) 45deg";
+        "col.inactive_border" = "rgba(595959aa)";
+      };
+
+      decoration = {
+        rounding = 5;
+        rounding_power = 2;
+
+        active_opacity = 1;
+        inactive_opacity = 1;
+
+        blur = {
+          enabled = true;
+          size = 3;
+          passes = 1;
+
+          vibrancy = 0.1696;
+          ignore_opacity = true;
+        };
+      };
     };
+  };
+
+  programs.rofi = {
+    enable = true;
+    theme = "gruvbox-dark";
   };
 
   programs.plasma = {

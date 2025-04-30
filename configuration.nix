@@ -346,6 +346,8 @@
     }))
     dunst
     libnotify
+    rofi
+    eza
   ];
 
   # add directx -> vulcan
