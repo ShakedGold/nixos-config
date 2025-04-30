@@ -339,8 +339,6 @@
     nv-codec-headers-12
     wireplumber
     (pkgs.callPackage ./davinci-resolve-paid.nix  {})
-    ffmpeg
-    handbrake
     r2modman
     waybar
     (pkgs.waybar.overrideAttrs (oldAttrs: {
