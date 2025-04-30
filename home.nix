@@ -55,6 +55,7 @@ in {
   # environment.
   home.packages = with pkgs; [
     nixos-build
+    hyprland
     papirus-icon-theme
   ];
 

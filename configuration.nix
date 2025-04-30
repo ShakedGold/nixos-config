@@ -135,6 +135,14 @@
   ];
   programs.dconf.enable = true;
   
+  # Enable the hyprland Desktop Environment
+  programs.hyprland = {
+    # Install the packages from nixpkgs
+    enable = true;
+    # Whether to enable XWayland
+    xwayland.enable = true;
+  };
+
   # environment.sessionVariables = {
   # };
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
