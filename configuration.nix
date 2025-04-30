@@ -127,7 +127,7 @@
   # Enable the KDE Plasma Desktop Environment.
   services.displayManager.sddm.enable = true;
   services.displayManager.sddm.wayland.enable = true;
-  services.displayManager.autoLogin.enable = true;
+  services.displayManager.autoLogin.enable = false;
   services.displayManager.autoLogin.user = "shaked";
   services.desktopManager.plasma6.enable = true;
   environment.plasma6.excludePackages = with pkgs.kdePackages; [
@@ -141,6 +141,7 @@
     enable = true;
     # Whether to enable XWayland
     xwayland.enable = true;
+    nvidiaPatches = true;
   };
 
   # environment.sessionVariables = {
@@ -227,6 +228,7 @@
   ];
   # Desktop Portals
   xdg.portal.enable = true;
+  xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
 
   services.tailscale.enable = true;
   services.tailscale.useRoutingFeatures = "client";
@@ -341,6 +343,12 @@
     ffmpeg
     handbrake
     r2modman
+    waybar
+    (pkgs.waybar.overrideAttrs (oldAttrs: {
+      mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ];
+    }))
+    dunst
+    libnotify
   ];
 
   # add directx -> vulcan
