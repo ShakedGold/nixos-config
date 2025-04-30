@@ -135,6 +135,9 @@
   ];
   programs.dconf.enable = true;
   
+  # Enable the hyprland Desktop Environment
+  programs.hyprland.enable = true
+
   # environment.sessionVariables = {
   # };
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
