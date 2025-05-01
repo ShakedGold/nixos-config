@@ -1,0 +1,78 @@
+{
+  config,
+  pkgs,
+  lib,
+  inputs,
+  ...
+} : {
+  wayland.windowManager.hyprland = {
+    enable = true;
+    package = pkgs.hyprland;
+    xwayland.enable = true;
+    systemd.enable = true;
+
+    settings = {
+      "$mod" = "ALT";
+      bind = [
+        "$mod, Return, exec, kitty"
+        "$mod, q, killactive"
+        "$mod, m, exit"
+
+        "$mod, h, movefocus, l"
+        "$mod, j, movefocus, d"
+        "$mod, k, movefocus, u"
+        "$mod, l, movefocus, r"
+
+        "$mod CTRL, h, movewindow, l"
+        "$mod CTRL, j, movewindow, d"
+        "$mod CTRL, k, movewindow, u"
+        "$mod CTRL, l, movewindow, r"
+
+        "$mod, F, fullscreen, 1"
+
+        "$mod, Space, exec, pkill rofi || rofi -show drun -show-icons"
+      ];
+
+      monitor = [
+        "DP-4, 2560x1440@144, 0x0, 1"
+        "HDMI-A-2, 1920x1080@60, 2560x0, 1, transform, 3"
+      ];
+
+      input = {
+        kb_layout = "us,il";
+        kb_variant = "";
+        kb_model = "";
+        kb_options = "grp:alt_shift_toggle";
+        kb_rules = "";
+        sensitivity = 0;
+        force_no_accel = true;
+      };
+
+      general = {
+        border_size = 2;
+        gaps_in = 2;
+        gaps_out = 10;
+
+        "col.active_border" = "rgba(33ccffee) rgba(00ff99ee) 45deg";
+        "col.inactive_border" = "rgba(595959aa)";
+      };
+
+      decoration = {
+        rounding = 5;
+        rounding_power = 2;
+
+        active_opacity = 1;
+        inactive_opacity = 1;
+
+        blur = {
+          enabled = true;
+          size = 3;
+          passes = 1;
+
+          vibrancy = 0.1696;
+          ignore_opacity = true;
+        };
+      };
+    };
+  };
+}
