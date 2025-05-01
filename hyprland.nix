@@ -1,10 +1,8 @@
 {
-  config,
   pkgs,
-  lib,
-  inputs,
   ...
 } : {
+  # HYPRLAND
   wayland.windowManager.hyprland = {
     enable = true;
     package = pkgs.hyprland;
@@ -31,6 +29,24 @@
         "$mod, F, fullscreen, 1"
 
         "$mod, Space, exec, pkill rofi || rofi -show drun -show-icons"
+
+        "$mod, 1, workspace, 1"
+        "$mod, 2, workspace, 2"
+        "$mod, 3, workspace, 3"
+        "$mod, 4, workspace, 4"
+        "$mod, 5, workspace, 5"
+        "$mod, 6, workspace, 6"
+        "$mod, 7, workspace, 7"
+        "$mod, 8, workspace, 8"
+
+        "$mod CTRL, 1, movetoworkspace, 1"
+        "$mod CTRL, 2, movetoworkspace, 2"
+        "$mod CTRL, 3, movetoworkspace, 3"
+        "$mod CTRL, 4, movetoworkspace, 4"
+        "$mod CTRL, 5, movetoworkspace, 5"
+        "$mod CTRL, 6, movetoworkspace, 6"
+        "$mod CTRL, 7, movetoworkspace, 7"
+        "$mod CTRL, 8, movetoworkspace, 8"
       ];
 
       monitor = [
@@ -72,6 +88,39 @@
           vibrancy = 0.1696;
           ignore_opacity = true;
         };
+      };
+    };
+  };
+
+  # WAYBAR
+  programs.waybar = {
+    enable = true;
+    
+    systemd = {
+      enable = true;
+      target = "network.target";
+    };
+
+    settings = {
+      mainBar = {
+        layer = "top";
+        position = "top";
+        height = 30;
+
+        output = [
+          "DP-4"
+          "HDMI-A-2"
+        ];
+
+        modules-left = [
+          "hyprland/workspaces"
+        ];
+        modules-center = [
+          "hyprland/window"
+        ];
+        modules-right = [
+          "hyprland/language"
+        ];
       };
     };
   };
