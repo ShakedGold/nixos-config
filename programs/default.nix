@@ -11,5 +11,6 @@
     ./rofi.nix
     ./obs-studio.nix
     ./ghostty.nix
+    ./waybar.nix
   ];
 }
