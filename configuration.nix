@@ -349,6 +349,7 @@
     rofi
     eza
     ghostty
+    hyprlock
   ];
 
   # add directx -> vulcan

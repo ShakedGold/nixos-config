@@ -18,6 +18,8 @@ in{
         "$mod, Return, exec, ${terminal}"
         "$mod, q, killactive"
         "$mod, m, exit"
+        "$mod, F, fullscreen, 1"
+        "$mod, L, exec, hyprlock"
 
         "$mod, h, movefocus, l"
         "$mod, j, movefocus, d"
@@ -28,8 +30,6 @@ in{
         "$mod CTRL, j, movewindow, d"
         "$mod CTRL, k, movewindow, u"
         "$mod CTRL, l, movewindow, r"
-
-        "$mod, F, fullscreen, 1"
 
         "$mod, Space, exec, pkill rofi || rofi -show drun -show-icons"
 
