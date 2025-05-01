@@ -1,7 +1,10 @@
 {
   pkgs,
   ...
-} : {
+} :
+let
+  terminal = "ghostty --gtk-single-instance=true --quit-after-last-window-closed=false";
+in{
   # HYPRLAND
   wayland.windowManager.hyprland = {
     enable = true;
@@ -12,7 +15,7 @@
     settings = {
       "$mod" = "ALT";
       bind = [
-        "$mod, Return, exec, kitty"
+        "$mod, Return, exec, ${terminal}"
         "$mod, q, killactive"
         "$mod, m, exit"
 
@@ -89,6 +92,10 @@
           ignore_opacity = true;
         };
       };
+
+      "exec-once" = [
+        "ghostty --gtk-single-instance=true --quit-after-last-window-closed=false --initial-window=false"
+      ];
     };
   };
 

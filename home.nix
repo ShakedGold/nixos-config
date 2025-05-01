@@ -1,7 +1,5 @@
 {
-  config,
   pkgs,
-  inputs,
   ...
 }: let
   nixos-build = pkgs.writeShellScriptBin "nixos-build" ''
@@ -125,5 +123,4 @@ in {
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
-
 }

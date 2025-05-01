@@ -348,6 +348,7 @@
     }))
     rofi
     eza
+    ghostty
   ];
 
   # add directx -> vulcan

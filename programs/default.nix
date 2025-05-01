@@ -10,5 +10,6 @@
     ./plasma.nix
     ./rofi.nix
     ./obs-studio.nix
+    ./ghostty.nix
   ];
 }
