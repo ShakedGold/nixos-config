@@ -344,8 +344,6 @@
     (pkgs.waybar.overrideAttrs (oldAttrs: {
       mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ];
     }))
-    dunst
-    libnotify
     rofi
     eza
   ];
