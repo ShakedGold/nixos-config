@@ -105,6 +105,7 @@ in {
         "1password --silent &"
         "vesktop --start-minimized &"
         "steam -silent &"
+        "hyprpaper &"
       ];
 
       windowrulev2 = [
