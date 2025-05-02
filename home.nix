@@ -7,7 +7,8 @@
     $EDITOR configuration.nix
     alejandra . &>/dev/false
     git --no-pager diff -U0 main
-    read -p "Do you want to nixos-rebuild [Y/n]: " -n 1 -r
+
+    read -p "Do you want to commit [Y/n]: " -n 1 -r
     if [[ $REPLY =~ ^[Nn]$ ]]; then
         echo
         echo "!!! Canceled by user."
@@ -16,8 +17,15 @@
 
     echo "Committing..."
     git add -A
-
     git commit -am "$(nixos-rebuild list-generations | grep current) - $(date)"
+
+    read -p "Do you want to nixos-rebuild [Y/n]: " -n 1 -r
+    if [[ $REPLY =~ ^[Nn]$ ]]; then
+        echo
+        echo "!!! Canceled by user."
+        exit 1
+    fi
+
     echo "NixOS Rebuilding..."
     sudo nixos-rebuild switch
 
