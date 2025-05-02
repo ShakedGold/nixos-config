@@ -351,6 +351,7 @@
     ghostty
     hyprlock
     pamixer
+    hyprpaper
   ];
 
   # add directx -> vulcan

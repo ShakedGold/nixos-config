@@ -99,12 +99,12 @@ in {
       ];
 
       exec-once = [
-        "ghostty --gtk-single-instance=true --quit-after-last-window-closed=false --initial-window=false"
-        "hyprctl dispatch workspace 1"
-        "waybar"
-        "1password --silent"
-        "vesktop --start-minimized"
-        "steam -silent"
+        "ghostty --gtk-single-instance=true --quit-after-last-window-closed=false --initial-window=false &"
+        "hyprctl dispatch workspace 1 &"
+        "waybar &"
+        "1password --silent &"
+        "vesktop --start-minimized &"
+        "steam -silent &"
       ];
 
       windowrulev2 = [
