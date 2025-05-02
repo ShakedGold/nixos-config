@@ -93,12 +93,12 @@ let cwd = builtins.toString ./.; in {
         "custom/logo" = {
           format = "";
           tooltip = false;
-          # "on-click" = "~/.config/rofi/launchers/misc/launcher.sh &";
+          "on-click" = "CWD=${cwd}/launcher ${cwd}/launcher/launcher.sh &";
         };
         "custom/power" = {
           format = "󰤆";
           tooltip = false;
-          "on-click" = "${cwd}/powermenu.sh &";
+          "on-click" = "CWD=${cwd}/powermenu ${cwd}/powermenu/powermenu.sh &";
         };
       };
     };

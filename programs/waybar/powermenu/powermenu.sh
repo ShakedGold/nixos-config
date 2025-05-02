@@ -23,7 +23,7 @@ rofi_cmd() {
 	rofi -dmenu \
 		-p "Uptime: $uptime" \
 		-mesg "Uptime: $uptime" \
-		-theme ${pwd}/${theme}.rasi
+		-theme $CWD/${theme}.rasi
 }
 
 # Ask for confirmation
@@ -40,7 +40,8 @@ confirm_cmd() {
 		-theme-str 'textbox {horizontal-align: 0.5;}' \
 		-dmenu \
 		-p 'Confirmation' \
-		-mesg 'Are you Sure?'
+		-mesg 'Are you Sure?' \
+		-theme $CWD/${theme}.rasi
 }
 
 
@@ -70,10 +71,7 @@ case $chosen in
 		run_cmd --reboot
         ;;
     $lock)
-		swaylock
-        ;;
-    $suspend)
-		run_cmd --suspend
+		hyprlock
         ;;
     $logout)
 		run_cmd --logout
