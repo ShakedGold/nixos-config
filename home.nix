@@ -13,18 +13,14 @@
         echo "!!! Canceled by user."
         exit 1
     fi
-    echo "NixOS Rebuilding..."
-    sudo nixos-rebuild switch
-
-    # If errors were found in the rebuild log, exit before committing
-    # if grep -Eq "^error" ~/nixos-rebuild.log; then
-    #     grep --color "error" ~/nixos-rebuild.log
-    #     exit 1
-    # fi
 
     echo "Committing..."
     git add -A
+
     git commit -am "$(nixos-rebuild list-generations | grep current) - $(date)"
+    echo "NixOS Rebuilding..."
+    sudo nixos-rebuild switch
+
     git push
     popd
   '';
