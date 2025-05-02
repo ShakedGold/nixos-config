@@ -154,7 +154,7 @@
                 launchers = [
                   "applications:systemsettings.desktop"
                   "preferred://filemanager"
-                  "applications:zen.desktop"
+                  "applications:zen-beta.desktop"
                   "applications:kitty.desktop"
                   "applications:vesktop.desktop"
                   "applications:code.desktop"

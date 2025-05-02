@@ -19,7 +19,7 @@ in{
         "$mod, q, killactive"
         "$mod, m, exit"
         "$mod, F, fullscreen, 1"
-        "$mod, L, exec, hyprlock"
+        "SUPER, L, exec, hyprlock"
 
         "$mod, h, movefocus, l"
         "$mod, j, movefocus, d"

@@ -4,13 +4,13 @@
 } : {
   systemd.user.services.ulauncher = {
     Install = {
-      After = ["network.target"];
       WantedBy = ["default.target"];
     };
 
     Unit = {
       "Description" = "Linux Application Launcher";
       "Documentation" = ["https://ulauncher.io/"];
+      After = ["network.target"];
     };
 
     Service = let
