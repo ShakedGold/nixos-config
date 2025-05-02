@@ -1,4 +1,7 @@
-let cwd = builtins.toString ./.; in {
+let
+cwd = builtins.toString ./.;
+rofi = builtins.toString ../rofi;
+in {
   programs.waybar = {
     enable = true;
     
@@ -93,12 +96,12 @@ let cwd = builtins.toString ./.; in {
         "custom/logo" = {
           format = "";
           tooltip = false;
-          "on-click" = "CWD=${cwd}/launcher ${cwd}/launcher/launcher.sh &";
+          "on-click" = "CWD=${rofi}/launcher ${rofi}/launcher/launcher.sh &";
         };
         "custom/power" = {
           format = "󰤆";
           tooltip = false;
-          "on-click" = "CWD=${cwd}/powermenu ${cwd}/powermenu/powermenu.sh &";
+          "on-click" = "CWD=${rofi}/powermenu ${rofi}/powermenu/powermenu.sh &";
         };
       };
     };
