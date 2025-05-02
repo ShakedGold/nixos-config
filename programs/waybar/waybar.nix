@@ -1,4 +1,4 @@
-{
+let cwd = builtins.toString ./.; in {
   programs.waybar = {
     enable = true;
     
@@ -87,7 +87,7 @@
               "default" = ["󰖀" "󰕾" " "];
           };
           "on-click" = "pamixer -t";
-          "scroll-step" = 1;
+          "scroll-step" = 5;
         };
 
         "custom/logo" = {
@@ -98,7 +98,7 @@
         "custom/power" = {
           format = "󰤆";
           tooltip = false;
-          # "on-click" = "~/.config/rofi/powermenu/type-2/powermenu.sh &";
+          "on-click" = "${cwd}/powermenu.sh &";
         };
       };
     };

@@ -1,5 +1,6 @@
 {
   imports = [
+    ./waybar
     ./zsh.nix
     ./neovim.nix
     ./git.nix
@@ -11,7 +12,6 @@
     ./rofi.nix
     ./obs-studio.nix
     ./ghostty.nix
-    ./waybar.nix
     ./hyprlock.nix
   ];
 }
