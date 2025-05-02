@@ -3,7 +3,7 @@
   ...
 } :
 let wallpaper = "${config.home.homeDirectory}/.config/home-manager/wallpaper.png"; in {
-  programs.hyprpaper = {
+  services.hyprpaper = {
     enable = true;
 
     settings = {
