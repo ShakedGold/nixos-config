@@ -1,15 +1,9 @@
 let
-cwd = builtins.toString ./.;
 rofi = builtins.toString ../rofi;
 in {
   programs.waybar = {
     enable = true;
     
-    systemd = {
-      enable = true;
-      target = "network.target";
-    };
-
     settings = {
       mainBar = {
         layer = "top";
@@ -96,12 +90,19 @@ in {
         "custom/logo" = {
           format = "";
           tooltip = false;
-          "on-click" = "CWD=${rofi}/launcher ${rofi}/launcher/launcher.sh &";
+          on-click = "${rofi}/launcher/launcher.sh &";
         };
+
         "custom/power" = {
           format = "󰤆";
           tooltip = false;
-          "on-click" = "CWD=${rofi}/powermenu ${rofi}/powermenu/powermenu.sh &";
+          on-click = "${rofi}/powermenu/powermenu.sh &";
+        };
+
+        "hyprland/language#language" = {
+          format-en = "English";
+          format-he = "Hebrew";
+          on-click = "hyprctl switchxkblayout current next";
         };
       };
     };
@@ -179,7 +180,7 @@ window#waybar.hidden {
 }
 
 #custom-logo {
-  padding-right: 7px;
+  padding-right: 13px;
   padding-left: 7px;
   margin-left: 5px;
   font-size: 25px;

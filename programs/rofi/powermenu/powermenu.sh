@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # CMDs
-uptime="`uptime -p | sed -e 's/up //g'`"
+uptime="`uptime | sed -e 's/up //g'`"
 host=`hostname`
 
 theme='style'
@@ -13,6 +13,7 @@ logout='󰍃'
 yes=''
 no=''
 
+CWD=$(dirname $0)
 # Pass variables to rofi
 run_rofi() {
 	echo -e "$lock\n$logout\n$reboot\n$shutdown" | rofi_cmd
@@ -54,7 +55,7 @@ run_cmd() {
 		elif [[ $1 == '--reboot' ]]; then
 			systemctl reboot
 		elif [[ $1 == '--logout' ]]; then
-		  killall Hyprland
+			hyprctl dispatch exit
 		fi
 	else
 		exit 0

@@ -4,7 +4,8 @@
 } :
 let
   terminal = "ghostty --gtk-single-instance=true --quit-after-last-window-closed=false";
-in{
+  rofi = builtins.toString ./rofi;
+in {
   # HYPRLAND
   wayland.windowManager.hyprland = {
     enable = true;
@@ -31,7 +32,7 @@ in{
         "$mod CTRL, k, movewindow, u"
         "$mod CTRL, l, movewindow, r"
 
-        "$mod, Space, exec, pkill rofi || rofi -show drun -show-icons"
+        "$mod, Space, exec, pkill rofi || ${rofi}/launcher/launcher.sh"
 
         "$mod, 1, workspace, 1"
         "$mod, 2, workspace, 2"
@@ -97,12 +98,21 @@ in{
         "XCURSOR_SIZE,24"
       ];
 
-      "exec-once" = [
+      exec-once = [
         "ghostty --gtk-single-instance=true --quit-after-last-window-closed=false --initial-window=false"
+        "hyprctl dispatch workspace 1"
+        "waybar"
+        "1password --silent"
+        "vesktop --start-minimized"
+        "steam -silent"
       ];
 
       windowrulev2 = [
         "stayfocused, class:(rofi)"
+      ];
+
+      workspace = [
+        "name:1, monitor:DP-4"
       ];
     };
   };

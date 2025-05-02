@@ -3,4 +3,4 @@
 ## Run
 rofi \
     -show drun \
-    -theme $CWD/style.rasi
+    -theme $(dirname $0)/style.rasi
