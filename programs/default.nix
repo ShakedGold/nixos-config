@@ -14,5 +14,6 @@
     ./obs-studio.nix
     ./ghostty.nix
     ./hyprlock.nix
+    ./hyprpaper.nix
   ];
 }
