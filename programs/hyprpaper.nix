@@ -10,7 +10,7 @@ let wallpaper = "${config.home.homeDirectory}/.config/home-manager/wallpaper.png
       preload = [ wallpaper ];
       wallpaper = [
         "DP-4,${wallpaper}"
-        "HDMI-2-A,${wallpaper}"
+        "HDMI-A-2,${wallpaper}"
       ];
     };
   };
