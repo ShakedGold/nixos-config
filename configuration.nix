@@ -353,8 +353,11 @@
     pamixer
     hyprpaper
     wails
+    webkitgtk
+    docker
+    nsis
+    upx
   ];
-
   # add directx -> vulcan
   nixpkgs.overlays = [
     (self: super: {
