@@ -155,7 +155,7 @@
                   "applications:systemsettings.desktop"
                   "preferred://filemanager"
                   "applications:zen-beta.desktop"
-                  "applications:kitty.desktop"
+                  "applications:ghostty.desktop"
                   "applications:vesktop.desktop"
                   "applications:code.desktop"
                   "applications:spotify.desktop"
