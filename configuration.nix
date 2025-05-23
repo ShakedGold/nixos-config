@@ -352,6 +352,7 @@
     hyprlock
     pamixer
     hyprpaper
+    wails
   ];
 
   # add directx -> vulcan
