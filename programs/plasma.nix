@@ -68,7 +68,7 @@
         {
           enable = true;
           name = "SteelSeries SteelSeries Aerox 3 Wireless";
-          acceleration = 0;
+          acceleration = -0.20;
           accelerationProfile = "none";
           scrollSpeed = 1;
           vendorId = "1038";
@@ -77,7 +77,7 @@
         {
           enable = true;
           name = "Aerox 3";
-          acceleration = 0;
+          acceleration = -0.20;
           accelerationProfile = "none";
           scrollSpeed = 1;
           vendorId = "0111";
