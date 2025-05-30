@@ -47,10 +47,10 @@
       }
     ];
 
-    hotkeys.commands."launch-kitty" = {
+    hotkeys.commands."launch-ghostty" = {
       name = "Launch Konsole";
       key = "Meta+Return";
-      command = "kitty";
+      command = "ghostty";
     };
     hotkeys.commands."lock" = {
       name = "Lock Screen";
@@ -155,7 +155,7 @@
                   "applications:systemsettings.desktop"
                   "preferred://filemanager"
                   "applications:zen-beta.desktop"
-                  "applications:ghostty.desktop"
+                  "applications:com.mitchellh.ghostty.desktop"
                   "applications:vesktop.desktop"
                   "applications:code.desktop"
                   "applications:spotify.desktop"
