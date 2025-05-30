@@ -52,7 +52,7 @@ in {
       btop = "LANG=en_US.UTF-8 btop"; # fix no locale
     };
 
-    initExtra = ''
+    initContent = ''
       [[ "$TERM" == "xterm-kitty" ]] && export TERM=xterm-256color
       ${lib.concatMapStrings (x: "${toString x}\n") (lib.mapAttrsToList(name: value: "export ${name}=${toString value}") config.home.sessionVariables)}
       source ${prompt}

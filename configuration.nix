@@ -240,6 +240,9 @@
       "233ccaac27ac343e"
     ];
   };
+  
+  programs.gamescope.enable = true;
+  programs.gamemode.enable = true;
 
   # nix-ld
   programs.nix-ld.enable = true;
@@ -301,7 +304,6 @@
     linux-wallpaperengine
     lutris
     wine
-    heroic
     qbittorrent
     anydesk
     firefoxpwa
@@ -357,6 +359,11 @@
     docker
     nsis
     upx
+    (heroic.override {
+      extraPkgs = pkgs: [
+        pkgs.gamescope
+      ];
+    })
   ];
   # add directx -> vulcan
   nixpkgs.overlays = [
