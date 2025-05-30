@@ -364,7 +364,7 @@
         pkgs.gamescope
       ];
     })
-    asdf
+    asdf-vm
   ];
   # add directx -> vulcan
   nixpkgs.overlays = [
