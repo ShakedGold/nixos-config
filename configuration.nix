@@ -284,7 +284,7 @@
     neovim
     kitty
     zsh
-    thefuck
+    pay-respects
     ripgrep
     gcc
     nodejs
