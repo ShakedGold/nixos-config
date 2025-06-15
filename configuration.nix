@@ -238,7 +238,10 @@
   ];
   # Desktop Portals
   xdg.portal.enable = true;
-  xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+  xdg.portal.extraPortals = [ 
+    pkgs.xdg-desktop-portal-gtk
+    pkgs.kdePackages.xdg-desktop-portal-kde
+  ];
 
   services.tailscale.enable = true;
   services.tailscale.useRoutingFeatures = "client";
