@@ -347,14 +347,14 @@
     kdePackages.bluedevil
     unityhub
     busybox
-    # rpcs3
+    rpcs3
     zoom-us
     prismlauncher
     inputs.zen-browser.packages."${system}".default
     obs-studio
     nv-codec-headers-12
     wireplumber
-    # (pkgs.callPackage ./davinci-resolve-paid.nix  {})
+    (pkgs.callPackage ./davinci-resolve-paid.nix  {})
     r2modman
     waybar
     (pkgs.waybar.overrideAttrs (oldAttrs: {
@@ -377,7 +377,7 @@
     })
     asdf-vm
     teams-for-linux
-    # superTuxKart
+    superTuxKart
   ];
   # add directx -> vulcan
   nixpkgs.overlays = [
