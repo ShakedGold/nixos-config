@@ -336,7 +336,7 @@
     kdePackages.bluedevil
     unityhub
     busybox
-    rpcs3
+    # rpcs3
     zoom-us
     prismlauncher
     inputs.zen-browser.packages."${system}".default
@@ -367,6 +367,7 @@
     })
     asdf-vm
     teams-for-linux
+    superTuxKart
   ];
   # add directx -> vulcan
   nixpkgs.overlays = [
