@@ -336,7 +336,7 @@
     kdePackages.bluedevil
     unityhub
     busybox
-    # rpcs3
+    rpcs3
     zoom-us
     prismlauncher
     inputs.zen-browser.packages."${system}".default
@@ -356,7 +356,6 @@
     pamixer
     hyprpaper
     wails
-    webkitgtk
     docker
     nsis
     upx
