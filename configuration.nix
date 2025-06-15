@@ -336,7 +336,7 @@
     kdePackages.bluedevil
     unityhub
     busybox
-    # rpcs3 - BROKEN
+    rpcs3
     zoom-us
     prismlauncher
     inputs.zen-browser.packages."${system}".default
