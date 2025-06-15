@@ -365,6 +365,7 @@
       ];
     })
     asdf-vm
+    teams
   ];
   # add directx -> vulcan
   nixpkgs.overlays = [
