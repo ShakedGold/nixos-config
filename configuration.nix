@@ -222,6 +222,7 @@
     allowUnfree = true;
     cudaSupport = true;
   };
+  nixpkgs.config.allowUnsupportedSystem = true;
 
   # Fonts
   fonts.packages = with pkgs; [
