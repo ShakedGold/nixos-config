@@ -400,6 +400,10 @@
     (discord.override {
       withVencord = true;
     })
+    tmux
+    make
+    fd
+    ncdu
   ];
   # add directx -> vulcan
   nixpkgs.overlays = [
