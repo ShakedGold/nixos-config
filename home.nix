@@ -128,4 +128,12 @@ in {
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
+
+  home.file.".clangd".text = ''
+  CompileFlags:
+    Add: [
+      -isystem${pkgs.glibc.dev}/include
+      -isystem${pkgs.libcxx.dev}/include/c++/v1
+    ]
+'';
 }
