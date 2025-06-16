@@ -401,9 +401,10 @@
       withVencord = true;
     })
     tmux
-    make
+    gnumake
     fd
     ncdu
+    lazygit
   ];
   # add directx -> vulcan
   nixpkgs.overlays = [
