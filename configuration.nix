@@ -385,6 +385,7 @@
     (discord.override {
       withVencord = true;
     })
+    kdePackages.xwaylandvideobridge
   ];
   # add directx -> vulcan
   nixpkgs.overlays = [
