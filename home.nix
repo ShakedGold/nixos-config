@@ -141,5 +141,12 @@ in {
       - -Werror
     Index:
       Background: Skip
+  clang-tidy:
+    Checks: >
+      bugprone-unused-return-value,
+      -*,cert-err33-c
+    CheckOptions:
+      - key: bugprone-unused-return-value.AllowCastToVoid
+        value: "false"
 '';
 }
