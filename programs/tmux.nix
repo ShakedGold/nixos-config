@@ -68,6 +68,9 @@ in
         bind -n -N "Resize left" M-H resize-pane -L 5
         bind -n -N "Resize up" M-K resize-pane -U 5
         bind -n -N "Resize down" M-J resize-pane -D 5
+
+        bind -n -N "Select the next window" M-n next
+        bind -n -N "Select the previous window" M-p prev
    '';
   };
 }
