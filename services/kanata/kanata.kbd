@@ -8,8 +8,7 @@
 )
 
 (defalias
-  cec (tap-hold 10 200 esc lctl)
-  sym (tap-hold 10 200 tab (layer-toggle symbols))
+  cec esc
 )
 
 (deflayer default
