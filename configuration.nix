@@ -407,6 +407,7 @@
     lazygit
     nettools
     python3
+    clang-tools
   ];
 
   programs.noisetorch.enable = true;
