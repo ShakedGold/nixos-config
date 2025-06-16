@@ -440,7 +440,6 @@
     keyboards = {
       internalKeyboard = {
         config = builtins.readFile ./services/kanata/kanata.kbd;
-        extraDefCfg = "fallthrough true";
       };
     };
   };
