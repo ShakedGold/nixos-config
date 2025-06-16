@@ -132,8 +132,8 @@ in {
   home.file.".clangd".text = ''
   CompileFlags:
     Add: [
-      -isystem${pkgs.glibc.dev}/include
-      -isystem${pkgs.libcxx.dev}/include/c++/v1
+      -i${pkgs.glibc.dev}/include
+      -i${pkgs.libcxx.dev}/include/c++/v1
     ]
 '';
 }
