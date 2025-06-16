@@ -1,7 +1,3 @@
-(defcfg
-  input-timeout-ms 0 ; No delay for key recognition
-)
-
 (defsrc
   esc caps
 )
