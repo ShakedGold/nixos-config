@@ -71,6 +71,8 @@ in
 
         bind -n -N "Select the next window" M-n next
         bind -n -N "Select the previous window" M-p prev
+
+        bind -n -N "Create a new window" M-n new-window
    '';
   };
 }
