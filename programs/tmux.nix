@@ -56,7 +56,7 @@ in
     extraConfig = ''
         bind -n -N "Split the pane into two, left and right" v split-window -h
         bind -n -N "Split the pane into two, top and bottom" s split-window -v
-        bind -x -N "Kill the current pane" s kill-pane
+        bind -n -N "Kill the current pane" x kill-pane
     '';
   };
 }
