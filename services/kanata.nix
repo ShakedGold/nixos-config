@@ -1,5 +1,0 @@
-{
-  services.kanata = {
-    enable = true;
-  };
-}
