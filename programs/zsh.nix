@@ -53,6 +53,7 @@ in {
       c = "clear";
       g = "g";
       tmux = "tmux -u";
+      v = "nvim";
     };
 
     initContent = ''
