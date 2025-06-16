@@ -3,6 +3,6 @@
 )
 
 (deflayer default
-  esc esc     ; Esc remains Esc
-  caps esc    ; Caps Lock becomes Esc
+  esc esc
+  caps esc
 )
