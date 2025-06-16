@@ -138,6 +138,7 @@ in {
       - -Wextra
       - -std=c99
       - -pedantic
+      - -Werror
     Index:
       Background: Skip
 '';
