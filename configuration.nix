@@ -313,7 +313,6 @@
     go
     gopls
     postman
-    vesktop
     ludusavi
     rclone
     linux-wallpaperengine
@@ -381,6 +380,9 @@
     asdf-vm
     teams-for-linux
     superTuxKart
+    (discord.override {
+      withVencord = true;
+    })
   ];
   # add directx -> vulcan
   nixpkgs.overlays = [
