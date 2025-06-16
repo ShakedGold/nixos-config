@@ -137,6 +137,7 @@ in {
       - -Wall
       - -Wextra
       - -std=c99
+      - -pedantic
     Index:
       Background: Skip
 '';
