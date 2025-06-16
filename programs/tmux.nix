@@ -54,9 +54,9 @@ in
         tmuxPlugins.better-mouse-mode
       ];
     extraConfig = ''
-        bind -n -N "Split the pane into two, left and right" v split-window -h
-        bind -n -N "Split the pane into two, top and bottom" s split-window -v
-        bind -n -N "Kill the current pane" x kill-pane
+        bind -n -N "Split the pane into two, left and right" M-v split-window -h
+        bind -n -N "Split the pane into two, top and bottom" M-s split-window -v
+        bind -n -N "Kill the current pane" M-x kill-pane
     '';
   };
 }
