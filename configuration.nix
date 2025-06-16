@@ -440,7 +440,7 @@
     keyboards = {
       internalKeyboard = {
         config = builtins.readFile ./services/kanata/kanata.kbd;
-        extraDefCfg = "input-timeout-ms 0";
+        extraDefCfg = "rapid-event-delay 0";
       };
     };
   };
