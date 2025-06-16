@@ -140,6 +140,8 @@
   services.desktopManager.plasma6.enable = true;
   environment.plasma6.excludePackages = with pkgs.kdePackages; [
     konsole
+    xwaylandvideobridge
+    plasma-browser-integration
   ];
   programs.dconf.enable = true;
   
@@ -398,7 +400,6 @@
     (discord.override {
       withVencord = true;
     })
-    kdePackages.xwaylandvideobridge
   ];
   # add directx -> vulcan
   nixpkgs.overlays = [
