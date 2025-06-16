@@ -156,7 +156,7 @@
                   "preferred://filemanager"
                   "applications:zen-beta.desktop"
                   "applications:com.mitchellh.ghostty.desktop"
-                  "applications:vesktop.desktop"
+                  "applications:discord.desktop"
                   "applications:code.desktop"
                   "applications:spotify.desktop"
                   "applications:steam.desktop"
