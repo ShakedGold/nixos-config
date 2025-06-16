@@ -237,11 +237,15 @@
     nerd-fonts.jetbrains-mono
   ];
   # Desktop Portals
-  xdg.portal.enable = true;
-  xdg.portal.extraPortals = [ 
-    pkgs.xdg-desktop-portal-gtk
-    pkgs.kdePackages.xdg-desktop-portal-kde
-  ];
+  xdg.portal = {
+    enable = true;
+    gtkUsePortal = true;
+    extraPortals = [ 
+      pkgs.xdg-desktop-portal-gtk
+      pkgs.kdePackages.xdg-desktop-portal-kde
+      pkgs.xdg-desktop-portal-wlr
+    ];
+  };
 
   services.tailscale.enable = true;
   services.tailscale.useRoutingFeatures = "client";
