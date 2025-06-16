@@ -141,13 +141,5 @@ in {
       - -Werror
     Index:
       Background: Skip
-  clang-tidy:
-      Checks: >
-        bugprone-unused-return-value
-        -*
-      
-      CheckOptions:
-        - key: bugprone-unused-return-value.CheckedFunctions
-          value: '.*'  # regex to match ALL functions
 '';
 }
