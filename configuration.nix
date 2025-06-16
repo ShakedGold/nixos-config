@@ -407,7 +407,6 @@
     lazygit
     nettools
     python3
-    noisetorch
   ];
   # add directx -> vulcan
   nixpkgs.overlays = [
