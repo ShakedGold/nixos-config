@@ -1,7 +1,12 @@
+(defcfg
+  input-timeout-ms 0 ; No delay for key recognition
+)
+
 (defsrc
   esc caps
 )
 
 (deflayer default
-  caps caps
+  esc esc     ; Esc remains Esc
+  caps esc    ; Caps Lock becomes Esc
 )
