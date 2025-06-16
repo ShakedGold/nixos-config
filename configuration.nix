@@ -239,7 +239,6 @@
   # Desktop Portals
   xdg.portal = {
     enable = true;
-    gtkUsePortal = true;
     extraPortals = [ 
       pkgs.xdg-desktop-portal-gtk
       pkgs.kdePackages.xdg-desktop-portal-kde
