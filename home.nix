@@ -131,9 +131,13 @@ in {
 
   home.file.".clangd".text = ''
   CompileFlags:
-    Add: [
-      -I${pkgs.glibc.dev}/include
-      -I${pkgs.libcxx.dev}/include/c++/v1
-    ]
+    Add:
+      - -I${pkgs.glibc.dev}/include
+      - -I${pkgs.libcxx.dev}/include/c++/v1
+      - -Wall
+      - -Wextra
+      - -std=c99
+    Index:
+      Background: Skip
 '';
 }
