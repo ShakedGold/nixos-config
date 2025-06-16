@@ -407,6 +407,7 @@
     lazygit
     nettools
     python3
+    kanata
   ];
 
   programs.noisetorch.enable = true;
