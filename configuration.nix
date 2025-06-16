@@ -408,6 +408,9 @@
     nettools
     python3
   ];
+
+  programs.noisetorch.enable = true;
+
   # add directx -> vulcan
   nixpkgs.overlays = [
     (self: super: {
