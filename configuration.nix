@@ -151,9 +151,11 @@
     xwayland.enable = true;
   };
 
-  # environment.sessionVariables = {
-  # };
-  environment.sessionVariables.NIXOS_OZONE_WL = "1";
+  environment.sessionVariables = {
+    NIXOS_OZONE_WL = "1";
+    XDG_SESSION_TYPE="wayland";
+  };
+
   environment.etc = {
     "1password/custom_allowed_browsers" = {
       text = ''
