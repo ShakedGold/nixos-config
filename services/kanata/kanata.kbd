@@ -1,5 +1,6 @@
 (defsrc
-  esc caps
+  esc
+  caps
 )
 
 (deflayer default
