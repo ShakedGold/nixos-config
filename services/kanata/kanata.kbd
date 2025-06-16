@@ -1,3 +1,11 @@
+(defcfg
+  input-timeout-ms 100
+)
+
+(defsrc
+  esc caps
+)
+
 (deflayer default
   caps esc
 )
