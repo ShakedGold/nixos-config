@@ -440,9 +440,9 @@
     keyboards = {
       internalKeyboard = {
         config = builtins.readFile ./services/kanata/kanata.kbd;
+        extraDefCfg = "input-timeout-ms 0";
       };
     };
-    extraDefCfg = "input-timeout-ms 0";
   };
 
   # Some programs need SUID wrappers, can be configured further or are
