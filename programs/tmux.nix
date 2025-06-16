@@ -64,10 +64,10 @@ in
         bind -n -N "Move to the up pane" M-k select-pane -U
         bind -n -N "Move to the down pane" M-j select-pane -D
 
-        bind -n -N "Resize right" M-S-l resize-pane -R 5
-        bind -n -N "Resize left" M-S-h resize-pane -L 5
-        bind -n -N "Resize up" M-S-k resize-pane -U 5
-        bind -n -N "Resize down" M-S-j resize-pane -D 5
+        bind -n -N "Resize right" S-L resize-pane -R 5
+        bind -n -N "Resize left" S-H resize-pane -L 5
+        bind -n -N "Resize up" S-K resize-pane -U 5
+        bind -n -N "Resize down" S-J resize-pane -D 5
    '';
   };
 }
