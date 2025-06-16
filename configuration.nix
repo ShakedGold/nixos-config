@@ -241,7 +241,22 @@
   # Desktop Portals
   xdg.portal = {
     enable = true;
-    extraPortals = [ 
+
+    config = {
+      kde.default = [ "kde" "gtk" "gnome" ];
+      kde."org.freedesktop.portal.FileChooser" = [ "kde" ];
+      kde."org.freedesktop.portal.OpenURI" = [ "kde" ];
+
+      hyprland.default = [ "hyprland" "gtk" "termfilechooser" ];
+      hyprland."org.freedesktop.portal.FileChooser" = [ "termfilechooser" ];
+      hyprland."org.freedesktop.portal.OpenURI" = [ "termfilechooser" ];
+    };
+
+    extraPortals = [
+      pkgs.xdg-desktop-portal-gtk
+      pkgs.xdg-desktop-portal-gnome
+      pkgs.xdg-desktop-portal-termfilechooser
+
       pkgs.kdePackages.xdg-desktop-portal-kde
     ];
   };
