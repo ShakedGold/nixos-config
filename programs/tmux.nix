@@ -54,6 +54,8 @@ in
         tmuxPlugins.better-mouse-mode
       ];
     extraConfig = ''
+        bind -N "Split the pane into two, left and right" v split-window -h
+        bind -N "Split the pane into two, top and bottom" s split-window -v
     '';
   };
 }
