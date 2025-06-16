@@ -52,6 +52,7 @@ in {
       btop = "LANG=en_US.UTF-8 btop"; # fix no locale
       c = "clear";
       g = "g";
+      tmux = "tmux -u";
     };
 
     initContent = ''
