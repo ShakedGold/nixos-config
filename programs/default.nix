@@ -15,5 +15,6 @@
     ./ghostty.nix
     ./hyprlock.nix
     ./hyprpaper.nix
+    ./tmux.nix
   ];
 }
