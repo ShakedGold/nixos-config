@@ -50,6 +50,8 @@ in {
       ls = "eza --icons=always";
       pcat = "bat --style plain";
       btop = "LANG=en_US.UTF-8 btop"; # fix no locale
+      c = "clear";
+      g = "g";
     };
 
     initContent = ''
