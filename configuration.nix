@@ -439,7 +439,7 @@
     enable = true;
     keyboards = {
       internalKeyboard = {
-        config = builtins.readFile ./kanata.kbd;
+        config = builtins.readFile ./services/kanata/kanata.kbd;
       };
     };
   };
