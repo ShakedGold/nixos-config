@@ -406,6 +406,7 @@
     ncdu
     lazygit
     nettools
+    python3
   ];
   # add directx -> vulcan
   nixpkgs.overlays = [
