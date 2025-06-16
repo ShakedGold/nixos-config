@@ -57,6 +57,11 @@ in
         bind -n -N "Split the pane into two, left and right" M-v split-window -h
         bind -n -N "Split the pane into two, top and bottom" M-s split-window -v
         bind -n -N "Kill the current pane" M-x kill-pane
+
+        bind -n -N "Move to the right pane" M-l select-pane -R
+        bind -n -N "Move to the left pane" M-h select-pane -L
+        bind -n -N "Move to the up pane" M-k select-pane -U
+        bind -n -N "Move to the down pane" M-j select-pane -D
     '';
   };
 }
