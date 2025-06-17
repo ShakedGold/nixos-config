@@ -395,7 +395,6 @@
       ];
     })
     asdf-vm
-    teams-for-linux
     superTuxKart
     (discord.override {
       withVencord = true;
