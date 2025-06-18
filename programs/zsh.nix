@@ -56,9 +56,11 @@ in {
       v = "nvim";
     };
 
-    initContent = ''
+    envExtra = ''
       ZSH_TMUX_AUTOSTART=true
+    '';
 
+    initContent = ''
       [[ "$TERM" == "xterm-kitty" ]] && export TERM=xterm-256color
       ${lib.concatMapStrings (x: "${toString x}\n") (lib.mapAttrsToList(name: value: "export ${name}=${toString value}") config.home.sessionVariables)}
       source ${prompt}
