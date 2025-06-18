@@ -60,15 +60,11 @@ in {
       [[ "$TERM" == "xterm-kitty" ]] && export TERM=xterm-256color
       ${lib.concatMapStrings (x: "${toString x}\n") (lib.mapAttrsToList(name: value: "export ${name}=${toString value}") config.home.sessionVariables)}
       source ${prompt}
-
-      if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then
-        tmux attach-session -t default || tmux new-session -s default
-      fi
     '';
 
     oh-my-zsh = {
       enable = true;
-      plugins = ["git"];
+      plugins = ["git" "tmux"];
     };
   };
 
