@@ -359,7 +359,6 @@
     tldr
     bat
     vlc
-    pnpm
     insomnia
     chromium
     zerotierone
