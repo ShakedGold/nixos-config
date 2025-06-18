@@ -407,6 +407,7 @@
     python3
     clang-tools
     gitflow
+    inputs.kwin-effects-forceblur.packages.${pkgs.system}.default
   ];
 
   programs.noisetorch.enable = true;
