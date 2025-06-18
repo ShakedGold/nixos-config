@@ -263,6 +263,14 @@
     ];
   };
 
+  xdg.mime.defaultApplications = {
+      "text/html" = "/run/current-system/sw/share/applications/firefox.desktop";
+      "x-scheme-handler/http" = "/run/current-system/sw/share/applications/firefox.desktop";
+      "x-scheme-handler/https" = "/run/current-system/sw/share/applications/firefox.desktop";
+      "x-scheme-handler/about" = "/run/current-system/sw/share/applications/firefox.desktop";
+      "x-scheme-handler/unknown" = "/run/current-system/sw/share/applications/firefox.desktop";
+  };
+
   services.tailscale.enable = true;
   services.tailscale.useRoutingFeatures = "client";
 
