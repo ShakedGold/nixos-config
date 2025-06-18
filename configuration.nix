@@ -416,6 +416,7 @@
     clang-tools
     gitflow
     inputs.kwin-effects-forceblur.packages.${pkgs.system}.default
+    bottles
   ];
 
   programs.noisetorch.enable = true;
