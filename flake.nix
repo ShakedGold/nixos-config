@@ -15,7 +15,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.home-manager.follows = "home-manager";
     };
-    zen-browser.url = "github:0xc000022070/zen-browser-flake";
+    zen-browser.url = "github:MarceColl/zen-browser-flake";
 
     hyprland.url = "github:hyprwm/Hyprland";
     hyprland-plugins = {
