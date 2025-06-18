@@ -407,6 +407,7 @@
     nettools
     python3
     clang-tools
+    gitflow
   ];
 
   programs.noisetorch.enable = true;
