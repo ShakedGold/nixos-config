@@ -34,4 +34,8 @@
 
 (deflayermap w_layer
   enter @w-max
+  h @w-left
+  j @w-down
+  k @w-up
+  l @w-right
 )
