@@ -22,6 +22,7 @@ let
         owner = "IngoMeyer441";
         repo = "tmux-easy-motion";
         rev = "3e2edbd0a3d9924cc1df3bd3529edc507bdf5934";
+        sha256 = "sha256-wOIPq12OqqxLERKfvVp4JgLkDXnM0KKtTqRWMqj4rfs=";
       };
     };
 in
