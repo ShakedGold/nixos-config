@@ -4,9 +4,15 @@
   enter
 )
 
+;; Layers
 (defalias
   hyperkey (tap-hold-press $tap-time $hold-time esc (layer-while-held mod))
   hw-layer (layer-while-held w_layer)
+)
+
+;; W Layer
+(defalias
+  max (key "Meta+PageUp")
 )
 
 (defvar
