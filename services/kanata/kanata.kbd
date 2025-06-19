@@ -11,9 +11,9 @@
 )
 
 ;; W Layer
-(defalias
-  max (macro lmet pgup)
-)
+;; (defalias
+;;   max (macro lmet pgup)
+;; )
 
 (defvar
   tap-time 150
