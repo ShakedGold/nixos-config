@@ -1,33 +1,34 @@
 (defsrc
-;;  caps
-;;  w
-;;  enter
+  caps
+  w
+ enter
+)
+
+(defvar
+  tap-time 150
+  hold-time 200
 )
  
-;; ;; Layers
+;; Layers
+(defalias
+  hyperkey (tap-hold-press $tap-time $hold-time esc (layer-while-held mod))
+  hw-layer (layer-while-held w_layer)
+)
+
+;; W Layer
 ;; (defalias
-;;   hyperkey (tap-hold-press $tap-time $hold-time esc (layer-while-held mod))
-;;   hw-layer (layer-while-held w_layer)
+;;   max (macro lmet pgup)
 ;; )
-;; 
-;; ;; W Layer
-;; ;; (defalias
-;; ;;   max (macro lmet pgup)
-;; ;; )
-;; 
-;; (defvar
-;;   tap-time 150
-;;   hold-time 200
-;; )
-;; 
+
+
 (deflayermap base
 ;;  caps @hyperkey
 )
-;; 
-;; (deflayermap mod
-;;   w @hw-layer
-;; )
-;; 
-;; (deflayermap w_layer
-;; ;;  enter @max
-;; )
+
+(deflayermap mod
+  w @hw-layer
+)
+
+(deflayermap w_layer
+  enter @max
+)
