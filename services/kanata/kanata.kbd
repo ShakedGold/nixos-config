@@ -17,7 +17,7 @@
 
 ;; W Layer
 (defalias
-  max w
+  max (macro a a)
 )
 
 (deflayermap base
