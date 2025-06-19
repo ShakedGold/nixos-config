@@ -8,19 +8,10 @@
   tap-time 150
   hold-time 200
 )
- 
-;; Layers
+
+;; F Layer
 (defalias
-  hyperkey (tap-hold-press $tap-time $hold-time esc (layer-while-held mod))
-  hw-layer (layer-while-held w_layer)
-)
-
-(deflayermap base
-  caps @hyperkey
-)
-
-(deflayermap mod
-  w @hw-layer
+  f-browser (cmd firefox --new-tab)
 )
 
 ;; W Layer
@@ -31,6 +22,23 @@
   w-up (multi lmet up)
   w-down (multi lmet down)
 )
+ 
+;; Layers
+(defalias
+  hyperkey (tap-hold-press $tap-time $hold-time esc (layer-while-held mod))
+
+  hw-layer (layer-while-held w_layer)
+  hf-layer (tap-hold-press $tap-time $hold-time @f-browser (layer-while-held f_layer))
+)
+
+(deflayermap base
+  caps @hyperkey
+)
+
+(deflayermap mod
+  w @hw-layer
+  f @hf-layer
+)
 
 (deflayermap w_layer
   enter @w-max
@@ -39,3 +47,6 @@
   k @w-up
   l @w-right
 )
+
+(deflayermap f_layer)
+
