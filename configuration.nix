@@ -447,6 +447,7 @@
         config = builtins.readFile ./services/kanata/kanata.kbd;
       };
     };
+    package = pkgs.kanata-with-cmd;
   };
 
 
