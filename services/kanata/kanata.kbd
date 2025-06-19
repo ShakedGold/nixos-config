@@ -18,10 +18,10 @@
   @hyperkey w enter
 )
 
-(deflayer mod
-  _ @hw-layer _
+(deflayermap mod
+  w @hw-layer
 )
 
-(deflayer w_layer
-  _ _ w
+(deflayermap w_layer
+  enter w
 )
