@@ -29,5 +29,5 @@
 )
 
 (deflayermap w_layer
-  enter w @max
+  enter @max
 )
