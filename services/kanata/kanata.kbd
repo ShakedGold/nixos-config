@@ -12,7 +12,7 @@
 
 ;; W Layer
 (defalias
-  max lmet-pgup
+  max (macro lmet pgup)
 )
 
 (defvar
