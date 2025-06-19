@@ -20,9 +20,9 @@
 ;;   hold-time 200
 ;; )
 ;; 
-;; (deflayermap base
-;;   caps @hyperkey
-;; )
+(deflayermap base
+;;  caps @hyperkey
+)
 ;; 
 ;; (deflayermap mod
 ;;   w @hw-layer
