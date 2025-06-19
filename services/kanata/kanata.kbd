@@ -17,7 +17,7 @@
 
 ;; W Layer
 (defalias
-  max (macro lmet pgup)
+  max (multi lmet pgup)
 )
 
 (deflayermap base
