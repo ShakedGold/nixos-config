@@ -360,18 +360,13 @@
     alejandra
     neofetch
     waylock
-    xdg-desktop-portal-gtk
     man-pages
     killall
     btop
-    tldr
     bat
     vlc
-    insomnia
     chromium
-    zerotierone
     kdePackages.bluedevil
-    unityhub
     busybox
     rpcs3
     zoom-us
@@ -392,16 +387,13 @@
     hyprlock
     pamixer
     hyprpaper
-    wails
     docker
-    nsis
     upx
     (heroic.override {
       extraPkgs = pkgs: [
         pkgs.gamescope
       ];
     })
-    asdf-vm
     superTuxKart
     (discord.override {
       withVencord = true;
@@ -416,8 +408,6 @@
     clang-tools
     gitflow
     inputs.kwin-effects-forceblur.packages.${pkgs.system}.default
-    bottles
-    unrar
   ];
 
   programs.noisetorch.enable = true;
