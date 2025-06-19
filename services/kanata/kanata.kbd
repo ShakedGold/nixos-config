@@ -6,7 +6,7 @@
 
 (defalias
   hyperkey (tap-hold-press $tap-time $hold-time esc (multi lsft lctl lalt lmet))
-  hw-layer (layer-while-held w_layer)
+  hw-layer (tap-hold-press $tap-time $hold-time esc (layer-while-held w_layer))
 )
 
 (defvar
