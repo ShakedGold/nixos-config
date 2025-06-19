@@ -440,7 +440,7 @@
     enable = true;
     keyboards = {
       internalKeyboard = {
-        extraDefCfg = "process-unmapped-keys yes";
+        extraDefCfg = ["process-unmapped-keys yes" "danger-enable-cmd yes"];
         config = builtins.readFile ./services/kanata/kanata.kbd;
       };
     };
