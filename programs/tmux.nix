@@ -28,6 +28,10 @@ in
           extraConfig = "set -g @super-fingers-key f";
         }
         {
+          plugin = tmux-easy-motion;
+          extraConfig = "set -g @easy-motion-prefix \"Space\"";
+        }
+        {
           plugin = tmuxPlugins.catppuccin;
           extraConfig = '' 
           set -g @catppuccin_flavour 'frappe'
