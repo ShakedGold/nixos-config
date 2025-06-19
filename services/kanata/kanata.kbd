@@ -12,15 +12,16 @@
   hold-time 200
 )
 
-(defchords mychords
-  (hyper w hw)
-  ;; add more combos if needed: (hyper t ht) etc.
-)
-
 (defalias
   hyperkey (tap-hold-press $tap-time $hold-time esc (multi lsft lctl lalt lmet))
   hw-layer (action chord mychords hw (layer-hold hyper_w))
 )
+
+(defchords mychords
+  (hyperkey w hw)
+  ;; add more combos if needed: (hyper t ht) etc.
+)
+
 
 (deflayer default
   esc  f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12
