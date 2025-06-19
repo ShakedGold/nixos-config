@@ -9,11 +9,6 @@
   hold-time 200
 )
 
-;; F Layer
-(defalias
-  f-browser (cmd firefox --new-tab)
-)
-
 ;; W Layer
 (defalias
   w-max (multi lmet pgup)
@@ -28,7 +23,6 @@
   hyperkey (tap-hold-press $tap-time $hold-time esc (layer-while-held mod))
 
   hw-layer (layer-while-held w_layer)
-  hf-layer (tap-hold-press $tap-time $hold-time @f-browser (layer-while-held f_layer))
 )
 
 (deflayermap base
@@ -47,6 +41,3 @@
   k @w-up
   l @w-right
 )
-
-(deflayermap f_layer)
-
