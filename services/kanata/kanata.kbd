@@ -15,11 +15,6 @@
   hw-layer (layer-while-held w_layer)
 )
 
-;; W Layer
-(defalias
-  max (multi lmet pgup)
-)
-
 (deflayermap base
   caps @hyperkey
 )
@@ -28,6 +23,15 @@
   w @hw-layer
 )
 
+;; W Layer
+(defalias
+  w-max (multi lmet pgup)
+  w-left (multi lmet left)
+  w-right (multi lmet right)
+  w-up (multi lmet up)
+  w-down (multi lmet down)
+)
+
 (deflayermap w_layer
-  enter @max
+  enter @w-max
 )
