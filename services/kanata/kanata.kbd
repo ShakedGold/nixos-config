@@ -21,7 +21,7 @@
 ;; )
 
 (deflayermap base
-;;  caps @hyperkey
+  caps @hyperkey
 )
 
 (deflayermap mod
