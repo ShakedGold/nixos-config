@@ -1,7 +1,7 @@
 (defsrc
   caps
   w
- enter
+  enter
 )
 
 (defvar
@@ -20,7 +20,6 @@
 ;;   max (macro lmet pgup)
 ;; )
 
-
 (deflayermap base
 ;;  caps @hyperkey
 )
@@ -30,5 +29,5 @@
 )
 
 (deflayermap w_layer
-  enter @max
+;;  enter @max
 )
