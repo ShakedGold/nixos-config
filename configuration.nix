@@ -417,6 +417,7 @@
     gitflow
     inputs.kwin-effects-forceblur.packages.${pkgs.system}.default
     bottles
+    unrar
   ];
 
   programs.noisetorch.enable = true;
