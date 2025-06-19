@@ -20,8 +20,8 @@
   hold-time 200
 )
 
-(deflayer base
-  @hyperkey w enter
+(deflayermap base
+  caps @hyperkey
 )
 
 (deflayermap mod
