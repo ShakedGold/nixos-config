@@ -14,6 +14,16 @@ let
         sha256 = "sha256-cPZCV8xk9QpU49/7H8iGhQYK6JwWjviL29eWabuqruc=";
       };
     };
+  tmux-easy-motion = pkgs.tmuxPlugins.mkTmuxPlugin
+    {
+      pluginName = "tmux-easy-motion";
+      version = "";
+      src = pkgs.fetchFromGitHub {
+        owner = "IngoMeter441";
+        repo = "tmux-easy-motion";
+        rev = "3e2edbd0a3d9924cc1df3bd3529edc507bdf5934";
+      };
+    };
 in
 {
   programs.tmux = {
