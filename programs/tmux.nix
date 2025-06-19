@@ -19,7 +19,7 @@ let
       pluginName = "tmux-easy-motion";
       version = "";
       src = pkgs.fetchFromGitHub {
-        owner = "IngoMeter441";
+        owner = "IngoMeyer441";
         repo = "tmux-easy-motion";
         rev = "3e2edbd0a3d9924cc1df3bd3529edc507bdf5934";
       };
