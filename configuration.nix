@@ -436,15 +436,15 @@
     allowedUDPPortRanges = allowedTCPPortRanges;
   };
 
-  services.kanata = {
-    enable = true;
-    keyboards = {
-      internalKeyboard = {
-        extraDefCfg = "process-unmapped-keys yes";
-        config = builtins.readFile ./services/kanata/kanata.kbd;
-      };
-    };
-  };
+  # services.kanata = {
+  #   enable = true;
+  #   keyboards = {
+  #     internalKeyboard = {
+  #       extraDefCfg = "process-unmapped-keys yes";
+  #       config = builtins.readFile ./services/kanata/kanata.kbd;
+  #     };
+  #   };
+  # };
 
 
   # Some programs need SUID wrappers, can be configured further or are
