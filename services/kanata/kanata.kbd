@@ -31,7 +31,6 @@
 
 (deflayermap mod
   w @hw-layer
-  f @hf-layer
 )
 
 (deflayermap w_layer
