@@ -14,7 +14,7 @@
 
 (defalias
   hyperkey (tap-hold-press $tap-time $hold-time esc (multi lsft lctl lalt lmet))
-  hyper-w (layer-hold hyper-w-layer)
+  hyper-w (layer-while-held hyper-w-layer)
 )
 
 (deflayer default
