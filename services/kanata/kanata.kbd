@@ -16,9 +16,9 @@
 )
 
 ;; W Layer
-;; (defalias
-;;   max (macro lmet pgup)
-;; )
+(defalias
+  max w
+)
 
 (deflayermap base
   caps @hyperkey
@@ -29,5 +29,5 @@
 )
 
 (deflayermap w_layer
-;;  enter @max
+  enter @max
 )
