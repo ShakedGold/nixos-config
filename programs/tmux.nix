@@ -73,6 +73,8 @@ in
         bind -n -N "Select the previous window" M-p prev
 
         bind -n -N "Create a new window" M-m new-window
+
+        set -g escape-time 0
    '';
   };
 }
