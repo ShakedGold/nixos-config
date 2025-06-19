@@ -1,9 +1,9 @@
-;; (defsrc
-;;   caps
-;;   w
-;;   enter
-;; )
-;; 
+(defsrc
+  caps
+  w
+  enter
+)
+ 
 ;; ;; Layers
 ;; (defalias
 ;;   hyperkey (tap-hold-press $tap-time $hold-time esc (layer-while-held mod))
