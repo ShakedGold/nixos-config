@@ -166,6 +166,9 @@
               };
             };
           }
+          {
+            name = "luisbocanegra.panel.colorizer";
+          }
         ];
       }
     ];
