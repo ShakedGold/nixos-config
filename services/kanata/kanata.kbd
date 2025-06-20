@@ -18,12 +18,18 @@
   w-down (multi lmet down)
   w-close (multi lalt f4)
 )
+
+;; F Layer
+(defalias
+  f-run-or-raise (cmd ./run-or-raise -f zen-beta -c zen-beta)
+)
  
 ;; Layers
 (defalias
   hyperkey (tap-hold-press $tap-time $hold-time esc (layer-while-held mod))
 
   hw-layer (layer-while-held w_layer)
+  hf-layer (tap-hold-press $tap-time $hold-time @f-run-or-raise (layer-while-held f_layer))
 )
 
 (deflayermap base
@@ -32,6 +38,7 @@
 
 (deflayermap mod
   w @hw-layer
+  f @hf-layer
 )
 
 (deflayermap w_layer
@@ -42,3 +49,5 @@
   l @w-right
   c @w-close
 )
+
+(deflayermap f_layer)
