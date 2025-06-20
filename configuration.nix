@@ -205,30 +205,7 @@
   # Desktop Portals
   xdg.portal = {
     enable = true;
-
-    config = {
-      common.default = "wlr";
-
-      kde.default = [ "kde" "gtk" "gnome" ];
-      kde."org.freedesktop.portal.FileChooser" = [ "kde" ];
-      kde."org.freedesktop.portal.OpenURI" = [ "kde" ];
-
-      hyprland.default = [ "hyprland" "gtk" "termfilechooser" ];
-      hyprland."org.freedesktop.portal.FileChooser" = [ "termfilechooser" ];
-      hyprland."org.freedesktop.portal.OpenURI" = [ "termfilechooser" ];
-    };
-
-    wlr.settings.screencast = {
-      output_name = "DP-1";
-      chooser_type = "simple";
-      chooser_cmd = "${pkgs.slurp}/bin/slurp -f %o -or";
-    };
-
     extraPortals = [
-      pkgs.xdg-desktop-portal-gtk
-      pkgs.xdg-desktop-portal-gnome
-      pkgs.xdg-desktop-portal-termfilechooser
-
       pkgs.kdePackages.xdg-desktop-portal-kde
     ];
   };
@@ -365,9 +342,7 @@
       ];
     })
     superTuxKart
-    (vesktop.override {
-      electron = pkgs.electron_33;
-    })
+    vesktop
     tmux
     gnumake
     fd
