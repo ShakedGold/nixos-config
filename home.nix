@@ -174,7 +174,6 @@ in {
   home.packages = with pkgs; [
     nixos-build
     run-or-raise
-    json-to-nix
     hyprland
     papirus-icon-theme
   ];
