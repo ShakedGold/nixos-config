@@ -26,7 +26,7 @@
   hyperkey (tap-hold-press $tap-time $hold-time esc (layer-while-held mod))
 
   hw-layer (layer-while-held w_layer)
-  hf-layer (tap-hold-press $tap-time $hold-time (cmd /etc/profiles/per-user/shaked/bin/run-or-raise "-f zen-beta" "-c zen-beta") (layer-while-held f_layer))
+  hf-layer (tap-hold-press $tap-time $hold-time (cmd /etc/profiles/per-user/shaked/bin/run-or-raise -f zen-beta -c zen-beta) (layer-while-held f_layer))
 )
 
 (deflayermap base
