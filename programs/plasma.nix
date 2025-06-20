@@ -1,5 +1,6 @@
 {
   config,
+  pkgs,
   ...
 } : {
   programs.plasma = {
@@ -164,6 +165,7 @@
               };
             };
           }
+          pkgs.plasma-panel-colorizer
         ];
       }
     ];
