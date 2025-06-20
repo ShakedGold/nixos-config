@@ -21,7 +21,7 @@
 
 ;; F Layer
 (defalias
-  f-run-or-raise (cmd ./run-or-raise -f zen-beta -c zen-beta)
+  f-run-or-raise (cmd run-or-raise -f zen-beta -c zen-beta)
 )
  
 ;; Layers

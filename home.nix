@@ -32,96 +32,120 @@
     git push
     popd
   '';
-  json-to-nix = pkgs.writers.writePython3Bin "json-to-nix" {} ''
-"""Converts JSON objects into nix (hackishly)."""
 
-import sys
-import json
+  run-or-raise = pkgs.writeShellScriptBin "run-or-raise" ''
+#!/usr/bin/env bash
+# Usage: ww -f "window class filter" -c "run if not found"
+# Usage: ww -fa "window title filter" -c "run if not found"
 
+## Find and contribute to a more updated version https://github.com/academo/ww-run-raise
 
-INDENT = " " * 2
+POSITIONAL=()
+while [[ $# -gt 0 ]]; do
+  key="$1"
 
+  case $key in
+  -c | --command)
+    COMMAND="$2"
+    shift # past argument
+    shift # past value
+    ;;
+  -f | --filter)
+    FILTERBY="$2"
+    shift # past argument
+    shift # past value
+    ;;
+  -fa | --filter-alternative)
+    FILTERALT="$2"
+    shift # past argument
+    shift # past value
+    ;;
+  *)                   # unknown option
+    POSITIONAL+=("$1") # save it in an array for later
+    shift              # past argument
+    ;;
+  esac
+done
 
-def strip_comments(t):
-    return "\n".join(line.partition("//")[0] for line in t.split("\n"))
+set -- "''${POSITIONAL[@]}" # restore positional parameters
 
+SCRIPT_CLASS_NAME=$(
+  cat <<EOF
+function kwinactivateclient(targetApp) {
+  var clients = workspace.windowList();
+  for (var i=0; i<clients.length; i++) {
+    client = clients[i];
+    if (client.resourceClass == targetApp){
+      workspace.activeWindow = client;
+      break;
+    }
+  }
+}
+kwinactivateclient('REPLACE_ME');
+EOF
+)
 
-def indent(s):
-    return "\n".join(INDENT + i for i in s.split("\n"))
+SCRIPT_CAPTION=$(
+  cat <<EOF
+function kwinactivateclient(targetApp) {
+  var clients = workspace.windowList();
+  for (var i=0; i<clients.length; i++) {
+    client = clients[i];
+    if (client.caption == targetApp){
+      workspace.activeWindow = client;
+      break;
+    }
+  }
+}
+kwinactivateclient('REPLACE_ME');
+EOF
+)
 
+CURRENT_SCRIPT_NAME=$(basename $0)
 
-def nix_stringify(s):
-    return json.dumps(s)
+# ensure the script file exists
+function ensure_script {
+  if [ ! -f SCRIPT_PATH ]; then
+    if [ ! -d "$SCRIPT_FOLDER" ]; then
+      mkdir -p "$SCRIPT_FOLDER"
+    fi
+    if [ "$1" == "class" ]; then
+      SCRIPT_CONTENT=''${SCRIPT_CLASS_NAME/REPLACE_ME/$2}
+    else
+      SCRIPT_CONTENT=''${SCRIPT_CAPTION/REPLACE_ME/$2}
+    fi
+    echo "$SCRIPT_CONTENT" >"$SCRIPT_PATH"
+  fi
+}
 
+if [ -z "$FILTERBY" ] && [ -z "$FILTERALT" ]; then
+  echo You need to specify a window filter. Either by class -f or by title -fa
+  exit 1
+fi
 
-def sanitize_key(s):
-    if s and s.isalnum() and not s[0].isdigit():
-        return s
-    return nix_stringify(s)
+IS_RUNNING=$(pgrep -o -a -f "$COMMAND" | grep -v "$CURRENT_SCRIPT_NAME")
 
-
-def flatten_obj_item(k, v):
-    keys = [k]
-    val = v
-    while isinstance(val, dict) and len(val) == 1:
-        k = next(iter(val.keys()))
-        keys.append(k)
-        val = val[k]
-    return keys, val
-
-
-def fmt_object(obj, flatten):
-    fields = []
-    for k, v in obj.items():
-        if flatten:
-            keys, val = flatten_obj_item(k, v)
-            formatted_key = ".".join(sanitize_key(i) for i in keys)
-        else:
-            formatted_key = sanitize_key(k)
-            val = v
-        fields.append(f"{formatted_key} = {fmt_any(val, flatten)};")
-
-    return "{\n" + indent("\n".join(fields)) + "\n}"
-
-
-def fmt_array(o, flatten):
-    body = indent("\n".join(fmt_any(i, flatten) for i in o))
-    return f"[\n{body}\n]"
-
-
-def fmt_any(o, flatten):
-    if isinstance(o, str) or isinstance(o, bool) or isinstance(o, int):
-        return json.dumps(o)
-    if isinstance(o, list):
-        return fmt_array(o, flatten)
-    if isinstance(o, dict):
-        return fmt_object(o, flatten)
-    raise TypeError(f"Unknown type {type(o)!r}")
-
-
-def main():
-    flatten = "--flatten" in sys.argv
-    args = [a for a in sys.argv[1:] if not a.startswith("--")]
-
-    if len(args) < 1:
-        print(f"Usage: {sys.argv[0]} [--flatten] <file.json>", file=sys.stderr)
-        sys.exit(1)
-
-    with open(args[0], "r") as f:
-        contents = f.read().strip()
-        if contents[-1] == ",":
-            contents = contents[:-1]
-        if contents[0] != "{":
-            contents = "{" + contents + "}"
-        data = json.loads(strip_comments(contents))
-
-    outputs = fmt_any(data, flatten=flatten)
-    print(outputs[1:-1])
-
-
-if __name__ == "__main__":
-    main()
-'';
+if [ -n "$IS_RUNNING" ] || [ -n "$FILTERALT" ]; then
+  SCRIPT_FOLDER="$HOME/.wwscripts/"
+  SCRIPT_NAME=$(echo "$FILTERBY$FILTERALT" | md5sum | head -c 32)
+  SCRIPT_PATH="$SCRIPT_FOLDER$SCRIPT_NAME"
+  if [ -n "$FILTERBY" ]; then
+    ensure_script class $FILTERBY
+  else
+    ensure_script caption $FILTERALT
+  fi
+  SCRIPT_NAME=$(cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 32 | head -n 1)
+  # run it
+  qdbus org.kde.KWin /Scripting org.kde.kwin.Scripting.loadScript "$SCRIPT_PATH" "$SCRIPT_NAME" > /dev/null
+  qdbus org.kde.KWin /Scripting org.kde.kwin.Scripting.start > /dev/null
+  # uninstall it
+  qdbus org.kde.KWin /Scripting org.kde.kwin.Scripting.unloadScript $SCRIPT_NAME > /dev/null
+  # remove it
+  rm -rf $HOME/.wwscripts
+elif [ -n "$COMMAND" ]; then
+  $COMMAND &
+fi
+  '';
 in {
   imports = [
     ./programs
@@ -149,6 +173,7 @@ in {
   # environment.
   home.packages = with pkgs; [
     nixos-build
+    run-or-raise
     json-to-nix
     hyprland
     papirus-icon-theme
