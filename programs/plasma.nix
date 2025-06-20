@@ -137,6 +137,7 @@
             };
           }
           "org.kde.plasma.digitalclock"
+          "luisbocanegra.panel.colorizer"
         ];
         hiding = "normalpanel";
       }
