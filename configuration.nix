@@ -202,9 +202,6 @@
     enable = true;
     extraPortals = [
       pkgs.kdePackages.xdg-desktop-portal-kde
-      pkgs.xdg-desktop-portal
-      pkgs.xdg-desktop-portal-gtk
-      pkgs.xdg-desktop-portal-wlr
     ];
   };
 
