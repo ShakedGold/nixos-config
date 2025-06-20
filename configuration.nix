@@ -354,7 +354,6 @@
     gitflow
     inputs.kwin-effects-forceblur.packages.${pkgs.system}.default
     kdePackages.xdg-desktop-portal-kde
-    xdg-desktop-portal-gtk
     slurp
   ];
 
