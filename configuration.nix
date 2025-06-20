@@ -362,9 +362,7 @@
       ];
     })
     superTuxKart
-    (discord.override {
-      withVencord = true;
-    })
+    vesktop
     tmux
     gnumake
     fd
