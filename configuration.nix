@@ -156,6 +156,9 @@
     # no need to redefine it in your config for now)
     #media-session.enable = true;
   };
+  services.wireplumber = {
+    enable = true;
+  };
 
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
@@ -209,6 +212,8 @@
     enable = true;
 
     config = {
+      common.default = "wlr";
+
       kde.default = [ "kde" "gtk" "gnome" ];
       kde."org.freedesktop.portal.FileChooser" = [ "kde" ];
       kde."org.freedesktop.portal.OpenURI" = [ "kde" ];
@@ -216,6 +221,12 @@
       hyprland.default = [ "hyprland" "gtk" "termfilechooser" ];
       hyprland."org.freedesktop.portal.FileChooser" = [ "termfilechooser" ];
       hyprland."org.freedesktop.portal.OpenURI" = [ "termfilechooser" ];
+    };
+
+    wlr.settins.screencast = {
+      output_name = "DP-1";
+      chooser_type = "simple";
+      chooser_cmd = "${pkgs.slurp}/bin/slurp -f %o -or";
     };
 
     extraPortals = [
@@ -372,6 +383,8 @@
     clang-tools
     gitflow
     inputs.kwin-effects-forceblur.packages.${pkgs.system}.default
+    xdg-desktop-portal-kde
+    xdg-desktop-portal-gtk
   ];
 
   programs.noisetorch.enable = true;
