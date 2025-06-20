@@ -357,6 +357,7 @@
     inputs.kwin-effects-forceblur.packages.${pkgs.system}.default
     kdePackages.xdg-desktop-portal-kde
     slurp
+    jq
   ];
 
   programs.noisetorch.enable = true;
