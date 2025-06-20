@@ -21,7 +21,7 @@
 
 ;; F Layer
 (defalias
-  f-tab-down (multi lctrl pgdown)
+  f-tab-down (multi lctrl pgdn)
   f-tab-up (multi lctrl pgup)
 )
  
