@@ -365,9 +365,9 @@
       ];
     })
     superTuxKart
-    (vesktop.override {
-      electron = pkgs.electron_33;
-    })
+    # (vesktop.override {
+    #   electron = pkgs.electron_33;
+    # })
     tmux
     gnumake
     fd
