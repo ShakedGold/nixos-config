@@ -365,9 +365,9 @@
       ];
     })
     superTuxKart
-    # (vesktop.override {
-    #   electron = pkgs.electron_33;
-    # })
+    (vesktop.override {
+      electron = pkgs.electron_33;
+    })
     tmux
     gnumake
     fd
@@ -380,6 +380,8 @@
     inputs.kwin-effects-forceblur.packages.${pkgs.system}.default
     kdePackages.xdg-desktop-portal-kde
     xdg-desktop-portal-gtk
+    slurp
+    bemenu
   ];
 
   programs.noisetorch.enable = true;
