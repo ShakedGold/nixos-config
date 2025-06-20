@@ -33,10 +33,7 @@
     popd
   '';
   json-to-nix = pkgs.writers.writePython3Bin "json-to-nix" {} ''
-
-# Original script: https://gist.githubusercontent.com/Scoder12/0538252ed4b82d65e59115075369d34d/raw/e86d1d64d1373a497118beb1259dab149cea951d/json2nix.py
 """Converts JSON objects into nix (hackishly)."""
-#!/usr/bin/env python
 
 import sys
 import json
@@ -46,8 +43,7 @@ INDENT = " " * 2
 
 
 def strip_comments(t):
-    # fixme: doesn't work if JSON strings contain //
-    return "\n".join(l.partition("//")[0] for l in t.split("\n"))
+    return "\n".join(line.partition("//")[0] for line in t.split("\n"))
 
 
 def indent(s):
@@ -55,7 +51,6 @@ def indent(s):
 
 
 def nix_stringify(s):
-    # fixme: this doesn't handle string interpolation and possibly has more bugs
     return json.dumps(s)
 
 
@@ -126,8 +121,7 @@ def main():
 
 if __name__ == "__main__":
     main()
-
-  '';
+'';
 in {
   imports = [
     ./programs
