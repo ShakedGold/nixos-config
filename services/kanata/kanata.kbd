@@ -20,13 +20,17 @@
 )
 
 ;; F Layer
+(defalias
+  f-tab-down (multi lctrl pgdown)
+  f-tab-up (multi lctrl pgup)
+)
  
 ;; Layers
 (defalias
   hyperkey (tap-hold-press $tap-time $hold-time esc (layer-while-held mod))
 
   hw-layer (layer-while-held w_layer)
-  hf-layer (tap-hold-press $tap-time $hold-time (cmd /run/current-system/sw/bin/bash -c "export DISPLAY=:0; export PATH=$PATH:/etc/profiles/per-user/shaked/bin/:/run/current-system/sw/bin/; run-or-raise -f zen-beta -c zen-beta") (layer-while-held f_layer))
+  hf-layer (layer-while-held f_layer)
 )
 
 (deflayermap base
@@ -47,4 +51,7 @@
   c @w-close
 )
 
-(deflayermap f_layer)
+(deflayermap f_layer
+  j @f-tab-down
+  k @f-tab-up
+)
