@@ -194,6 +194,7 @@
     cudaSupport = true;
   };
   nixpkgs.config.allowUnsupportedSystem = true;
+  nixpkgs.config.permittedInsecurePackages = true;
 
   # Fonts
   fonts.packages = with pkgs; [
