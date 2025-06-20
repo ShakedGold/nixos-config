@@ -202,6 +202,7 @@
     enable = true;
     extraPortals = [
       pkgs.kdePackages.xdg-desktop-portal-kde
+      pkgs.xdg-desktop-portal
     ];
   };
 
@@ -350,6 +351,7 @@
     inputs.kwin-effects-forceblur.packages.${pkgs.system}.default
     kdePackages.xdg-desktop-portal-kde
     slurp
+    xdg-desktop-portal
   ];
 
   programs.noisetorch.enable = true;
@@ -391,25 +393,6 @@
     };
     package = pkgs.kanata-with-cmd;
   };
-
-      systemd.user.services."wait-for-full-path" = {
-      description = "wait for systemd units to have full PATH";
-      wantedBy = [ "xdg-desktop-portal.service" ];
-      before = [ "xdg-desktop-portal.service" ];
-      path = with pkgs; [ systemd coreutils gnugrep ];
-      script = ''
-        ispresent () {
-          systemctl --user show-environment | grep -E '^PATH=.*/.nix-profile/bin'
-        }
-        while ! ispresent; do
-          sleep 0.1;
-        done
-      '';
-      serviceConfig = {
-        Type = "oneshot";
-        TimeoutStartSec = "60";
-      };
-    };
 
 
   # Some programs need SUID wrappers, can be configured further or are
