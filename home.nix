@@ -2,7 +2,7 @@
   pkgs,
   ...
 }: let
-  nixos-build = pkgs.writeShellScriptBin "nixos-build" ''
+  nixos-build = pkgs.writers.writePython3 "nixos-build" {} ''
     pushd $HOME/.config/home-manager
     $EDITOR configuration.nix
     alejandra . &>/dev/false
