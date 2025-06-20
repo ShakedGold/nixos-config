@@ -117,6 +117,11 @@
     xwayland.enable = true;
   };
 
+  environment.sessionVariables = {
+    NIXOS_OZONE_WL = "1";
+    XDG_SESSION_TYPE="wayland";
+  };
+
   environment.etc = {
     "1password/custom_allowed_browsers" = {
       text = ''
@@ -350,7 +355,6 @@
     inputs.kwin-effects-forceblur.packages.${pkgs.system}.default
     kdePackages.xdg-desktop-portal-kde
     slurp
-    xdg-desktop-portal
   ];
 
   programs.noisetorch.enable = true;
