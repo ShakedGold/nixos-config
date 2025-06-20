@@ -23,6 +23,8 @@
 (defalias
   f-tab-down (multi lctrl pgdn)
   f-tab-up (multi lctrl pgup)
+  f-new-tab (multi lctrl t)
+  f-close-tab (multi lctrl w)
 )
  
 ;; Layers
@@ -54,4 +56,6 @@
 (deflayermap f_layer
   j @f-tab-down
   k @f-tab-up
+  n @f-new-tab
+  m @f-close-tab
 )
