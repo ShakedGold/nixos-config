@@ -16,6 +16,7 @@
   w-right (multi lmet right)
   w-up (multi lmet up)
   w-down (multi lmet down)
+  w-close (multi lalt f4)
 )
  
 ;; Layers
@@ -39,4 +40,5 @@
   j @w-down
   k @w-up
   l @w-right
+  c @w-close
 )
