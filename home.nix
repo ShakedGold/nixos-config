@@ -2,7 +2,7 @@
   pkgs,
   ...
 }: let
-  nixos-build = pkgs.writers.writePython3 "nixos-build" {} ''
+  nixos-build = pkgs.writeShellScriptBin "nixos-build" ''
     pushd $HOME/.config/home-manager
     $EDITOR configuration.nix
     alejandra . &>/dev/false
@@ -32,7 +32,7 @@
     git push
     popd
   '';
-  json-to-nix = pkgs.writeShellScriptBin "json-to-nix" ''
+  json-to-nix = pkgs.writers.writePython3Bin "json-to-nix" {} ''
 
 # Original script: https://gist.githubusercontent.com/Scoder12/0538252ed4b82d65e59115075369d34d/raw/e86d1d64d1373a497118beb1259dab149cea951d/json2nix.py
 """Converts JSON objects into nix (hackishly)."""
