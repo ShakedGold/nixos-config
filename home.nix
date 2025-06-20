@@ -155,6 +155,7 @@ in {
   # environment.
   home.packages = with pkgs; [
     nixos-build
+    json-to-nix
     hyprland
     papirus-icon-theme
   ];
