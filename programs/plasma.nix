@@ -165,7 +165,9 @@
               };
             };
           }
-          pkgs.plasma-panel-colorizer
+          {
+            name = "luisbocanegra.panel.colorizer";
+          }
         ];
       }
     ];
