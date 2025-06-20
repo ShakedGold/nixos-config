@@ -156,7 +156,7 @@
                   "preferred://filemanager"
                   "preferred://browser"
                   "applications:com.mitchellh.ghostty.desktop"
-                  "applications:discord.desktop"
+                  "applications:vesktop.desktop"
                   "applications:code.desktop"
                   "applications:spotify.desktop"
                   "applications:steam.desktop"
