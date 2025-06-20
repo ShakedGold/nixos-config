@@ -381,7 +381,6 @@
     kdePackages.xdg-desktop-portal-kde
     xdg-desktop-portal-gtk
     slurp
-    bemenu
   ];
 
   programs.noisetorch.enable = true;
