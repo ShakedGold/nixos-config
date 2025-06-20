@@ -194,7 +194,9 @@
     cudaSupport = true;
   };
   nixpkgs.config.allowUnsupportedSystem = true;
-  nixpkgs.config.permittedInsecurePackages = true;
+  nixpkgs.config.permittedInsecurePackages = [
+     "electron-33.4.11"
+  ];
 
   # Fonts
   fonts.packages = with pkgs; [
