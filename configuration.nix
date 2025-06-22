@@ -359,6 +359,7 @@
     slurp
     jq
     openssl
+    nasm
   ];
 
   programs.noisetorch.enable = true;
