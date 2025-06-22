@@ -359,6 +359,7 @@
     slurp
     jq
     openssl
+    asm-lsp
   ];
 
   programs.noisetorch.enable = true;
