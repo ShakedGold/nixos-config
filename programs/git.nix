@@ -4,6 +4,6 @@
     userName = "Shaked Gold";
     userEmail = "shakedgold2005@gmail.com";
     extraConfig.init.defaultBranch = "main";
-    push.autoSetupRemote = true;
+    extraConfig.push.autoSetupRemote = true;
   };
 }
