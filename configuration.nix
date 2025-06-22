@@ -358,6 +358,7 @@
     kdePackages.xdg-desktop-portal-kde
     slurp
     jq
+    openssl
   ];
 
   programs.noisetorch.enable = true;
