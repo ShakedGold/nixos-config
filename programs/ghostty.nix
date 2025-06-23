@@ -11,10 +11,10 @@
 
     settings = {
       font-family = "JetBrainsMono Nerd Font";
-      background = "#000000";
       background-opacity = 0.9;
       background-blur = true;
       confirm-close-surface = false;
+      theme = "catppuccin-mocha";
     };
   };
 }
