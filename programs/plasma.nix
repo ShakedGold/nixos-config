@@ -137,6 +137,9 @@
                   "plasmashell_microphone"
                   "steam"
                   "applications:vesktop.desktop"
+                  "vesktop"
+                  "albert"
+                  "applications:albert"
                 ];
               };
             };
