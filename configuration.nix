@@ -298,7 +298,7 @@
     stremio
     util-linux
     gparted
-    ulauncher
+    # ulauncher
     wmctrl
     wl-clipboard
     rustup
@@ -360,6 +360,7 @@
     jq
     openssl
     nasm
+    albert
   ];
 
   programs.noisetorch.enable = true;
