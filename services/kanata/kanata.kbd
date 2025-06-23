@@ -25,6 +25,8 @@
   f-tab-up (multi lctrl pgup)
   f-new-tab (multi lctrl t)
   f-close-tab (multi lctrl w)
+  f-backwards (multi lalt left)
+  f-forwards (multi lalt right)
 )
  
 ;; Layers
@@ -56,6 +58,8 @@
 (deflayermap f_layer
   j @f-tab-down
   k @f-tab-up
+  h @f-backwards
+  h @f-forwards
   n @f-new-tab
   m @f-close-tab
 )
