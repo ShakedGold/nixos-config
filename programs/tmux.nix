@@ -89,6 +89,8 @@ in
 
         bind -n -N "Create a new window" M-m new-window
 
+        bind -n -N "Toggle pane fullscreen" M-f resize-pane -Z
+
         set -g escape-time 0
    '';
   };
