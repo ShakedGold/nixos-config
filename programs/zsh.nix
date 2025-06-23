@@ -54,6 +54,7 @@ in {
       g = "git";
       tmux = "tmux -u";
       v = "nvim";
+      x = ". $HOME/.zshrc";
     };
 
     envExtra = ''
