@@ -1,7 +1,8 @@
 {
   imports = [
     ./clipman.nix
-    ./ulauncher.nix
+    # ./ulauncher.nix
     ./noisetorch.nix
+    ./albert.nix
   ];
 }
