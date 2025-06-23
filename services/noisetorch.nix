@@ -16,7 +16,7 @@
 
     Service = {
       Type = "simple";
-      Restart = "always";
+      Restart = "on-failure";
       RestartSec = 30;
       ExecStart = pkgs.writeShellScript "noisetorch.sh" ''
       noisetorch -u
