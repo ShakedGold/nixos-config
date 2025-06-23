@@ -27,6 +27,7 @@
   security.sudo.configFile = ''
     Defaults  !sudoedit_checkdir
   '';
+  security.sudo.enable = true;
 
   system.autoUpgrade = {
     enable = true;
