@@ -16,5 +16,6 @@
     ./hyprlock.nix
     ./hyprpaper.nix
     ./tmux.nix
+    ./albert.nix
   ];
 }

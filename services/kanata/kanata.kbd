@@ -61,5 +61,5 @@
   h @f-backwards
   l @f-forwards
   i @f-new-tab
-  m @f-close-tab
+  w @f-close-tab
 )
