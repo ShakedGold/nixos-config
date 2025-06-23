@@ -60,6 +60,6 @@
   k @f-tab-up
   h @f-backwards
   l @f-forwards
-  n @f-new-tab
+  i @f-new-tab
   m @f-close-tab
 )
