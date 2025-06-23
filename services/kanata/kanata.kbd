@@ -59,7 +59,7 @@
   j @f-tab-down
   k @f-tab-up
   h @f-backwards
-  h @f-forwards
+  l @f-forwards
   n @f-new-tab
   m @f-close-tab
 )
