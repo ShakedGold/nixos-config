@@ -58,10 +58,15 @@
       key = "Meta+L";
       command = "dbus-send --dest=org.freedesktop.ScreenSaver --type=method_call /ScreenSaver org.freedesktop.ScreenSaver.Lock";
     };
-    hotkeys.commands."ulauncher-toggle" = {
-      name = "Ulauncher Toggle";
+    # hotkeys.commands."ulauncher-toggle" = {
+    #   name = "Ulauncher Toggle";
+    #   key = "Alt+Space";
+    #   command = "ulauncher-toggle";
+    # };
+    hotkeys.commands."albert-toggle" = {
+      name = "Albert Toggle";
       key = "Alt+Space";
-      command = "ulauncher-toggle";
+      command = "albert toggle";
     };
 
     input = {
