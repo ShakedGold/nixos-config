@@ -51,7 +51,7 @@ in {
       pcat = "bat --style plain";
       btop = "LANG=en_US.UTF-8 btop"; # fix no locale
       c = "clear";
-      g = "g";
+      g = "git";
       tmux = "tmux -u";
       v = "nvim";
     };
