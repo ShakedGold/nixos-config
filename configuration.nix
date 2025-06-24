@@ -135,6 +135,10 @@
     XDG_SESSION_TYPE = "wayland";
   };
 
+  environment.shellAliases = {
+    nix-shell = "nix-shell --run zsh";
+  };
+
   environment.etc = {
     "1password/custom_allowed_browsers" = {
       text = ''

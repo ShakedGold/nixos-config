@@ -1,7 +1,4 @@
-{
-  pkgs,
-  ...
-}: let
+{pkgs, ...}: let
   nixos-build = pkgs.writeShellScriptBin "nixos-build" ''
     pushd $HOME/.config/home-manager
     $EDITOR configuration.nix
@@ -27,124 +24,124 @@
     fi
 
     echo "NixOS Rebuilding..."
-    sudo nixos-rebuild switch
+    sudo nixos-rebuild switch --upgrade --impure
 
     git push
     popd
   '';
 
   run-or-raise = pkgs.writeShellScriptBin "run-or-raise" ''
-#!/usr/bin/env bash
-# Usage: ww -f "window class filter" -c "run if not found"
-# Usage: ww -fa "window title filter" -c "run if not found"
+    #!/usr/bin/env bash
+    # Usage: ww -f "window class filter" -c "run if not found"
+    # Usage: ww -fa "window title filter" -c "run if not found"
 
-## Find and contribute to a more updated version https://github.com/academo/ww-run-raise
+    ## Find and contribute to a more updated version https://github.com/academo/ww-run-raise
 
-POSITIONAL=()
-while [[ $# -gt 0 ]]; do
-  key="$1"
+    POSITIONAL=()
+    while [[ $# -gt 0 ]]; do
+      key="$1"
 
-  case $key in
-  -c | --command)
-    COMMAND="$2"
-    shift # past argument
-    shift # past value
-    ;;
-  -f | --filter)
-    FILTERBY="$2"
-    shift # past argument
-    shift # past value
-    ;;
-  -fa | --filter-alternative)
-    FILTERALT="$2"
-    shift # past argument
-    shift # past value
-    ;;
-  *)                   # unknown option
-    POSITIONAL+=("$1") # save it in an array for later
-    shift              # past argument
-    ;;
-  esac
-done
+      case $key in
+      -c | --command)
+        COMMAND="$2"
+        shift # past argument
+        shift # past value
+        ;;
+      -f | --filter)
+        FILTERBY="$2"
+        shift # past argument
+        shift # past value
+        ;;
+      -fa | --filter-alternative)
+        FILTERALT="$2"
+        shift # past argument
+        shift # past value
+        ;;
+      *)                   # unknown option
+        POSITIONAL+=("$1") # save it in an array for later
+        shift              # past argument
+        ;;
+      esac
+    done
 
-set -- "''${POSITIONAL[@]}" # restore positional parameters
+    set -- "''${POSITIONAL[@]}" # restore positional parameters
 
-SCRIPT_CLASS_NAME=$(
-  cat <<EOF
-function kwinactivateclient(targetApp) {
-  var clients = workspace.windowList();
-  for (var i=0; i<clients.length; i++) {
-    client = clients[i];
-    if (client.resourceClass == targetApp){
-      workspace.activeWindow = client;
-      break;
+    SCRIPT_CLASS_NAME=$(
+      cat <<EOF
+    function kwinactivateclient(targetApp) {
+      var clients = workspace.windowList();
+      for (var i=0; i<clients.length; i++) {
+        client = clients[i];
+        if (client.resourceClass == targetApp){
+          workspace.activeWindow = client;
+          break;
+        }
+      }
     }
-  }
-}
-kwinactivateclient('REPLACE_ME');
-EOF
-)
+    kwinactivateclient('REPLACE_ME');
+    EOF
+    )
 
-SCRIPT_CAPTION=$(
-  cat <<EOF
-function kwinactivateclient(targetApp) {
-  var clients = workspace.windowList();
-  for (var i=0; i<clients.length; i++) {
-    client = clients[i];
-    if (client.caption == targetApp){
-      workspace.activeWindow = client;
-      break;
+    SCRIPT_CAPTION=$(
+      cat <<EOF
+    function kwinactivateclient(targetApp) {
+      var clients = workspace.windowList();
+      for (var i=0; i<clients.length; i++) {
+        client = clients[i];
+        if (client.caption == targetApp){
+          workspace.activeWindow = client;
+          break;
+        }
+      }
     }
-  }
-}
-kwinactivateclient('REPLACE_ME');
-EOF
-)
+    kwinactivateclient('REPLACE_ME');
+    EOF
+    )
 
-CURRENT_SCRIPT_NAME=$(basename $0)
+    CURRENT_SCRIPT_NAME=$(basename $0)
 
-# ensure the script file exists
-function ensure_script {
-  if [ ! -f SCRIPT_PATH ]; then
-    if [ ! -d "$SCRIPT_FOLDER" ]; then
-      mkdir -p "$SCRIPT_FOLDER"
+    # ensure the script file exists
+    function ensure_script {
+      if [ ! -f SCRIPT_PATH ]; then
+        if [ ! -d "$SCRIPT_FOLDER" ]; then
+          mkdir -p "$SCRIPT_FOLDER"
+        fi
+        if [ "$1" == "class" ]; then
+          SCRIPT_CONTENT=''${SCRIPT_CLASS_NAME/REPLACE_ME/$2}
+        else
+          SCRIPT_CONTENT=''${SCRIPT_CAPTION/REPLACE_ME/$2}
+        fi
+        echo "$SCRIPT_CONTENT" >"$SCRIPT_PATH"
+      fi
+    }
+
+    if [ -z "$FILTERBY" ] && [ -z "$FILTERALT" ]; then
+      echo You need to specify a window filter. Either by class -f or by title -fa
+      exit 1
     fi
-    if [ "$1" == "class" ]; then
-      SCRIPT_CONTENT=''${SCRIPT_CLASS_NAME/REPLACE_ME/$2}
-    else
-      SCRIPT_CONTENT=''${SCRIPT_CAPTION/REPLACE_ME/$2}
+
+    IS_RUNNING=$(pgrep -o -a -f "$COMMAND" | grep -v "$CURRENT_SCRIPT_NAME")
+
+    if [ -n "$IS_RUNNING" ] || [ -n "$FILTERALT" ]; then
+      SCRIPT_FOLDER="$HOME/.wwscripts/"
+      SCRIPT_NAME=$(echo "$FILTERBY$FILTERALT" | md5sum | head -c 32)
+      SCRIPT_PATH="$SCRIPT_FOLDER$SCRIPT_NAME"
+      if [ -n "$FILTERBY" ]; then
+        ensure_script class $FILTERBY
+      else
+        ensure_script caption $FILTERALT
+      fi
+      SCRIPT_NAME=$(cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 32 | head -n 1)
+      # run it
+      qdbus org.kde.KWin /Scripting org.kde.kwin.Scripting.loadScript "$SCRIPT_PATH" "$SCRIPT_NAME" > /dev/null
+      qdbus org.kde.KWin /Scripting org.kde.kwin.Scripting.start > /dev/null
+      # uninstall it
+      qdbus org.kde.KWin /Scripting org.kde.kwin.Scripting.unloadScript $SCRIPT_NAME > /dev/null
+      # remove it
+      rm -rf $HOME/.wwscripts
+    elif [ -n "$COMMAND" ]; then
+      $COMMAND &
     fi
-    echo "$SCRIPT_CONTENT" >"$SCRIPT_PATH"
-  fi
-}
-
-if [ -z "$FILTERBY" ] && [ -z "$FILTERALT" ]; then
-  echo You need to specify a window filter. Either by class -f or by title -fa
-  exit 1
-fi
-
-IS_RUNNING=$(pgrep -o -a -f "$COMMAND" | grep -v "$CURRENT_SCRIPT_NAME")
-
-if [ -n "$IS_RUNNING" ] || [ -n "$FILTERALT" ]; then
-  SCRIPT_FOLDER="$HOME/.wwscripts/"
-  SCRIPT_NAME=$(echo "$FILTERBY$FILTERALT" | md5sum | head -c 32)
-  SCRIPT_PATH="$SCRIPT_FOLDER$SCRIPT_NAME"
-  if [ -n "$FILTERBY" ]; then
-    ensure_script class $FILTERBY
-  else
-    ensure_script caption $FILTERALT
-  fi
-  SCRIPT_NAME=$(cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 32 | head -n 1)
-  # run it
-  qdbus org.kde.KWin /Scripting org.kde.kwin.Scripting.loadScript "$SCRIPT_PATH" "$SCRIPT_NAME" > /dev/null
-  qdbus org.kde.KWin /Scripting org.kde.kwin.Scripting.start > /dev/null
-  # uninstall it
-  qdbus org.kde.KWin /Scripting org.kde.kwin.Scripting.unloadScript $SCRIPT_NAME > /dev/null
-  # remove it
-  rm -rf $HOME/.wwscripts
-elif [ -n "$COMMAND" ]; then
-  $COMMAND &
-fi
   '';
 in {
   imports = [
@@ -180,7 +177,7 @@ in {
 
   xdg.portal = {
     enable = true;
-    extraPortals = with pkgs;[
+    extraPortals = with pkgs; [
       xdg-desktop-portal-gtk
       kdePackages.xdg-desktop-portal-kde
       xdg-desktop-portal-hyprland
@@ -229,7 +226,7 @@ in {
   home.sessionVariables = {
     EDITOR = "nvim";
   };
-  
+
   xdg.desktopEntries = {
     "1password" = {
       name = "1Password";
@@ -237,8 +234,8 @@ in {
       type = "Application";
       icon = "1password";
       comment = "Password manager and secure wallet";
-      mimeType = [ "x-scheme-handler/onepassword" ];
-      categories = [ "Office" ];
+      mimeType = ["x-scheme-handler/onepassword"];
+      categories = ["Office"];
       terminal = false;
     };
     "davinci-resolve-studio" = {
@@ -255,16 +252,16 @@ in {
   programs.home-manager.enable = true;
 
   home.file.".clangd".text = ''
-  CompileFlags:
-    Add:
-      - -I${pkgs.glibc.dev}/include
-      - -I${pkgs.libcxx.dev}/include/c++/v1
-      - -Wall
-      - -Wextra
-      - -std=c99
-      - -pedantic
-      - -Werror
-    Index:
-      Background: Skip
-'';
+    CompileFlags:
+      Add:
+        - -I${pkgs.glibc.dev}/include
+        - -I${pkgs.libcxx.dev}/include/c++/v1
+        - -Wall
+        - -Wextra
+        - -std=c99
+        - -pedantic
+        - -Werror
+      Index:
+        Background: Skip
+  '';
 }
