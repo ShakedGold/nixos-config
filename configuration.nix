@@ -375,6 +375,7 @@
     nasm
     albert
     nur.repos.shadowrz.klassy-qt6
+    superTuxKart
   ];
 
   programs.noisetorch.enable = true;
