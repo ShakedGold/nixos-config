@@ -111,9 +111,15 @@
   programs.dconf.enable = true;
 
   nixpkgs.config.packageOverrides = pkgs: {
-    nur = import (builtins.fetchTarball "https://github.com/nix-community/NUR/archive/main.tar.gz") {
-      inherit pkgs;
-    };
+    nur =
+      import (builtins.fetchTarball {
+        # Get the revision by choosing a version from https://github.com/nix-community/NUR/commits/main
+        url = "https://github.com/nix-community/NUR/archive/33df6fc789f71aa6e203ee8053260ddc61d09174.tar.gz";
+        # Get the hash by running `nix-prefetch-url --unpack <url>` on the above url
+        sha256 = "02kzwkf914my1sshwzhg12hvqahp3x00ggfj0p166lqdajjg57bh";
+      }) {
+        inherit pkgs;
+      };
   };
 
   # Enable the hyprland Desktop Environment
