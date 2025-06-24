@@ -178,6 +178,16 @@ in {
     papirus-icon-theme
   ];
 
+  portal = {
+    enable = true;
+    extraPortals = with pkgs;[
+      xdg-desktop-portal-gtk
+      kdePackages.xdg-desktop-portal-kde
+      xdg-desktop-portal-hyprland
+    ];
+    xdgOpenUsePortal = true;
+  };
+
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.
   home.file = {
