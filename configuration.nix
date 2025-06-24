@@ -318,7 +318,7 @@
     chromium
     kdePackages.bluedevil
     busybox
-    rpcs3
+    # rpcs3
     zoom-us
     prismlauncher
     inputs.zen-browser.packages."${system}".default
