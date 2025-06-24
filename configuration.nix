@@ -22,7 +22,7 @@
   boot.loader.grub.efiSupport = true;
   boot.loader.grub.useOSProber = true;
   boot.kernelPackages = pkgs.linuxPackages_zen;
-  boot.kernelParams = lib.mkAfter [ "nvidia-drm.modeset=1" "nvidia-drm.fbdev=0" "nvidia.NVreg_EnableGpuFirmware=0" ];
+  boot.kernelParams = lib.mkAfter ["nvidia-drm.modeset=1" "nvidia-drm.fbdev=0" "nvidia.NVreg_EnableGpuFirmware=0"];
 
   security.sudo.configFile = ''
     Defaults  !sudoedit_checkdir
@@ -109,7 +109,13 @@
     plasma-browser-integration
   ];
   programs.dconf.enable = true;
-  
+
+  nixpkgs.config.packageOverrides = pkgs: {
+    nur = import (builtins.fetchTarball "https://github.com/nix-community/NUR/archive/main.tar.gz") {
+      inherit pkgs;
+    };
+  };
+
   # Enable the hyprland Desktop Environment
   programs.hyprland = {
     # Install the packages from nixpkgs
@@ -120,7 +126,7 @@
 
   environment.sessionVariables = {
     NIXOS_OZONE_WL = "1";
-    XDG_SESSION_TYPE="wayland";
+    XDG_SESSION_TYPE = "wayland";
   };
 
   environment.etc = {
@@ -178,7 +184,7 @@
       "widget.use-xdg-desktop-portal.file-picker" = 1;
     };
     package = pkgs.firefox;
-    nativeMessagingHosts.packages = [ pkgs.firefoxpwa ];
+    nativeMessagingHosts.packages = [pkgs.firefoxpwa];
   };
 
   programs._1password.enable = true;
@@ -196,7 +202,7 @@
   };
   nixpkgs.config.allowUnsupportedSystem = true;
   nixpkgs.config.permittedInsecurePackages = [
-     "electron-33.4.11"
+    "electron-33.4.11"
   ];
 
   # Fonts
@@ -214,11 +220,11 @@
   };
 
   xdg.mime.defaultApplications = {
-      "text/html" = "/run/current-system/sw/share/applications/zen.desktop";
-      "x-scheme-handler/http" = "/run/current-system/sw/share/applications/zen.desktop";
-      "x-scheme-handler/https" = "/run/current-system/sw/share/applications/zen.desktop";
-      "x-scheme-handler/about" = "/run/current-system/sw/share/applications/zen.desktop";
-      "x-scheme-handler/unknown" = "/run/current-system/sw/share/applications/zen.desktop";
+    "text/html" = "/run/current-system/sw/share/applications/zen.desktop";
+    "x-scheme-handler/http" = "/run/current-system/sw/share/applications/zen.desktop";
+    "x-scheme-handler/https" = "/run/current-system/sw/share/applications/zen.desktop";
+    "x-scheme-handler/about" = "/run/current-system/sw/share/applications/zen.desktop";
+    "x-scheme-handler/unknown" = "/run/current-system/sw/share/applications/zen.desktop";
   };
 
   services.tailscale.enable = true;
@@ -230,7 +236,7 @@
       "233ccaac27ac343e"
     ];
   };
-  
+
   programs.gamescope.enable = true;
   programs.gamemode.enable = true;
 
@@ -325,11 +331,11 @@
     obs-studio
     nv-codec-headers-12
     wireplumber
-    (pkgs.callPackage ./davinci-resolve-paid.nix  {})
+    (pkgs.callPackage ./davinci-resolve-paid.nix {})
     r2modman
     waybar
     (pkgs.waybar.overrideAttrs (oldAttrs: {
-      mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ];
+      mesonFlags = oldAttrs.mesonFlags ++ ["-Dexperimental=true"];
     }))
     rofi
     eza
@@ -362,6 +368,7 @@
     openssl
     nasm
     albert
+    nur.repos.shadowrz.klassy-qt6
   ];
 
   programs.noisetorch.enable = true;
@@ -395,15 +402,14 @@
     keyboards = {
       internalKeyboard = {
         extraDefCfg = ''
-        process-unmapped-keys yes
-        danger-enable-cmd yes
+          process-unmapped-keys yes
+          danger-enable-cmd yes
         '';
         config = builtins.readFile ./services/kanata/kanata.kbd;
       };
     };
     package = pkgs.kanata-with-cmd;
   };
-
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
@@ -419,7 +425,12 @@
   # services.openssh.enable = true;
 
   security.pam.loginLimits = [
-    { domain = "*"; item = "memlock"; type = "-"; value = "unlimited"; }
+    {
+      domain = "*";
+      item = "memlock";
+      type = "-";
+      value = "unlimited";
+    }
   ];
 
   # Open ports in the firewall.
