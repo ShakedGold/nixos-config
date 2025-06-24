@@ -178,7 +178,7 @@ in {
     papirus-icon-theme
   ];
 
-  portal = {
+  xdg.portal = {
     enable = true;
     extraPortals = with pkgs;[
       xdg-desktop-portal-gtk
