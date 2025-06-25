@@ -27,7 +27,7 @@
   f-close-tab (multi lctrl w)
   f-backwards (multi lalt left)
   f-forwards (multi lalt right)
-  f-focus (cmd kdotool search --class zen windowactivate)
+  f-focus (cmd /run/current-system/sw/bin/kdotool search --class zen windowactivate)
 )
  
 ;; Layers
