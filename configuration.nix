@@ -79,7 +79,7 @@
   security.pki.certificates = [
     (builtins.fetchurl {
       url = "https://cacerts.digicert.com/DigiCertGlobalRootG2.crt";
-      sha256 = "1h12mz0b0ja5md3f7g21v0hjyz4w5lq5j6nq89fq5v5yjq0a7yb2";
+      sha256 = "0pybn5d6mm17x9619ha3bv1zyiyyz4irmlwdiw9y1r9ic2vwng6b";
     })
   ];
 
