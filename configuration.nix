@@ -66,6 +66,14 @@
     enable = true;
     enableStrongSwan = true;
   };
+  environment.etc."strongswan.conf".text = ''
+    charon-nm {
+      load = pem pkcs12 x509 revocation constraints socket-default stroke kernel-netlink
+      plugins {
+        include strongswan.d/charon-nm/*.conf
+      }
+    }
+  '';
 
   # Set your time zone.
   time.timeZone = "Asia/Jerusalem";
