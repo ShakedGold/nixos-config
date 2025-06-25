@@ -398,18 +398,6 @@
   users.groups.libvirtd.members = ["shaked"];
   virtualisation.libvirtd.enable = true;
   virtualisation.spiceUSBRedirection.enable = true;
-  virtualisation.libvirtd.qemu = {
-    ovmf = {
-      enable = true;
-      packages = [
-        pkgs.OVMFFull.override
-        {
-          secureBoot = true;
-          tpmSupport = true;
-        }
-      ];
-    };
-  };
 
   # add directx -> vulcan
   nixpkgs.overlays = [
