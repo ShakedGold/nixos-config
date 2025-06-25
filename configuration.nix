@@ -397,7 +397,6 @@
   programs.virt-manager.enable = true;
   users.groups.libvirtd.members = ["shaked"];
   virtualisation.libvirtd.qemu = {
-    package = pkgs.qemu_kvm;
     runAsRoot = true;
     swtpm.enable = true;
     libvirtd.enable = true;
