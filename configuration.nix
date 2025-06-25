@@ -64,39 +64,23 @@
   # Enable networking
   networking.networkmanager = {
     enable = true;
-
-    plugins = with pkgs; [strongswanNM];
+    enableStrongSwan = true;
   };
 
-  environment.etc."strongswan.conf".text = ''
-    charon-nm {
-        conn baseconfig
-          keyexchange = ikev2
-          ike = aes256-sha1-modp2048,aes192gcm16-aes128gcm16-prfsha256-ecp256-modp3072,aes192-sha256-ecp256-modp3072
-          esp = aes256-sha1!
-          dpdaction = clear
-          dpddelay = 30s
-          rekey = no
-          fragmentation = yes
-          dpdtimeout = 90s
-          ikelifetime = 60m
-          keylife = 20m
-          rekeymargin = 3m
-
-      conn ipsec-ikev2-vpn-client
-          also = baseconfig
-          auto = start
-          reauth = no
-          eap_identity = %identity
-          right = [server domain name]
-          rightid = %any
-          rightsubnet = 0.0.0.0/0
-          rightauth = pubkey
-          leftsourceip = %config
-          leftid = (username)
-          leftauth = eap-mschapv2
-    }
-  '';
+  systemd.services.NetworkManager = {
+    environment = {
+      STRONGSWAN_CONF = pkgs.writeTextFile {
+        name = "strongswan.conf";
+        text = ''
+          charon-nm {
+            ca_dir = ${pkgs.cacert.unbundled}/etc/ssl/certs
+            # add other settings here...
+          }
+          include ${pkgs.strongswanNM}/etc/strongswan.conf
+        '';
+      };
+    };
+  };
 
   # Set your time zone.
   time.timeZone = "Asia/Jerusalem";
