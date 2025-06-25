@@ -24,10 +24,10 @@
   boot.kernelPackages = pkgs.linuxPackages_zen;
   boot.kernelParams = lib.mkAfter ["nvidia-drm.modeset=1" "nvidia-drm.fbdev=0" "nvidia.NVreg_EnableGpuFirmware=0"];
 
-  security.sudo.configFile = ''
-    Defaults  !sudoedit_checkdir
-  '';
-  security.sudo.enable = true;
+  # security.sudo.configFile = ''
+  #   Defaults  !sudoedit_checkdir
+  # '';
+  security.sudo.enable = lib.mkForce true;
 
   system.autoUpgrade = {
     enable = true;
