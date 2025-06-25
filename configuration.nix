@@ -396,6 +396,7 @@
     superTuxKart
     qemu
     quickemu
+    xca
   ];
 
   programs.noisetorch.enable = true;
