@@ -76,6 +76,12 @@
     }
   '';
   environment.etc."ipsec.secrets".text = "";
+  security.pki.certificates = [
+    (builtins.fetchurl {
+      url = "https://cacerts.digicert.com/DigiCertGlobalRootG2.crt";
+      sha256 = "1h12mz0b0ja5md3f7g21v0hjyz4w5lq5j6nq89fq5v5yjq0a7yb2";
+    })
+  ];
 
   # Set your time zone.
   time.timeZone = "Asia/Jerusalem";
