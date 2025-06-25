@@ -68,12 +68,15 @@
   };
   environment.etc."strongswan.conf".text = ''
     charon-nm {
-      load = pem pkcs12 x509 revocation constraints socket-default stroke kernel-netlink
+      load = curl pem pkcs12 pgp dnskey sshkey x509 revocation constraints pubkey openssl random nonce xcbc hmac kernel-netlink socket-default
       plugins {
         include strongswan.d/charon-nm/*.conf
       }
     }
   '';
+  environment.etc."ipsec.d/acerts".source = "/dev/null";
+  environment.etc."ipsec.d/crls".source = "/dev/null";
+  environment.etc."ipsec.secrets".text = "";
 
   # Set your time zone.
   time.timeZone = "Asia/Jerusalem";
