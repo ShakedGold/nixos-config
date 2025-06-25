@@ -301,7 +301,6 @@
     neovim
     kitty
     zsh
-    pay-respects
     ripgrep
     gcc
     nodejs
@@ -391,8 +390,6 @@
     albert
     nur.repos.shadowrz.klassy-qt6
     superTuxKart
-    qemu
-    quickemu
   ];
 
   programs.noisetorch.enable = true;
