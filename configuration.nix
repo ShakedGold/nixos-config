@@ -398,6 +398,7 @@
   users.groups.libvirtd.members = ["shaked"];
   virtualisation.libvirtd.enable = true;
   virtualisation.spiceUSBRedirection.enable = true;
+  virtualisation.libvirtd.qemu.vhostUserPackages = [pkgs.virtiofsd];
 
   # add directx -> vulcan
   nixpkgs.overlays = [
