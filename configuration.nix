@@ -382,6 +382,7 @@
     qemu
     quickemu
     strongswanNM
+    networkmanagerapplet
   ];
 
   programs.noisetorch.enable = true;
