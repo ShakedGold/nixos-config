@@ -66,6 +66,19 @@
     enable = true;
   };
 
+  services.resolved.enable = true;
+  networking.resolvconf.useLocalResolver = true;
+
+  networking.firewall = rec {
+    allowedTCPPortRanges = [
+      {
+        from = 1714;
+        to = 1764;
+      }
+    ];
+    allowedUDPPortRanges = allowedTCPPortRanges;
+  };
+
   # Set your time zone.
   time.timeZone = "Asia/Jerusalem";
 
@@ -403,18 +416,6 @@
   ];
 
   programs.kdeconnect.enable = true;
-  networking.firewall = rec {
-    allowedTCPPortRanges = [
-      {
-        from = 1714;
-        to = 1764;
-      }
-    ];
-    allowedUDPPortRanges = allowedTCPPortRanges;
-  };
-
-  services.resolved.enable = true;
-  networking.resolvconf.useLocalResolver = true;
 
   services.kanata = {
     enable = true;
