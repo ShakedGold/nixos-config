@@ -65,22 +65,7 @@
   networking.networkmanager = {
     enable = true;
     enableStrongSwan = true;
-    plugins = [pkgs.networkmanager_strongswan];
   };
-
-  environment.etc."strongswan.conf".text = ''
-    charon-nm {
-      plugins {
-        include strongswan.d/charon-nm/*.conf
-      }
-    }
-  '';
-
-  environment.etc."ipsec.d/cacerts/azure-vpn-ca.pem".source = "/root/.vpn-certs/ca-cert.pem";
-  environment.etc."ipsec.d/certs/user-cert.pem".source = "/root/.vpn-certs/user-cert.pem";
-  environment.etc."ipsec.secrets".text = ''
-    : RSA "/root/.vpn-certs/user-key.pem"
-  '';
 
   # Set your time zone.
   time.timeZone = "Asia/Jerusalem";
@@ -396,7 +381,7 @@
     superTuxKart
     qemu
     quickemu
-    xca
+    strongswanNM
   ];
 
   programs.noisetorch.enable = true;
