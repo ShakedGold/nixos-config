@@ -389,6 +389,7 @@
     albert
     nur.repos.shadowrz.klassy-qt6
     superTuxKart
+    qemu
     quickemu
   ];
 
