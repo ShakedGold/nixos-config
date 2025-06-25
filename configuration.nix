@@ -392,6 +392,7 @@
     superTuxKart
     insomnia
     gef
+    kdotool
   ];
 
   programs.noisetorch.enable = true;
