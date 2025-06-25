@@ -64,6 +64,8 @@
   # Enable networking
   networking.networkmanager = {
     enable = true;
+
+    plugins = with pkgs; [strongswanNM];
   };
 
   environment.etc."strongswan.conf".text = ''
