@@ -67,15 +67,20 @@
     enableStrongSwan = true;
     plugins = [pkgs.networkmanager_strongswan];
   };
+
   environment.etc."strongswan.conf".text = ''
     charon-nm {
-      load = curl pem pkcs12 pgp dnskey sshkey x509 revocation constraints pubkey openssl random nonce xcbc hmac kernel-netlink socket-default
       plugins {
         include strongswan.d/charon-nm/*.conf
       }
     }
   '';
-  environment.etc."ipsec.secrets".text = "";
+
+  environment.etc."ipsec.d/cacerts/azure-vpn-ca.pem".source = "/root/.vpn-certs/ca-cert.pem";
+  environment.etc."ipsec.d/certs/user-cert.pem".source = "/root/.vpn-certs/user-cert.pem";
+  environment.etc."ipsec.secrets".text = ''
+    : RSA "/root/.vpn-certs/user-key.pem"
+  '';
 
   # Set your time zone.
   time.timeZone = "Asia/Jerusalem";
