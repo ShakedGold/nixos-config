@@ -64,21 +64,6 @@
   # Enable networking
   networking.networkmanager = {
     enable = true;
-    enableStrongSwan = true;
-  };
-
-  systemd.services.NetworkManager = {
-    environment = {
-      STRONGSWAN_CONF = pkgs.writeTextFile {
-        name = "strongswan.conf";
-        text = ''
-          charon-nm {
-            ca_dir = /etc/ipsec.d/cacerts
-          }
-          include ${pkgs.strongswanNM}/etc/strongswan.conf
-        '';
-      };
-    };
   };
 
   # Set your time zone.
@@ -395,8 +380,6 @@
     superTuxKart
     qemu
     quickemu
-    strongswanNM
-    networkmanagerapplet
   ];
 
   programs.noisetorch.enable = true;
