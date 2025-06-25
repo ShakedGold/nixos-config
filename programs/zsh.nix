@@ -54,6 +54,7 @@ in {
       tmux = "tmux -u";
       v = "nvim";
       x = ". $HOME/.zshrc";
+      nix-shell = "export NIX_SHELL=1; nix-shell";
     };
 
     envExtra = ''
