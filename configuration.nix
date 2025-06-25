@@ -65,6 +65,7 @@
   networking.networkmanager = {
     enable = true;
     enableStrongSwan = true;
+    plugins = [pkgs.networkmanager_strongswan];
   };
   environment.etc."strongswan.conf".text = ''
     charon-nm {
@@ -74,8 +75,6 @@
       }
     }
   '';
-  environment.etc."ipsec.d/acerts".source = "/dev/null";
-  environment.etc."ipsec.d/crls".source = "/dev/null";
   environment.etc."ipsec.secrets".text = "";
 
   # Set your time zone.
