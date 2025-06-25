@@ -76,6 +76,7 @@
     }
   '';
   environment.etc."ipsec.secrets".text = "";
+  security.pki.certificateFiles = ["/root/.vpn-certs/ca-cert.pem" "/root/.vpn-certs/user-cert.pem" "/root/.vpn-certs/user-key.pem"];
 
   # Set your time zone.
   time.timeZone = "Asia/Jerusalem";
