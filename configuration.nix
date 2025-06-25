@@ -397,7 +397,7 @@
   programs.virt-manager.enable = true;
   users.groups.libvirtd.members = ["shaked"];
   virtualisation.libvirtd.qemu = {
-    runAsRoot = true;
+    package = pkgs.qemu_kvm;
     swtpm.enable = true;
     libvirtd.enable = true;
     spiceUSBRedirection.enable = true;
