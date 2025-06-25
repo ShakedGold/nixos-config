@@ -190,7 +190,7 @@
     description = "Shaked Gold";
     shell = pkgs.zsh;
     useDefaultShell = true;
-    extraGroups = ["networkmanager" "wheel" "geoclue" "input"];
+    extraGroups = ["networkmanager" "wheel" "geoclue" "input" "kvm"];
     packages = with pkgs; [
       kdePackages.kate
     ];
