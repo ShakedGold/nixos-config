@@ -391,6 +391,7 @@
     nur.repos.shadowrz.klassy-qt6
     superTuxKart
     insomnia
+    gef
   ];
 
   programs.noisetorch.enable = true;
