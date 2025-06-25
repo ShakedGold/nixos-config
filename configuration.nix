@@ -401,7 +401,7 @@
   virtualisation.libvirtd.qemu = {
     ovmf = {
       enable = true;
-      package = pkgs.OVMFFull.override {
+      packages = pkgs.OVMFFull.override {
         secureBoot = true;
         tpmSupport = true;
       };
