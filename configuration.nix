@@ -396,11 +396,9 @@
   programs.noisetorch.enable = true;
   programs.virt-manager.enable = true;
   users.groups.libvirtd.members = ["shaked"];
+  virtualisation.libvirtd.enable = true;
+  virtualisation.spiceUSBRedirection.enable = true;
   virtualisation.libvirtd.qemu = {
-    package = pkgs.qemu_kvm;
-    swtpm.enable = true;
-    libvirtd.enable = true;
-    spiceUSBRedirection.enable = true;
     ovmf = {
       enable = true;
       package = pkgs.OVMFFull.override {
