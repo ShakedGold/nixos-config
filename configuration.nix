@@ -413,6 +413,9 @@
     allowedUDPPortRanges = allowedTCPPortRanges;
   };
 
+  services.resolved.enable = true;
+  networking.resolvconf.useLocalResolver = true;
+
   services.kanata = {
     enable = true;
     keyboards = {
