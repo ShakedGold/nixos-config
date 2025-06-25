@@ -73,8 +73,7 @@
         name = "strongswan.conf";
         text = ''
           charon-nm {
-            ca_dir = ${pkgs.cacert.unbundled}/etc/ssl/certs
-            # add other settings here...
+            ca_dir = /etc/ipsec.d/cacerts
           }
           include ${pkgs.strongswanNM}/etc/strongswan.conf
         '';
