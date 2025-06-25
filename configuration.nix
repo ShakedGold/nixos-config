@@ -76,57 +76,6 @@
     }
   '';
   environment.etc."ipsec.secrets".text = "";
-  security.pki.certificates = [
-    ''
-      Bag Attributes: <Empty Attributes>
-      subject=CN=P2SRootCert
-      issuer=CN=P2SRootCert
-      -----BEGIN CERTIFICATE-----
-      MIIC5zCCAc+gAwIBAgIQWU/3t+RqHbdCbFS/+B+wsDANBgkqhkiG9w0BAQsFADAW
-      MRQwEgYDVQQDDAtQMlNSb290Q2VydDAeFw0yNDA5MjUxOTQ4NTFaFw0yNjA5MjUx
-      OTU4NDlaMBYxFDASBgNVBAMMC1AyU1Jvb3RDZXJ0MIIBIjANBgkqhkiG9w0BAQEF
-      AAOCAQ8AMIIBCgKCAQEA2CLNsyT4/xF3xN5z5waUYKEYE3/Zz4xxx8cqmiiqrQ5I
-      5VJXL2tcelzfJwpQlMzIPBnjPgJDnSDai0cA2biM1XoECc6iJ9sZ7ADScRvmIQE/
-      41BZ5c1oZ/KCSPetOerF7yZ3izhwyZrT+fKhd6j0H0pX+Ep9Nze7B8rTVUW4jX/S
-      2ZwTX0pqN5PfPGPZyf3Htf31VK/AP4aMc3+rxlJB6hAMJ7NMHZYcEpZ80tlDIqFR
-      GoKpcJpohRi+0vsl3Nfyg9MGoLZpEtIXwqiaCmVD92HwvTaASjstCSNvLbfhg9yW
-      vZkMm2vLPrJfbrqvOtqvZQL+kGWwYHUloPg3u5ysmQIDAQABozEwLzAOBgNVHQ8B
-      Af8EBAMCAgQwHQYDVR0OBBYEFJc+uczwgLCT6nCIIFA3DdVVkRaKMA0GCSqGSIb3
-      DQEBCwUAA4IBAQAk1RW/0rrW2Czh2l233RCbJsy+dR560Bdj5jBVpwwpPCw1o4T9
-      GpN7Alt4VrogViluWArrT4rE2uhpYeT/rNJFEN9k4J+rLaKmbspwPwwUGLyIActo
-      tH/9t+IHvFmZ7U2t6XalAHhhTFglmM+xHQnmmT7gqkYdIAUvQ45YcX8IMtqhkw4q
-      iLxhGlSxhzsG9SOLjjuFCPwJPlQo4QjvAb9I6Z83V+iLf7LOqqqzCtARFKlKYPW3
-      SWMlZi/vK9dOEUzvNooFsyLqL0ZP8Oo7sH260ya0YbBe9CZqciul/6l0ESU6Jb9Z
-      CSz5p4HMvOyb0y6/42Nuz3pGXLmCX8Q5t6YV
-      -----END CERTIFICATE-----
-    ''
-    ''
-        Bag Attributes
-          localKeyID: 01 00 00 00
-      subject=CN=P2SChildCert
-      issuer=CN=P2SRootCert
-      -----BEGIN CERTIFICATE-----
-      MIIDOTCCAiGgAwIBAgIQLaWQADbZkrhJHszl/tztczANBgkqhkiG9w0BAQsFADAW
-      MRQwEgYDVQQDDAtQMlNSb290Q2VydDAeFw0yNDA5MjgxMTI2NThaFw0yNjAzMjgx
-      MTM2NTNaMBcxFTATBgNVBAMMDFAyU0NoaWxkQ2VydDCCASIwDQYJKoZIhvcNAQEB
-      BQADggEPADCCAQoCggEBAOCldIKl2MKKcnD/HVuc6LIsWXRn4KXz7a0IC8en745I
-      fbZbePTZZFxazIOIXjV9zCfQLGyJ1FmwqNwkMI3PLqQzK9ZTXad8/V1PVM/fTT+I
-      RgZmA8WWx+OXt2tkniyQUC/3OiG6kULNh1DXuKNAZqfFfD7pfzQyimiLMZPfVnCs
-      lwDpg55Y4f5BTEX2PI+kqm68IEHt4j0d8KlWn9Zd5Sm7EtwlPWxDFmm6nNJYFWBB
-      OMguaSLIB2dh2T9Xg+iCo9EHTrbjGgd4aPZ77E0tmDJzu5AS7dWUW+zZp6kYthW8
-      yJgv8ca2DlS2ubwsKt5vlX8FdgyYe80EOLtiFBJLr7kCAwEAAaOBgTB/MA4GA1Ud
-      DwEB/wQEAwIFoDAYBgNVHREEETAPgg1QMlNDaGlsZENlcnQxMBMGA1UdJQQMMAoG
-      CCsGAQUFBwMCMB8GA1UdIwQYMBaAFJc+uczwgLCT6nCIIFA3DdVVkRaKMB0GA1Ud
-      DgQWBBRW+todpHta1Hg+Wf1hZAMYTO1uvzANBgkqhkiG9w0BAQsFAAOCAQEAyHq9
-      mxCylQMBSZkm6Uv/xQWPBcBLj8JtNAEKvbNjbrSA7ggKgTNHrZE6LGmy4dRRcGJN
-      kD7PgxojmDgfvggrQC8R4elzsQozJ8xH9vxwuUEmJleVmIxNX484zfQQUGHgpvOv
-      nOvd1KGIEWs/1Ho6IEjbnqv2B/xVXHJOSG8SY2rLnbFwqhmHMTGasrey6B9bAenp
-      utrFdFvX4LQXvlhei72R6pyo1xzvfoGMOWaDsQCPyxMXqfxe9qZSoniWgAYB+9xl
-      vkm+W+nJli7ya/wTYHbEJnMmdRTcMgXDl1WqUy+ETU2IARO/wfOcKPdGQG9rqr3q
-      bt6VFaJG3T8q1LYMUg==
-      -----END CERTIFICATE-----
-    ''
-  ];
 
   # Set your time zone.
   time.timeZone = "Asia/Jerusalem";
