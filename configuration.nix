@@ -21,7 +21,11 @@
   boot.loader.grub.efiSupport = true;
   boot.loader.grub.useOSProber = true;
   boot.kernelPackages = pkgs.linuxPackages_zen;
-  boot.kernelParams = lib.mkAfter ["nvidia-drm.modeset=1" "nvidia-drm.fbdev=0" "nvidia.NVreg_EnableGpuFirmware=0"];
+  boot.kernelParams = lib.mkAfter [
+    "nvidia-drm.modeset=1"
+    "nvidia-drm.fbdev=0"
+    "nvidia.NVreg_EnableGpuFirmware=0"
+  ];
 
   # security.sudo.configFile = ''
   #   Defaults  !sudoedit_checkdir
@@ -47,7 +51,10 @@
   '';
   security.polkit.enable = true;
 
-  nix.settings.experimental-features = ["nix-command" "flakes"];
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
   nix.gc.automatic = true;
   nix.gc.dates = "daily";
   nix.gc.options = "--delete-older-than 10d";
@@ -126,12 +133,14 @@
 
   nixpkgs.config.packageOverrides = pkgs: {
     nur =
-      import (builtins.fetchTarball {
+      import
+      (builtins.fetchTarball {
         # Get the revision by choosing a version from https://github.com/nix-community/NUR/commits/main
         url = "https://github.com/nix-community/NUR/archive/33df6fc789f71aa6e203ee8053260ddc61d09174.tar.gz";
         # Get the hash by running `nix-prefetch-url --unpack <url>` on the above url
         sha256 = "02kzwkf914my1sshwzhg12hvqahp3x00ggfj0p166lqdajjg57bh";
-      }) {
+      })
+      {
         inherit pkgs;
       };
   };
@@ -191,7 +200,13 @@
     description = "Shaked Gold";
     shell = pkgs.zsh;
     useDefaultShell = true;
-    extraGroups = ["networkmanager" "wheel" "geoclue" "input" "kvm"];
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+      "geoclue"
+      "input"
+      "kvm"
+    ];
     packages = with pkgs; [
       kdePackages.kate
     ];
@@ -305,7 +320,13 @@
     protonup-qt
     steam-run
     (steam.override {
-      extraPkgs = pkgs: with pkgs; [gtk3 mono libgdiplus zlib];
+      extraPkgs = pkgs:
+        with pkgs; [
+          gtk3
+          mono
+          libgdiplus
+          zlib
+        ];
     })
     spotify
     vscode
