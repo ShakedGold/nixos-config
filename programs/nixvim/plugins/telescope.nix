@@ -18,10 +18,6 @@
             prompt_position = "top";
           };
 
-          mappings = {
-            "<C-j>" = "require('telescope.actions').move_selection_next";
-            "<C-k>" = "require('telescope.actions').move_selection_previous";
-          };
           set_env = {
             COLORTERM = "truecolor";
           };
