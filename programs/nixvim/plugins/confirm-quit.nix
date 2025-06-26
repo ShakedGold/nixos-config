@@ -10,7 +10,7 @@
           owner = "yutkat";
           repo = "confirm-quit.nvim";
           rev = "a1dbd9b553e8d6770cd6a879a3ee8ffad292c70c"; # use latest commit
-          sha256 = "sha256-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA="; # use `nix flake show` or `nix-prefetch`
+          sha256 = "sha256-EGwSPxHCZaHWeeN8M+d3UXOor9ME7R6skpkcENVENRw="; # use `nix flake show` or `nix-prefetch`
         };
       })
     ];
