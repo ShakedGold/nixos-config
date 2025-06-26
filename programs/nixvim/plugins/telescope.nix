@@ -4,37 +4,39 @@
       enable = true;
 
       settings = {
-        file_ignore_patterns = [
-          "^.git/"
-          "^.mypy_cache/"
-          "^__pycache__/"
-          "^output/"
-          "^data/"
-          "%.ipynb"
-        ];
+        defaults = {
+          file_ignore_patterns = [
+            "^.git/"
+            "^.mypy_cache/"
+            "^__pycache__/"
+            "^output/"
+            "^data/"
+            "%.ipynb"
+          ];
 
-        layout_config = {
-          prompt_position = "top";
-        };
+          layout_config = {
+            prompt_position = "top";
+          };
 
-        mappings = {
-          "<C-j>" = {
-            __raw = "require('telescope.actions').move_selection_next";
+          mappings = {
+            "<C-j>" = {
+              __raw = "require('telescope.actions').move_selection_next";
+            };
+            "<C-k>" = {
+              __raw = "require('telescope.actions').move_selection_previous";
+            };
+            "<A-j>" = {
+              __raw = "require('telescope.actions').move_selection_next";
+            };
+            "<A-k>" = {
+              __raw = "require('telescope.actions').move_selection_previous";
+            };
           };
-          "<C-k>" = {
-            __raw = "require('telescope.actions').move_selection_previous";
+          set_env = {
+            COLORTERM = "truecolor";
           };
-          "<A-j>" = {
-            __raw = "require('telescope.actions').move_selection_next";
-          };
-          "<A-k>" = {
-            __raw = "require('telescope.actions').move_selection_previous";
-          };
+          sorting_strategy = "ascending";
         };
-        set_env = {
-          COLORTERM = "truecolor";
-        };
-        sorting_strategy = "ascending";
       };
     };
   };
