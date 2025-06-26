@@ -14,5 +14,6 @@
     ./barbar.nix
     ./autopairs.nix
     ./blame_line.nix
+    ./alpha.nix
   ];
 }
