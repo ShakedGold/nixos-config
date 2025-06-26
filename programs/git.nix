@@ -6,7 +6,7 @@
     extraConfig.init.defaultBranch = "main";
     extraConfig.push.autoSetupRemote = true;
     ignores = [
-      "*.nix"
+      "shell.nix"
     ];
   };
 }
