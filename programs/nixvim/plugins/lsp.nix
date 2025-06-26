@@ -10,5 +10,6 @@
           filetypes = [ "go" "gomod" "gowork" "gotmpl" ];
         };
       };
+    };
   };
 }
