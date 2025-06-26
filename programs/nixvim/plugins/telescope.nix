@@ -17,6 +17,16 @@
           layout_config = {
             prompt_position = "top";
           };
+          mappings = {
+            i = {
+              "<C-j>" = {
+                __raw = "require('telescope.actions').move_selection_next";
+              };
+              "<C-k>" = {
+                __raw = "require('telescope.actions').move_selection_previous";
+              };
+            };
+          };
 
           set_env = {
             COLORTERM = "truecolor";
