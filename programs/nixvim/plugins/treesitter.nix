@@ -5,7 +5,7 @@
       enable = true;
 
       settings = {
-        indent = true;
+        indent.enable = true;
         highlight.enable = true;
       };
 
