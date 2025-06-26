@@ -15,6 +15,8 @@
     };
 
     clipboard.register = "unnamedplus";
+    undodir = "~/.vim/undo-dir";
+    undofile = true;
 
     globals.mapleader = " ";
   };
