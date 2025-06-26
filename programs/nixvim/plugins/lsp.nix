@@ -11,7 +11,7 @@
         lua_ls.enable = true;
         nil_ls = {
           enable = true;
-          autoArchive = true;
+          nix.flake.autoArchive = true;
         };
       };
     };
