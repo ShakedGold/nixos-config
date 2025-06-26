@@ -5,7 +5,7 @@
 
       sources.formatting = {
         alejandra.enable = true;
-        stylelua.enable = true;
+        styllua.enable = true;
         clang_format.enable = true;
 
         # Python
