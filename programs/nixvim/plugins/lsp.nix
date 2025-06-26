@@ -6,8 +6,9 @@
         nixd.enable = true;
         gopls = {
           enable = true;
-          filetypes = [ "go" "gomod" "gowork" "gotmpl" ];
+          autostart = true;
         };
+        golangci_lint_ls.enable = true;
         lua_ls.enable = true;
       };
     };
