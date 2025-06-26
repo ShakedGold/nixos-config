@@ -12,5 +12,6 @@
     ./comment.nix
     ./friendly-snippets.nix
     ./barbar.nix
+    ./autopairs.nix
   ];
 }
