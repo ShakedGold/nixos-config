@@ -1,19 +1,17 @@
 { pkgs, ... }:
 {
   programs.nixvim = {
-    plugins.treesitter = {
-      enable = true;
+    plugins.treesitter.enable = true;
 
-      settings = {
-        indent.enable = true;
-        highlight.enable = true;
-      };
-
-      grammarPackages = with pkgs.vimPlugins.nvim-treesitter.builtGrammars; [
-        lua
-        javascript
-        nix
-      ];
+    plugins.treesitter.settings = {
+      indent.enable = true;
+      highlight.enable = true;
     };
+
+    plugins.treesitter.grammarPackages = with pkgs.vimPlugins.nvim-treesitter.builtGrammars; [
+      lua
+      javascript
+      nix
+    ];
   };
 }
