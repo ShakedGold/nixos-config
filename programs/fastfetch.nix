@@ -36,7 +36,6 @@
       modules = [
         "title"
         "separator"
-        "wm"
         {
           type = "os";
           key = "OS";
@@ -47,6 +46,7 @@
           type = "kernel";
           key = "Kernel";
         }
+        "wm"
         "break"
         {
           type = "memory";
@@ -61,6 +61,7 @@
         "break"
         "gpu"
         "uptime"
+        "colors"
       ];
     };
   };
