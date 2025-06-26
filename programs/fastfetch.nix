@@ -64,7 +64,7 @@
         "gpu"
         "uptime"
         "break"
-        "packages"
+        "processes"
         "break"
         "colors"
       ];
