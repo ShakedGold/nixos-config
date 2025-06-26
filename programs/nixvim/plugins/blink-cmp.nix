@@ -23,7 +23,7 @@
         };
         keymap = {
           preset = "super-tab";
-          "<C-j>" = [ "select_next" "fallbacks" ];
+          "<C-j>" = [ "select_next" "fallback" ];
         };
         signature = {
           enabled = true;
