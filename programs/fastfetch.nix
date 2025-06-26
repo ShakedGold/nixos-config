@@ -59,10 +59,12 @@
           };
         }
         "disk"
-        "netio"
         "break"
+        "cpu"
         "gpu"
         "uptime"
+        "break"
+        "packages"
         "break"
         "colors"
       ];
