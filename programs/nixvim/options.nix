@@ -12,11 +12,12 @@
       shiftwidth = 2; # Tab width should be 2
       confirm = true;
       cmdheight = 0;
+
+      undodir = "~/.vim/undo-dir";
+      undofile = true;
     };
 
     clipboard.register = "unnamedplus";
-    undodir = "~/.vim/undo-dir";
-    undofile = true;
 
     globals.mapleader = " ";
   };
