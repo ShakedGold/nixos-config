@@ -15,10 +15,6 @@
           keys = "blue";
           title = "red";
         };
-        key = {
-          width = 12;
-          type = "string";
-        };
         bar = {
           width = 10;
           charElapsed = "■";
