@@ -57,7 +57,7 @@
         mode = "n";
         key = "<leader>gg";
         options.silent = true;
-        action = "";
+        action = "<cmd>LazyGit<CR>";
       }
     ];
   };
