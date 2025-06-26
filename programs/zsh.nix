@@ -6,11 +6,15 @@
 }: let
   prompt = pkgs.writers.writeBash "prompt" ''
     get_git_nix_prompt2() {
+      local nix_prompt=""
+      if [ -n "$IN_NIX_SHELL" ]; then
+        # Nerd Font icon U+F313 with text
+        nix_prompt="%{$fg[red]%}[ nix-shell]"
+      fi
+
       if git rev-parse --is-inside-work-tree &> /dev/null || [ -n "$IN_NIX_SHELL" ]; then
         echo -n "%}%(?,,%{$fg[red]%}[%{$fg_bold[white]%}%?%{$reset_color%}%{$fg[red]%}])"
-        if [ -n "$IN_NIX_SHELL" ]; then
-          echo -n "%{$fg[magenta]%}[nix]%{$fg[red]%}"
-        fi
+        echo -n "$nix_prompt"
         echo -n "
     %{$fg[red]%}└"
       fi
