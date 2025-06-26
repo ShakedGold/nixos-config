@@ -8,5 +8,6 @@
     ./lsp.nix
     ./blink-cmp.nix
     ./none-ls.nix
+    ./hop.nix
   ];
 }
