@@ -2,7 +2,7 @@
   caps
   w
   enter
-  S-esc
+  esc
   grv
 )
 
@@ -43,7 +43,7 @@
 
 (deflayermap base
   caps @hyperkey
-  S-esc @esc-grv
+  esc @esc-grv
 )
 
 (deflayermap mod
