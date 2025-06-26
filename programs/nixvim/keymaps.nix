@@ -47,6 +47,12 @@
         options.silent = true;
         action = "<cmd>BufferPick<CR>";
       }
+      {
+        mode = "n";
+        key = "<leader>c";
+        options.silent = true;
+        action = "<cmd>BufferClose<CR>";
+      }
     ];
   };
 }

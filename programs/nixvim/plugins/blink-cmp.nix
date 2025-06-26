@@ -36,7 +36,7 @@
             "fallback"
           ];
           "<Tab>" = [
-            "select_next"
+            "accept"
             "fallback"
           ];
         };
