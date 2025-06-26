@@ -41,6 +41,12 @@
         '';
         options.remap = true;
       }
+      {
+        mode = "n";
+        key = "<leader>bb";
+        options.silent = true;
+        action = "<cmd>BufferPick<CR>";
+      }
     ];
   };
 }
