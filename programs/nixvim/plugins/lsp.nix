@@ -1,14 +1,14 @@
 {
   programs.nixvim = {
-    plugins.lsp.enable = true;
-
-    plugins.lsp.autoLoad = true;
-    plugins.lsp.servers = {
+    plugins.lsp = {
+      enable = true;
       lsp-format.enable = true;
-      gopls = {
-        enable = true;
-        filetypes = [ "go" "gomod" "gowork" "gotmpl" ];
+      servers = {
+        nixd.enable = true;
+        gopls = {
+          enable = true;
+          filetypes = [ "go" "gomod" "gowork" "gotmpl" ];
+        };
       };
-    };
   };
 }
