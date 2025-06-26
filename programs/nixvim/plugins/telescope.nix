@@ -3,13 +3,38 @@
     plugins.telescope = {
       enable = true;
 
-      settings.mappings = {
-        "<C-j>" = {
-          __raw = "require('telescope.actions').move_selection_next";
+      settings = {
+        file_ignore_patterns = [
+          "^.git/"
+          "^.mypy_cache/"
+          "^__pycache__/"
+          "^output/"
+          "^data/"
+          "%.ipynb"
+        ];
+
+        layout_config = {
+          prompt_position = "top";
         };
-        "<C-k>" = {
-          __raw = "require('telescope.actions').move_selection_previous";
+
+        mappings = {
+          "<C-j>" = {
+            __raw = "require('telescope.actions').move_selection_next";
+          };
+          "<C-k>" = {
+            __raw = "require('telescope.actions').move_selection_previous";
+          };
+          "<A-j>" = {
+            __raw = "require('telescope.actions').move_selection_next";
+          };
+          "<A-k>" = {
+            __raw = "require('telescope.actions').move_selection_previous";
+          };
         };
+        set_env = {
+          COLORTERM = "truecolor";
+        };
+        sorting_strategy = "ascending";
       };
     };
   };

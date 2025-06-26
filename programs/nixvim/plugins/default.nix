@@ -15,5 +15,7 @@
     ./autopairs.nix
     ./blame_line.nix
     ./alpha.nix
+    ./gitsigns.nix
+    ./visual-multi.nix
   ];
 }
