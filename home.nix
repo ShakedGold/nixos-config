@@ -173,7 +173,6 @@ in {
     run-or-raise
     hyprland
     papirus-icon-theme
-    inputs.nixvim.homeModules.nixvim
   ];
 
   xdg.portal = {
