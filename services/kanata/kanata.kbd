@@ -2,6 +2,9 @@
   caps
   w
   enter
+  esc
+  shift
+  grv
 )
 
 (defvar
@@ -31,6 +34,8 @@
  
 ;; Layers
 (defalias
+  esc-grv (tap-hold-press $tap-time $hold-time grv esc)
+
   hyperkey (tap-hold-press $tap-time $hold-time esc (layer-while-held mod))
 
   hw-layer (layer-while-held w_layer)
@@ -39,6 +44,7 @@
 
 (deflayermap base
   caps @hyperkey
+  S-esc @esc-grv
 )
 
 (deflayermap mod
