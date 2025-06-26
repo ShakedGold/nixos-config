@@ -55,6 +55,9 @@
             yellow = 70;
           };
         }
+        "disk"
+        "gpu"
+        "uptime"
       ];
     };
   };
