@@ -1,5 +1,4 @@
-{ pkgs, ... }:
-{
+{pkgs, ...}: {
   programs.nixvim = {
     enable = true;
 
@@ -12,6 +11,7 @@
 
       shiftwidth = 2; # Tab width should be 2
       confirm = true;
+      cmdheight = 0;
     };
 
     globals.mapleader = " ";

@@ -13,6 +13,6 @@
     ./friendly-snippets.nix
     ./barbar.nix
     ./autopairs.nix
-    ./blame_line.nix.nix
+    ./blame_line.nix
   ];
 }
