@@ -47,6 +47,7 @@
           key = "Kernel";
         }
         "wm"
+        "lm"
         "break"
         {
           type = "memory";
@@ -58,9 +59,11 @@
           };
         }
         "disk"
+        "netio"
         "break"
         "gpu"
         "uptime"
+        "break"
         "colors"
       ];
     };
