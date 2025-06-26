@@ -9,7 +9,7 @@
       local nix_prompt=""
       if [ -n "$IN_NIX_SHELL" ]; then
         # Nerd Font icon U+F313 with text
-        nix_prompt="%{$fg[red]%}[[%{$fg_bold[white]%}nix-shell  {$reset_color%}%{$fg[red]%}]]"
+        nix_prompt="%{$fg[red]%}[%{$fg_bold[white]%}nix-shell  {$reset_color%}%{$fg[red]%]"
       fi
 
       if git rev-parse --is-inside-work-tree &> /dev/null || [ -n "$IN_NIX_SHELL" ]; then
