@@ -4,7 +4,11 @@
 
     plugins.lsp.autoLoad = true;
     plugins.lsp.servers = {
-      nixd.enable = true;
+      lsp-format.enable = true;
+      gopls = {
+        enable = true;
+        filetypes = [ "go" "gomod" "gowork" "gotmpl" ];
+      };
     };
   };
 }
