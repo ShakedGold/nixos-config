@@ -389,6 +389,7 @@
     insomnia
     gef
     kdotool
+    neovim
   ];
 
   programs.noisetorch.enable = true;
