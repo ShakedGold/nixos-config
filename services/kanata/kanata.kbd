@@ -27,7 +27,6 @@
   f-close-tab (multi lctrl w)
   f-backwards (multi lalt left)
   f-forwards (multi lalt right)
-  f-focus (shell "run-or-raise -f firefox -c firefox")
 )
  
 ;; Layers
@@ -35,7 +34,7 @@
   hyperkey (tap-hold-press $tap-time $hold-time esc (layer-while-held mod))
 
   hw-layer (layer-while-held w_layer)
-  hf-layer (multi @f-focus (layer-while-held f_layer))
+  hf-layer layer-while-held f_layer)
 )
 
 (deflayermap base
