@@ -14,6 +14,8 @@
       cmdheight = 0;
     };
 
+    clipboard.register = "unnamedplus";
+
     globals.mapleader = " ";
   };
 }
