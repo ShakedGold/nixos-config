@@ -36,6 +36,7 @@
       modules = [
         "title"
         "separator"
+        "wm"
         {
           type = "os";
           key = "OS";
