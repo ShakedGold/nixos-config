@@ -1,4 +1,3 @@
-{ pkgs, ... }:
 {
     imports = [
       ./lualine.nix
@@ -9,5 +8,6 @@
       ./lsp.nix
       ./blink-cmp.nix
       ./none-ls.nix
+      ./confirm-quit.nix
     ];
 }
