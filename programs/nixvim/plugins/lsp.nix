@@ -8,6 +8,7 @@
           enable = true;
           filetypes = [ "go" "gomod" "gowork" "gotmpl" ];
         };
+        lua_ls.enable = true;
       };
     };
 
