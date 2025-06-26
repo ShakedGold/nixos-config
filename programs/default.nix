@@ -17,6 +17,6 @@
     ./hyprpaper.nix
     ./tmux.nix
     ./fastfetch.nix
-    ./nixvim.nix
+    ./nixvim
   ];
 }
