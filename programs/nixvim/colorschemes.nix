@@ -1,10 +1,10 @@
 {
   programs.nixvim = {
-    colorschemes.catppuccin = {
+    colorschemes.kanagawa = {
       enable = true;
 
       settings = {
-        flavour = "mocha";
+        theme = "dragon";
       };
     };
   };
