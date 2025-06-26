@@ -11,9 +11,12 @@
           enable = true;
           settings.nix.flake.autoArchive = true;
         };
+        pylsp.settings.plugins.pylsp_mypy.enabled = true;
+        pylsp.settings.plugins.pylint.enabled = true;
 
         golangci_lint_ls.enable = true;
         lua_ls.enable = true;
+        clangd.enable = true;
       };
     };
 
