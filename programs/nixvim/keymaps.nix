@@ -41,18 +41,6 @@
         '';
         options.remap = true;
       }
-      {
-        mode = "n";
-        key = "<leader>c";
-        options.silent = true;
-        action = "gcc";
-      }
-      {
-        mode = "v";
-        key = "<leader>c";
-        options.silent = true;
-        action = "gc";
-      }
     ];
   };
 }
