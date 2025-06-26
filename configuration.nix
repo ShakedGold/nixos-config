@@ -334,7 +334,6 @@
     copyq
     fd
     alejandra
-    neofetch
     waylock
     man-pages
     killall
