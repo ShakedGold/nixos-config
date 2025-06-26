@@ -4,7 +4,6 @@
     ./rofi
 
     ./zsh.nix
-    ./neovim.nix
     ./git.nix
     ./ssh.nix
     ./kitty.nix
