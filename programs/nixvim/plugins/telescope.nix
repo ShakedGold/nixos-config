@@ -3,7 +3,7 @@
     plugins.telescope = {
       enable = true;
 
-      mappings = {
+      settings.mappings = {
         "<C-j>" = {
           __raw = "require('telescope.actions').move_selection_next";
         };
