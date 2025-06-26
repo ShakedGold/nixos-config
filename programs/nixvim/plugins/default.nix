@@ -8,5 +8,6 @@
       ./neo-tree.nix
       ./lsp.nix
       ./blink-cmp.nix
+      ./none-ls.nix
     ];
 }
