@@ -25,6 +25,12 @@
         options.silent = true;
         action = "<cmd>w<CR>";
       }
+      {
+        mode = "n";
+        key = "<leader>q";
+        options.silent = true;
+        action = "<cmd>q<CR>";
+      }
     ];
   };
 }
