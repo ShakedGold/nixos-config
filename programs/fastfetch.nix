@@ -10,10 +10,14 @@
         };
       };
       display = {
-        separator = "  ";
+        separator = "";
         color = {
           keys = "blue";
           title = "red";
+        };
+        key = {
+          width = 20;
+          type = "string";
         };
         bar = {
           width = 10;
@@ -42,6 +46,7 @@
           type = "kernel";
           key = "Kernel";
         }
+        "break"
         {
           type = "memory";
           key = "Memory";
@@ -52,6 +57,7 @@
           };
         }
         "disk"
+        "break"
         "gpu"
         "uptime"
       ];
