@@ -17,5 +17,6 @@
     ./alpha.nix
     ./gitsigns.nix
     ./visual-multi.nix
+    ./lazygit.nix
   ];
 }

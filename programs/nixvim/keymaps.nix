@@ -53,6 +53,12 @@
         options.silent = true;
         action = "<cmd>BufferClose<CR>";
       }
+      {
+        mode = "n";
+        key = "<leader>gg";
+        options.silent = true;
+        action = "";
+      }
     ];
   };
 }
