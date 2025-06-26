@@ -17,5 +17,6 @@
     ./hyprpaper.nix
     ./tmux.nix
     ./albert.nix
+    ./fastfetch.nix
   ];
 }
