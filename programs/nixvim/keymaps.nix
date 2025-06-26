@@ -41,6 +41,18 @@
         '';
         options.remap = true;
       }
+      {
+        mode = "n";
+        key = "<leader>/";
+        options.silent = true;
+        action = "gcc";
+      }
+      {
+        mode = "v";
+        key = "<leader>/";
+        options.silent = true;
+        action = "gc";
+      }
     ];
   };
 }

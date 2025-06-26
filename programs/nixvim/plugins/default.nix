@@ -10,5 +10,6 @@
     ./none-ls.nix
     ./hop.nix
     ./comment.nix
+    ./friendly-snippets.nix
   ];
 }
