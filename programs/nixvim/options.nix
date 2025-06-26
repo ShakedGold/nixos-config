@@ -12,5 +12,7 @@
 
       shiftwidth = 2;        # Tab width should be 2
     };
+
+    globals.mapleader = " ";
   };
 }
