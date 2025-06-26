@@ -31,6 +31,10 @@
           val = 2;
         }
         {
+          opts = {
+            hl = "Type";
+            position = "center";
+          };
           type = "group";
           val = [
             {
@@ -54,18 +58,6 @@
               val = " Quit Neovim";
             }
           ];
-        }
-        {
-          type = "padding";
-          val = 2;
-        }
-        {
-          opts = {
-            hl = "Keyword";
-            position = "center";
-          };
-          type = "text";
-          val = "Inspiring quote here.";
         }
       ];
     };
