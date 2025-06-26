@@ -9,5 +9,6 @@
     ./blink-cmp.nix
     ./none-ls.nix
     ./hop.nix
+    ./comment.nix
   ];
 }
