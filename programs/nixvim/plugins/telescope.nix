@@ -19,12 +19,8 @@
           };
 
           mappings = {
-            "<C-j>" = {
-              __raw = "require('telescope.actions').move_selection_next";
-            };
-            "<C-k>" = {
-              __raw = "require('telescope.actions').move_selection_previous";
-            };
+            "<C-j>" = "require('telescope.actions').move_selection_next";
+            "<C-k>" = "require('telescope.actions').move_selection_previous";
           };
           set_env = {
             COLORTERM = "truecolor";
