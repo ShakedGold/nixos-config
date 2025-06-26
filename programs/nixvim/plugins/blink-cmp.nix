@@ -35,6 +35,10 @@
             "accept"
             "fallback"
           ];
+          "<Tab>" = [
+            "select_next"
+            "fallback"
+          ];
         };
         signature = {
           enabled = true;
