@@ -34,7 +34,7 @@
   hyperkey (tap-hold-press $tap-time $hold-time esc (layer-while-held mod))
 
   hw-layer (layer-while-held w_layer)
-  hf-layer layer-while-held f_layer)
+  hf-layer (layer-while-held f_layer)
 )
 
 (deflayermap base
