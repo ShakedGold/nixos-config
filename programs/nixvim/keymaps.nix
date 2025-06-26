@@ -43,13 +43,13 @@
       }
       {
         mode = "n";
-        key = "<leader>/";
+        key = "<leader>c";
         options.silent = true;
         action = "gcc";
       }
       {
         mode = "v";
-        key = "<leader>/";
+        key = "<leader>c";
         options.silent = true;
         action = "gc";
       }
