@@ -5,7 +5,7 @@
     };
 
     Unit = {
-      "Description" = "Linux Application Launcher";
+      "Description" = "Albert Application Launcher";
       "Documentation" = ["https://albertlauncher.github.io/"];
       After = ["network.target"];
     };
@@ -14,7 +14,7 @@
       Type = "simple";
       Restart = "always";
       RestartSec = 1;
-      ExecStart = pkgs.albert;
+      ExecStart = pkgs.writeShellScript "albert-env-wrapper.sh" "albert";
     };
   };
 }

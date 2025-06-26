@@ -325,7 +325,6 @@
     stremio
     util-linux
     gparted
-    # ulauncher
     wmctrl
     wl-clipboard
     rustup
