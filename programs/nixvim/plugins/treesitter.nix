@@ -6,7 +6,7 @@
 
       settings = {
         indent = true;
-        highlight = true;
+        highlight.enable = true;
       };
 
       grammarPackages = with pkgs.vimPlugins.nvim-treesitter.builtGrammars; [
