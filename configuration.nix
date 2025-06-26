@@ -390,6 +390,7 @@
     insomnia
     gef
     kdotool
+    inputs.nixvim.homeModules.nixvim
   ];
 
   programs.noisetorch.enable = true;
