@@ -297,7 +297,6 @@
     colloid-kde
     colloid-gtk-theme
     home-manager
-    neovim
     kitty
     zsh
     ripgrep
