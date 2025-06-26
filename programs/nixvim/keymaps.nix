@@ -19,6 +19,12 @@
         options.silent = true;
         action = "<cmd>Neotree filesystem toggle<CR>";
       }
+      {
+        mode = "n";
+        key = "<leader>w";
+        options.silent = true;
+        action = "<cmd>w<CR>";
+      }
     ];
   };
 }
