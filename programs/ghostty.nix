@@ -1,7 +1,4 @@
-{
-  pkgs,
-  ...
-} : {
+{pkgs, ...}: {
   programs.ghostty = {
     enable = true;
     package = pkgs.ghostty;
@@ -14,7 +11,7 @@
       background-opacity = 0.9;
       background-blur = true;
       confirm-close-surface = false;
-      theme = "catppuccin-mocha";
+      theme = "Kanagawa Dragon";
     };
   };
 }
