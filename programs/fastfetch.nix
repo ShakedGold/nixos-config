@@ -46,8 +46,6 @@
           type = "kernel";
           key = "Kernel";
         }
-        "wm"
-        "lm"
         "break"
         {
           type = "memory";
