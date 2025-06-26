@@ -64,7 +64,6 @@
         "break"
         "processes"
         "shell"
-        "terminal"
         "break"
         "colors"
       ];
