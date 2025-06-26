@@ -13,6 +13,12 @@
         options.silent = true;
         action = "<cmd>Telescope live_grep<CR>";
       }
+      {
+        mode = "n";
+        key = "<leader>e";
+        options.silent = true;
+        action = "<cmd>Neotree filesystem toggle<CR>";
+      }
     ];
   };
 }
