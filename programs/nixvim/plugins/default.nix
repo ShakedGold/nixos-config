@@ -1,4 +1,7 @@
 { pkgs, ... }:
 {
-    imports = [ ./lualine.nix ];
+    imports = [
+      ./lualine.nix
+      ./telescope.nix
+    ];
 }
