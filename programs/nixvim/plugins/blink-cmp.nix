@@ -20,6 +20,12 @@
           documentation = {
             auto_show = true;
           };
+          menu.draw = [
+            "label"
+            "label_description"
+            "kind_icon"
+            "kind"
+          ];
         };
         keymap = {
           preset = "default";

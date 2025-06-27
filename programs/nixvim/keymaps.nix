@@ -59,6 +59,12 @@
         options.silent = true;
         action = "<cmd>LazyGit<CR>";
       }
+      {
+        mode = "n";
+        key = "<leader>h";
+        options.silent = true;
+        action = "<cmd>noh<CR>";
+      }
     ];
   };
 }
