@@ -15,6 +15,7 @@
       colorScheme = "BreezeDark";
       wallpaper = "${config.home.homeDirectory}/.config/home-manager/wallpaper.png";
       enableMiddleClickPaste = false;
+      windowDecorations.theme = "Klassy";
     };
 
     session = {
