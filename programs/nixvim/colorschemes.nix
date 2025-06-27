@@ -1,11 +1,5 @@
 {
   programs.nixvim = {
-    colorschemes.kanagawa = {
-      enable = true;
-
-      settings = {
-        theme = "dragon";
-      };
-    };
+    colorschemes.catppuccin.enable = true;
   };
 }
