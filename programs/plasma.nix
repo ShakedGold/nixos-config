@@ -15,7 +15,11 @@
       colorScheme = "BreezeDark";
       wallpaper = "${config.home.homeDirectory}/.config/home-manager/wallpaper.png";
       enableMiddleClickPaste = false;
-      windowDecorations.theme = "Klassy";
+
+      windowDecorations = {
+        library = "org.kde.klassy";
+        theme = "Klassy";
+      };
     };
 
     session = {
