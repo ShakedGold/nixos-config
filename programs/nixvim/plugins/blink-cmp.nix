@@ -20,12 +20,23 @@
           documentation = {
             auto_show = true;
           };
-          menu.draw = [
-            "label"
-            "label_description"
-            "kind_icon"
-            "kind"
-          ];
+          menu = {
+            border = "none";
+            draw = {
+              gap = 1;
+              treesitter = [ "lsp" ];
+              columns = [
+                {
+                  __unkeyed-1 = "label";
+                }
+                {
+                  __unkeyed-1 = "kind_icon";
+                  __unkeyed-2 = "kind";
+                  gap = 1;
+                }
+                { __unkeyed-1 = "source_name"; }
+              ];
+            };
         };
         keymap = {
           preset = "default";
