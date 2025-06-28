@@ -65,6 +65,17 @@
         key = "Alt+Space";
         command = "albert toggle";
       };
+
+      # Window Control
+      "toggle-maximize" = {
+        name = "Maximize";
+        key = "Ctrl+Shift+Meta+Alt+PgUp";
+        command = "Maximize Window";
+      };
+    };
+
+    hotkeys.kwin = {
+      "Window Maximize" = "Meta+M";
     };
 
     input = {
