@@ -182,11 +182,11 @@ in {
         "Kill Window" = "Meta+Q";
 
         # Window Layout
-        "Maximize Window" = "${hyperkey}+Return";
-        "Quick Tile Window to the Left" = "${hyperkey}+Left";
-        "Quick Tile Window to the Right" = "${hyperkey}+Right";
-        "Quick Tile Window to the Top" = "${hyperkey}+Top";
-        "Quick Tile Window to the Bottom" = "${hyperkey}+Bottom";
+        "Window Maximize" = "${hyperkey}+Return";
+        "Window Quick Tile Left" = "${hyperkey}+Left";
+        "Window Quick Tile Right" = "${hyperkey}+Right";
+        "Window Quick Tile Top" = "${hyperkey}+Top";
+        "Window Quick Tile Bottom" = "${hyperkey}+Bottom";
       };
       "KDE Keyboard Layout Switcher" = {
         "Switch to Next Keyboard Layout" = "Alt+Shift";
