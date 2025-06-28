@@ -159,7 +159,7 @@
 
     EDITOR = "nvim";
     BROWSER = "zen-beta";
-    TERMINAL = "ghostty"
+    TERMINAL = "ghostty";
   };
 
   environment.etc = {
