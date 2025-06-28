@@ -57,7 +57,7 @@
       "launch-terminal" = {
         name = "Launch Terminal";
         key = "Ctrl+Shift+Meta+Alt+T";
-        command = "'$TERMINAL'";
+        command = ${environment.sessionVariables.TERMINAL};
       };
       "lock" = {
         name = "Lock Screen";
