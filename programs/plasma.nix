@@ -65,17 +65,6 @@
         key = "Alt+Space";
         command = "albert toggle";
       };
-
-      # Window Control
-      "toggle-maximize" = {
-        name = "Maximize";
-        key = "Ctrl+Shift+Meta+Alt+PgUp";
-        command = "Maximize Window";
-      };
-    };
-
-    hotkeys.kwin = {
-      "Window Maximize" = "Meta+M";
     };
 
     input = {
@@ -189,6 +178,7 @@
     shortcuts = {
       kwin = {
         "Kill Window" = "Meta+Q";
+        "Maximize Window" = "Shift+Ctrl+Alt+Meta+T";
       };
       "KDE Keyboard Layout Switcher" = {
         "Switch to Next Keyboard Layout" = "Alt+Shift";
