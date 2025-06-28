@@ -84,11 +84,11 @@ in {
 
       set-option -g status-position top
 
-      setw -g mode-keys vi
-      bind -T copy-mode-vi v send -X begin-selection
-      bind -T copy-mode-vi y send-keys -X copy-pipe-and-cancel
-      bind P paste-buffer
-      bind -T copy-mode-vi MouseDragEnd1Pane send-keys -X copy-pipe-and-cancel
+      # setw -g mode-keys vi
+      # bind -T copy-mode-vi v send -X begin-selection
+      # bind -T copy-mode-vi y send-keys -X copy-pipe-and-cancel
+      # bind P paste-buffer
+      # bind -T copy-mode-vi MouseDragEnd1Pane send-keys -X copy-pipe-and-cancel
     '';
   };
 }
