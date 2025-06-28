@@ -32,7 +32,7 @@ in {
       }
       {
         plugin = tmux-easy-motion;
-        extraConfig = "set -g @easy-motion-prefix \"Space\"";
+        extraConfig = ''set -g @easy-motion-prefix "Space"'';
       }
       {
         plugin = tmuxPlugins.catppuccin;
@@ -40,6 +40,16 @@ in {
           set -g @catppuccin_flavour 'frappe'
           set -g @catppuccin_window_tabs_enabled on
           set -g @catppuccin_date_time "%H:%M"
+          set -g @catppuccin_window_status_style "rounded"
+
+          set -g status-right-length 100
+          set -g status-left-length 100
+          set -g status-left ""
+          set -g status-right "#{E:@catppuccin_status_application}"
+          set -agF status-right "#{E:@catppuccin_status_cpu}"
+          set -ag status-right "#{E:@catppuccin_status_session}"
+          set -ag status-right "#{E:@catppuccin_status_uptime}"
+          set -agF status-right "#{E:@catppuccin_status_battery}"
         '';
       }
       {
@@ -61,13 +71,16 @@ in {
       tmuxPlugins.better-mouse-mode
     ];
     extraConfig = ''
+      unbind r
+      bind r source-file ~/.config/tmux/tmux.conf
+
       bind -n -N "Split the pane into two, left and right" M-s split-window -h
       bind -n -N "Split the pane into two, top and bottom" M-v split-window -v
 
       bind -n -N "Kill the current pane" M-x kill-pane
 
       bind -n -N "Move to the right pane" M-l select-pane -R
-      bind -n -N "Move to the left pane" M-h select-pane -L
+      bind -n -N "Move to the left panej M-h select-pane -L
       bind -n -N "Move to the up pane" M-k select-pane -U
       bind -n -N "Move to the down pane" M-j select-pane -D
 
@@ -85,6 +98,12 @@ in {
 
       set -g escape-time 0
       set-option -g status-position top
+
+      setw -g mode-keys vi
+      bind -T copy-mode-vi v send -X begin-selection
+      bind -T copy-mode-vi y send-keys -X copy-pipe-and-cancel
+      bind P paste-buffer
+      bind -T copy-mode-vi MouseDragEnd1Pane send-keys -X copy-pipe-and-cancel
     '';
   };
 }
