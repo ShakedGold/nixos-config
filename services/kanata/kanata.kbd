@@ -17,10 +17,10 @@
 ;; W Layer
 (defalias
   w-max (multi @hyperkey pgup)
-  w-left (multi lmet left)
-  w-right (multi lmet right)
-  w-up (multi lmet up)
-  w-down (multi lmet down)
+  w-left (multi @hyperkey left)
+  w-right (multi @hyperkey right)
+  w-up (multi @hyperkey up)
+  w-down (multi @hyperkey down)
   w-close (multi lalt f4)
 )
 
