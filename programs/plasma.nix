@@ -53,25 +53,22 @@
       }
     ];
 
-    hotkeys.commands."launch-ghostty" = {
-      name = "Launch Konsole";
-      key = "Meta+Return";
-      command = "ghostty";
-    };
-    hotkeys.commands."lock" = {
-      name = "Lock Screen";
-      key = "Meta+L";
-      command = "dbus-send --dest=org.freedesktop.ScreenSaver --type=method_call /ScreenSaver org.freedesktop.ScreenSaver.Lock";
-    };
-    # hotkeys.commands."ulauncher-toggle" = {
-    #   name = "Ulauncher Toggle";
-    #   key = "Alt+Space";
-    #   command = "ulauncher-toggle";
-    # };
-    hotkeys.commands."albert-toggle" = {
-      name = "Albert Toggle";
-      key = "Alt+Space";
-      command = "albert toggle";
+    hotkeys.commands = {
+      "launch-terminal" = {
+        name = "Launch Terminal";
+        key = "Ctrl+Shift+Meta+Alt+T";
+        command = "$TERMINAL";
+      };
+      "lock" = {
+        name = "Lock Screen";
+        key = "Meta+L";
+        command = "dbus-send --dest=org.freedesktop.ScreenSaver --type=method_call /ScreenSaver org.freedesktop.ScreenSaver.Lock";
+      };
+      "albert-toggle" = {
+        name = "Albert Toggle";
+        key = "Alt+Space";
+        command = "albert toggle";
+      };
     };
 
     input = {
