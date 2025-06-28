@@ -225,6 +225,8 @@ in {
   #
   home.sessionVariables = {
     EDITOR = "nvim";
+    BROWSER = "zen-beta";
+    TERMINAL = "ghostty";
   };
 
   xdg.desktopEntries = {
@@ -239,7 +241,12 @@ in {
       terminal = false;
     };
     "davinci-resolve-studio" = {
-      categories = ["AudioVideo" "AudioVideoEditing" "Video" "Graphics"];
+      categories = [
+        "AudioVideo"
+        "AudioVideoEditing"
+        "Video"
+        "Graphics"
+      ];
       comment = "Professional video editing, color, effects and audio post-processing";
       exec = ''"qdbus org.kde.kded6 /kded org.kde.kded6.unloadModule "appmenu" && davinci-resolve-studio %u && qdbus org.kde.kded6 /kded org.kde.kded6.loadModule "appmenu""'';
       icon = "davinci-resolve-studio";
