@@ -9,16 +9,6 @@
       sha256 = "sha256-cPZCV8xk9QpU49/7H8iGhQYK6JwWjviL29eWabuqruc=";
     };
   };
-  tmux-easy-motion = pkgs.tmuxPlugins.mkTmuxPlugin {
-    pluginName = "tmux-easy-motion";
-    version = "";
-    src = pkgs.fetchFromGitHub {
-      owner = "IngoMeyer441";
-      repo = "tmux-easy-motion";
-      rev = "3e2edbd0a3d9924cc1df3bd3529edc507bdf5934";
-      sha256 = "sha256-wOIPq12OqqxLERKfvVp4JgLkDXnM0KKtTqRWMqj4rfs=";
-    };
-  };
 in {
   programs.tmux = {
     enable = true;
@@ -29,10 +19,6 @@ in {
       {
         plugin = tmux-super-fingers;
         extraConfig = "set -g @super-fingers-key f";
-      }
-      {
-        plugin = tmux-easy-motion;
-        extraConfig = ''set -g @easy-motion-prefix "Space"'';
       }
       {
         plugin = tmuxPlugins.catppuccin;
@@ -47,8 +33,7 @@ in {
           set -g status-left ""
           set -g status-right "#{E:@catppuccin_status_application}"
           set -ag status-right "#{E:@catppuccin_status_session}"
-
-          set -g @catppuccin_directory_text "#{pane_current_path}"
+          set -ag status-right "#{E:@catppuccin_status_directory}"
         '';
       }
       {
@@ -96,7 +81,10 @@ in {
       bind -n -N "Toggle pane fullscreen" M-f resize-pane -Z
 
       set -g escape-time 0
+
       set-option -g status-position top
+
+      set -g base-index 1
 
       setw -g mode-keys vi
       bind -T copy-mode-vi v send -X begin-selection
