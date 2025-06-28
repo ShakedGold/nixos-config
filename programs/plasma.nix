@@ -182,7 +182,7 @@ in {
         "Kill Window" = "Meta+Q";
 
         # Window Layout
-        "Window Maximize" = "${hyperkey}+Return";
+        "Window Maximize" = "${hyperkey}+PgUp";
         "Window Quick Tile Left" = "${hyperkey}+Left";
         "Window Quick Tile Right" = "${hyperkey}+Right";
         "Window Quick Tile Top" = "${hyperkey}+Up";
