@@ -183,10 +183,10 @@ in {
 
         # Window Layout
         "Window Maximize" = "${hyperkey}+Return";
-        "Window Quick Tile Left" = "${hyperkey}+Left";
-        "Window Quick Tile Right" = "${hyperkey}+Right";
-        "Window Quick Tile Top" = "${hyperkey}+Top";
-        "Window Quick Tile Bottom" = "${hyperkey}+Bottom";
+        "Window Quick Tile Left" = "${hyperkey}+H";
+        "Window Quick Tile Right" = "${hyperkey}+L";
+        "Window Quick Tile Top" = "${hyperkey}+Up";
+        "Window Quick Tile Bottom" = "${hyperkey}+J";
       };
       "KDE Keyboard Layout Switcher" = {
         "Switch to Next Keyboard Layout" = "Alt+Shift";
