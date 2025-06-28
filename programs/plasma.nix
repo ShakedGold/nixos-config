@@ -1,4 +1,6 @@
-{config, ...}: {
+{config, ...}: let
+  hyperkey = ''Shift+Ctrl+Alt+Meta'';
+in {
   programs.plasma = {
     enable = true;
 
@@ -52,7 +54,7 @@
     hotkeys.commands = {
       "launch-terminal" = {
         name = "Launch Terminal";
-        key = "Ctrl+Shift+Meta+Alt+T";
+        key = "${hyperkey}+T";
         command = "${config.home.sessionVariables.TERMINAL}";
       };
       "lock" = {
@@ -178,7 +180,13 @@
     shortcuts = {
       kwin = {
         "Kill Window" = "Meta+Q";
-        "Maximize Window" = "Shift+Ctrl+Alt+Meta+T";
+
+        # Window Layout
+        "Maximize Window" = "${hyperkey}+T";
+        "Quick Tile Window to the Left" = "${hyperkey}+Left";
+        "Quick Tile Window to the Right" = "${hyperkey}+Right";
+        "Quick Tile Window to the Top" = "${hyperkey}+Top";
+        "Quick Tile Window to the Bottom" = "${hyperkey}+Bottom";
       };
       "KDE Keyboard Layout Switcher" = {
         "Switch to Next Keyboard Layout" = "Alt+Shift";
