@@ -1,8 +1,4 @@
-{
-  config,
-  home,
-  ...
-}: {
+{config, ...}: {
   programs.plasma = {
     enable = true;
 
@@ -57,7 +53,7 @@
       "launch-terminal" = {
         name = "Launch Terminal";
         key = "Ctrl+Shift+Meta+Alt+T";
-        command = "${home.sessionVariables.TERMINAL}";
+        command = "${config.home.sessionVariables.TERMINAL}";
       };
       "lock" = {
         name = "Lock Screen";
