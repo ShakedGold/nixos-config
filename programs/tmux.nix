@@ -84,8 +84,6 @@ in {
 
       set-option -g status-position top
 
-      set -g base-index 1
-
       setw -g mode-keys vi
       bind -T copy-mode-vi v send -X begin-selection
       bind -T copy-mode-vi y send-keys -X copy-pipe-and-cancel
