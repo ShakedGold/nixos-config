@@ -1,6 +1,6 @@
 {
   config,
-  pkgs,
+  home,
   ...
 }: {
   programs.plasma = {
