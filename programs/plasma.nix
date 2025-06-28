@@ -182,7 +182,7 @@ in {
         "Kill Window" = "Meta+Q";
 
         # Window Layout
-        "Maximize Window" = "${hyperkey}+T";
+        "Maximize Window" = "${hyperkey}+Return";
         "Quick Tile Window to the Left" = "${hyperkey}+Left";
         "Quick Tile Window to the Right" = "${hyperkey}+Right";
         "Quick Tile Window to the Top" = "${hyperkey}+Top";
