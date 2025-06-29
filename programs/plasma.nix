@@ -178,7 +178,7 @@ in {
       "run-or-raise-browser" = {
         name = "Run Or Raise Browser";
         key = "${hyperkey}+F";
-        command = "echo hi";
+        command = "run-or-raise -f zen-beta -c zen-beta";
       };
     };
 
