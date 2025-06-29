@@ -58,8 +58,8 @@ in {
       unbind r
       bind r source-file ~/.config/tmux/tmux.conf
 
-      bind -n -N "Split the pane into two, left and right" M-s split-window -h
-      bind -n -N "Split the pane into two, top and bottom" M-v split-window -v
+      bind -n -N "Split the pane into two, left and right" M-s split-window -h -c "#{pane_current_path}"
+      bind -n -N "Split the pane into two, top and bottom" M-v split-window -v -c "#{pane_current_path}"
 
       bind -n -N "Kill the current pane" M-x kill-pane
 
