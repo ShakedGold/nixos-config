@@ -411,6 +411,7 @@
     gef
     kdotool
     neovim
+    zip
   ];
 
   programs.noisetorch.enable = true;
