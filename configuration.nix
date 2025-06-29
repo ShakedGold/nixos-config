@@ -206,6 +206,7 @@
       "geoclue"
       "input"
       "kvm"
+      "docker"
     ];
     packages = with pkgs; [
       kdePackages.kate
@@ -416,7 +417,10 @@
   programs.noisetorch.enable = true;
   programs.virt-manager.enable = true;
   users.groups.libvirtd.members = ["shaked"];
-  virtualisation.libvirtd.enable = true;
+  virtualisation = {
+    docker.enable = true;
+    libvirtd.enable = true;
+  };
   virtualisation.spiceUSBRedirection.enable = true;
   virtualisation.libvirtd.qemu.vhostUserPackages = [pkgs.virtiofsd];
 
