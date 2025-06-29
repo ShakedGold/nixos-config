@@ -27,10 +27,11 @@
     "nvidia.NVreg_EnableGpuFirmware=0"
   ];
 
-  # security.sudo.configFile = ''
-  #   Defaults  !sudoedit_checkdir
-  # '';
   security.sudo.enable = lib.mkForce true;
+  security.sudo.extraConfig = ''
+    Defaults lecture = never # rollback results in sudo lectures after each reboot, it's somewhat useless anyway
+    Defaults pwfeedback # password input feedback - makes typed password visible as asterisks
+  '';
 
   system.autoUpgrade = {
     enable = true;
