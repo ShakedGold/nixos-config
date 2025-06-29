@@ -51,24 +51,6 @@ in {
       }
     ];
 
-    hotkeys.commands = {
-      "launch-terminal" = {
-        name = "Launch Terminal";
-        key = "${hyperkey}+T";
-        command = "${config.home.sessionVariables.TERMINAL}";
-      };
-      "lock" = {
-        name = "Lock Screen";
-        key = "Meta+L";
-        command = "dbus-send --dest=org.freedesktop.ScreenSaver --type=method_call /ScreenSaver org.freedesktop.ScreenSaver.Lock";
-      };
-      "albert-toggle" = {
-        name = "Albert Toggle";
-        key = "Alt+Space";
-        command = "albert toggle";
-      };
-    };
-
     input = {
       mice = [
         {
@@ -176,6 +158,29 @@ in {
         ];
       }
     ];
+
+    hotkeys.commands = {
+      "launch-terminal" = {
+        name = "Launch Terminal";
+        key = "${hyperkey}+T";
+        command = "${config.home.sessionVariables.TERMINAL}";
+      };
+      "lock" = {
+        name = "Lock Screen";
+        key = "Meta+L";
+        command = "dbus-send --dest=org.freedesktop.ScreenSaver --type=method_call /ScreenSaver org.freedesktop.ScreenSaver.Lock";
+      };
+      "albert-toggle" = {
+        name = "Albert Toggle";
+        key = "Alt+Space";
+        command = "albert toggle";
+      };
+      "run-or-raise-browser" = {
+        name = "Run Or Raise Browser";
+        key = "${hyperkey}+F";
+        command = "run-or-raise -f ${config.home.sessionVariables.BROWSER} -c ${config.home.sessionVariables.BROWSER}";
+      };
+    };
 
     shortcuts = {
       kwin = {
