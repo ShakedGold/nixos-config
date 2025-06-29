@@ -206,7 +206,6 @@
       "geoclue"
       "input"
       "kvm"
-      "docker"
     ];
     packages = with pkgs; [
       kdePackages.kate
