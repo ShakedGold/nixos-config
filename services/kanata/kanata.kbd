@@ -16,11 +16,11 @@
 
 ;; W Layer
 (defalias
-  w-max (multi @hyperkey pgup)
-  w-left (multi @hyperkey l)
-  w-right (multi @hyperkey r)
-  w-up (multi @hyperkey up)
-  w-down (multi @hyperkey down)
+  w-max (multi pgup)
+  w-left (multi l)
+  w-right (multi r)
+  w-up (multi up)
+  w-down (multi down)
   w-close (multi lalt f4)
 )
 
@@ -32,8 +32,6 @@
   f-close-tab (multi lctrl w)
   f-backwards (multi lalt left)
   f-forwards (multi lalt right)
-
-  f-launch (multi @hyperkey f)
 )
 
 ;; T Layer
@@ -48,7 +46,7 @@
   hyperkey_layer (tap-hold-press $tap-time $hold-time esc (multi @hyperkey (layer-while-held mod)))
 
   hw-layer (layer-while-held w_layer)
-  hf-layer (multi (macro @f-launch) (layer-while-held f_layer))
+  hf-layer (multi (macro f) (layer-while-held f_layer))
 )
 
 (deflayermap base
