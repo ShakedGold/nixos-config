@@ -32,6 +32,8 @@
   f-close-tab (multi lctrl w)
   f-backwards (multi lalt left)
   f-forwards (multi lalt right)
+
+  f-launch (multi @hyperkey f)
 )
 
 ;; T Layer
@@ -46,7 +48,7 @@
   hyperkey_layer (tap-hold-press $tap-time $hold-time esc (multi @hyperkey (layer-while-held mod)))
 
   hw-layer (layer-while-held w_layer)
-  hf-layer (multi (macro f) (layer-while-held f_layer))
+  hf-layer (multi (macro @f-launch) (layer-while-held f_layer))
 )
 
 (deflayermap base
