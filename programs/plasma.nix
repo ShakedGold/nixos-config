@@ -175,11 +175,6 @@ in {
         key = "Alt+Space";
         command = "albert toggle";
       };
-      "run-or-raise-browser" = {
-        name = "Run Or Raise Browser";
-        key = "${hyperkey}+F";
-        command = "run-or-raise -f zen-beta -c zen-beta";
-      };
     };
 
     shortcuts = {
