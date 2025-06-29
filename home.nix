@@ -123,6 +123,8 @@
     IS_RUNNING=$(pgrep -o -a -f "$COMMAND" | grep -v "$CURRENT_SCRIPT_NAME")
 
     if [ -n "$IS_RUNNING" ] || [ -n "$FILTERALT" ]; then
+      echo "PROGRAM $COMMAND IS RUNNING"
+
       SCRIPT_FOLDER="$HOME/.wwscripts/"
       SCRIPT_NAME=$(echo "$FILTERBY$FILTERALT" | md5sum | head -c 32)
       SCRIPT_PATH="$SCRIPT_FOLDER$SCRIPT_NAME"
@@ -133,13 +135,22 @@
       fi
       SCRIPT_NAME=$(cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 32 | head -n 1)
       # run it
+      echo "LOADING SCRIPT: $SCRIPT_PATH"
+
       qdbus org.kde.KWin /Scripting org.kde.kwin.Scripting.loadScript "$SCRIPT_PATH" "$SCRIPT_NAME" > /dev/null
+
+      echo "RUNNING SCRIPT: $SCRIPT_PATH"
       qdbus org.kde.KWin /Scripting org.kde.kwin.Scripting.start > /dev/null
+
       # uninstall it
+      echo "UNINSTALLING SCRIPT: $SCRIPT_NAME"
       qdbus org.kde.KWin /Scripting org.kde.kwin.Scripting.unloadScript $SCRIPT_NAME > /dev/null
+
       # remove it
       rm -rf $HOME/.wwscripts
     elif [ -n "$COMMAND" ]; then
+      echo "PROGRAM $COMMAND IS NOT RUNNING"
+
       $COMMAND &
     fi
   '';
