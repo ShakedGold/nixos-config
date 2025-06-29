@@ -178,7 +178,7 @@ in {
       "run-or-raise-browser" = {
         name = "Run Or Raise Browser";
         key = "${hyperkey}+F";
-        command = "run-or-raise -f ${config.home.sessionVariables.BROWSER} -c ${config.home.sessionVariables.BROWSER}";
+        command = "echo hi";
       };
     };
 
