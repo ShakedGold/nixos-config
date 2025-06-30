@@ -281,6 +281,7 @@ in {
       Add:
         - -I${pkgs.glibc.dev}/include
         - -I${pkgs.libcxx.dev}/include/c++/v1
+        - -I./include
         - -Wall
         - -Wextra
         - -std=c99
