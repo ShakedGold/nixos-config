@@ -255,14 +255,6 @@
     ];
   };
 
-  xdg.desktopEntries = {
-    whatsie = {
-      name = "Whatsie";
-      genericName = "Whatsapp";
-      exec = "QT_QPA_PLATFORM=xcb whatsie %U";
-    };
-  };
-
   xdg.mime = {
     enable = true;
     defaultApplications = {

@@ -264,6 +264,15 @@ in {
       name = "Davinci Resolve Studio";
       type = "Application";
     };
+
+    xdg.desktopEntries = {
+      whatsie = {
+        name = "Whatsie";
+        genericName = "Whatsapp";
+        exec = "QT_QPA_PLATFORM=xcb whatsie %U";
+        icon = "whatsapp";
+      };
+    };
   };
 
   # Let Home Manager install and manage itself.
