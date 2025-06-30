@@ -47,12 +47,12 @@ in {
       ls = "eza --icons=always";
       pcat = "bat --style plain";
       btop = "LANG=en_US.UTF-8 btop"; # fix no locale
-      c = "clear";
       g = "git";
       tmux = "tmux -u";
-      v = "nvim";
       x = ". $HOME/.zshrc";
       nix-shell = "export NIX_SHELL=1; nix-shell";
+      c = "wl-copy";
+      v = "wl-paste";
     };
 
     envExtra = ''
