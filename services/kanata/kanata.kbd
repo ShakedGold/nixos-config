@@ -16,11 +16,11 @@
 
 ;; W Layer
 (defalias
-  w-max (multi pgup)
-  w-left (multi l)
-  w-right (multi r)
-  w-up (multi up)
-  w-down (multi down)
+  w-max (multi lmet pgup)
+  w-left (multi lmet left)
+  w-right (multi lmet right)
+  w-up (multi lmet up)
+  w-down (multi lmet down)
   w-close (multi lalt f4)
 )
 
@@ -34,19 +34,14 @@
   f-forwards (multi lalt right)
 )
 
-;; T Layer
-(defalias
-  t-launch (multi @hyperkey t)
-)
- 
 ;; Layers
 (defalias
   esc-grv (tap-hold-press $tap-time $hold-time grv esc)
 
-  hyperkey_layer (tap-hold-press $tap-time $hold-time esc (multi @hyperkey (layer-while-held mod)))
+  hyperkey_layer (tap-hold-press $tap-time $hold-time esc (layer-while-held mod))
 
   hw-layer (layer-while-held w_layer)
-  hf-layer (multi (macro f) (layer-while-held f_layer))
+  hf-layer (layer-while-held f_layer)
 )
 
 (deflayermap base

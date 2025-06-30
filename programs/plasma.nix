@@ -180,13 +180,6 @@ in {
     shortcuts = {
       kwin = {
         "Kill Window" = "Meta+Q";
-
-        # Window Layout
-        "Window Maximize" = "${hyperkey}+PgUp";
-        "Window Quick Tile Left" = "${hyperkey}+L";
-        "Window Quick Tile Right" = "${hyperkey}+R";
-        "Window Quick Tile Top" = "${hyperkey}+Up";
-        "Window Quick Tile Bottom" = "${hyperkey}+Down";
       };
       "KDE Keyboard Layout Switcher" = {
         "Switch to Next Keyboard Layout" = "Alt+Shift";
