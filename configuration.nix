@@ -443,7 +443,11 @@
 
   programs.kdeconnect.enable = true;
 
-  services.mongodb.enable = true;
+  services.mongodb = {
+    enable = true;
+    package = pkgs.mongodb-ce;
+  };
+
   services.kanata = {
     enable = true;
     keyboards = {
