@@ -144,8 +144,8 @@ in {
               General = {
                 launchers = [
                   "applications:systemsettings.desktop"
-                  "preferred://filemanager"
-                  "preferred://browser"
+                  "applications:org.kde.dolphin.desktop"
+                  "applications:zen-beta.desktop"
                   "applications:com.mitchellh.ghostty.desktop"
                   "applications:vesktop.desktop"
                   "applications:code.desktop"
