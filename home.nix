@@ -265,13 +265,11 @@ in {
       type = "Application";
     };
 
-    xdg.desktopEntries = {
-      whatsie = {
-        name = "Whatsie";
-        genericName = "Whatsapp";
-        exec = "QT_QPA_PLATFORM=xcb whatsie %U";
-        icon = "whatsapp";
-      };
+    whatsie = {
+      name = "Whatsie";
+      genericName = "Whatsapp";
+      exec = "QT_QPA_PLATFORM=xcb whatsie %U";
+      icon = "whatsapp";
     };
   };
 
