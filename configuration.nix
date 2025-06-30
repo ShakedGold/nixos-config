@@ -416,6 +416,7 @@
     kdotool
     neovim
     zip
+    whatsie
   ];
 
   programs.noisetorch.enable = true;
