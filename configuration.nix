@@ -443,6 +443,7 @@
 
   programs.kdeconnect.enable = true;
 
+  services.mongodb.enable = true;
   services.kanata = {
     enable = true;
     keyboards = {
