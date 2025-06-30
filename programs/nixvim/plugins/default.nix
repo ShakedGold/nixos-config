@@ -19,5 +19,6 @@
     ./visual-multi.nix
     ./lazygit.nix
     ./better-escape.nix
+    ./yanky.nix
   ];
 }
