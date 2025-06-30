@@ -280,8 +280,7 @@ in {
     CompileFlags:
       Add:
         - -I${pkgs.glibc.dev}/include
-        - -I${pkgs.libcxx.dev}/include/c++/v1
-        - -I./include
+        - -Iinclude
         - -Wall
         - -Wextra
         - -std=c99
