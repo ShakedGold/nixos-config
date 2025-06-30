@@ -416,6 +416,8 @@
     kdotool
     neovim
     zip
+    mongosh
+    mongodb-compass
   ];
 
   programs.noisetorch.enable = true;
