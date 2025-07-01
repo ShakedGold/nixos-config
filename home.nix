@@ -272,7 +272,7 @@ in {
       exec = "QT_QPA_PLATFORM=xcb whatsie";
       icon = "whatsapp";
       categories = [
-        "Internet"
+        "Network"
       ];
     };
   };
