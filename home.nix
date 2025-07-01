@@ -267,9 +267,13 @@ in {
 
     whatsie = {
       name = "Whatsie";
+      comment = "WhatsApp messaging client for linux";
       genericName = "Whatsapp";
-      exec = "QT_QPA_PLATFORM=xcb whatsie %U";
+      exec = "QT_QPA_PLATFORM=xcb whatsie";
       icon = "whatsapp";
+      categories = [
+        "Internet"
+      ];
     };
   };
 
