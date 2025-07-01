@@ -290,6 +290,7 @@ in {
         - -std=c99
         - -pedantic
         - -Werror
+        - -x c
       Index:
         Background: Skip
   '';
