@@ -417,6 +417,7 @@
     neovim
     zip
     whatsie
+    bear
   ];
 
   programs.noisetorch.enable = true;
