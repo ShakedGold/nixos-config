@@ -418,7 +418,6 @@
     zip
     whatsie
     bear
-    krita
   ];
 
   programs.noisetorch.enable = true;
