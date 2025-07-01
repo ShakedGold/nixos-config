@@ -5,7 +5,14 @@
 
       settings = {
         mappings = {
-          t = false;
+          t = {
+            j = false;
+          };
+          v = {
+            j = {
+              k = false;
+            };
+          };
         };
       };
     };
