@@ -7,6 +7,7 @@
     extraConfig.push.autoSetupRemote = true;
     ignores = [
       "shell.nix"
+      "compile-commands.json"
     ];
   };
 }

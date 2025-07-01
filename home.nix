@@ -284,7 +284,6 @@ in {
     CompileFlags:
       Add:
         - -I${pkgs.glibc.dev}/include
-        - -Iinclude
         - -Wall
         - -Wextra
         - -std=c99
