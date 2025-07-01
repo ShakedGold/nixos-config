@@ -16,7 +16,7 @@
       undodir = "/tmp/.nvim-undo-dir";
       undofile = true;
 
-      colorcoloum = 120;
+      colorcolumn = 120;
     };
 
     clipboard.register = "unnamedplus";
