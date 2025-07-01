@@ -6,7 +6,10 @@
       settings = {
         mappings = {
           t = {
-            j = false;
+            j = {
+              j = false;
+              k = false;
+            };
           };
           v = {
             j = {
