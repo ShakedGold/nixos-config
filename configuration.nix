@@ -422,6 +422,7 @@
     whatsie
     bear
     cmake
+    dotnet-sdk_10
   ];
 
   programs.noisetorch.enable = true;
