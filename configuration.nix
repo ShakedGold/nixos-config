@@ -421,6 +421,7 @@
     zip
     whatsie
     bear
+    cmake
   ];
 
   programs.noisetorch.enable = true;
