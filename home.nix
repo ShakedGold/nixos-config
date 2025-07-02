@@ -282,7 +282,6 @@ in {
 
   home.file.".clangd".text = ''
     CompileFlags:
-      CompilationDatabase: "cmake"
       Add:
         - -I${pkgs.glibc.dev}/include
         - -Wall
