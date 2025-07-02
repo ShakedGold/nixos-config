@@ -22,6 +22,7 @@
         lua_ls.enable = true;
         clangd.enable = true;
         dockerls.enable = true;
+        cmake.enable = true;
       };
 
       keymaps = {
