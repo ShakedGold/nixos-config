@@ -1,6 +1,6 @@
 {
   wayland.windowManager.hyprland.settings."$mod" = "";
   wayland.windowManager.hyprland.settings.bind = [
-    "$mod, F, exec zen"
+    "$mod, F, exec, zen"
   ];
 }
