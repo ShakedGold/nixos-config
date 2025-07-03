@@ -433,7 +433,7 @@
   programs.kdeconnect.enable = true;
 
   services.kanata = {
-    enable = false;
+    enable = true;
     keyboards = {
       internalKeyboard = {
         extraDefCfg = ''
