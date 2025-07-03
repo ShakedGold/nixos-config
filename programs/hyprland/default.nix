@@ -2,6 +2,7 @@
   imports = [
     ./bind.nix
     ./monitors.nix
+    ./input.nix
   ];
 
   wayland.windowManager.hyprland = {
