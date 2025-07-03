@@ -51,6 +51,7 @@
         mode = "n";
         key = "<leader>c";
         options.silent = true;
+        options.nowait = true;
         action = "<cmd>BufferClose<CR>";
       }
       {
