@@ -1,6 +1,7 @@
 {pkgs, ...}: {
   imports = [
     ./bind.nix
+    ./monitors.nix
   ];
 
   wayland.windowManager.hyprland = {
