@@ -66,7 +66,11 @@
         home-manager.nixosModules.home-manager
         {
           home-manager.useUserPackages = true;
-          home-manager.sharedModules = [plasma-manager.homeManagerModules.plasma-manager inputs.nixvim.homeManagerModules.nixvim];
+          home-manager.sharedModules = [
+            plasma-manager.homeManagerModules.plasma-manager
+            inputs.nixvim.homeManagerModules.nixvim
+          ];
+          home-manager.backupFileExtension = "backup";
 
           # This should point to your home.nix path of course. For an example
           # of this see ./home.nix in this directory.
