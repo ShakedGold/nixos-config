@@ -1,5 +1,5 @@
 {
-  wayland.windowManager.hyprland.input = {
+  wayland.windowManager.hyprland.settings.input = {
     kb_layout = "us,il";
     kb_variant = "";
     kb_model = "";
