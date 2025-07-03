@@ -240,15 +240,6 @@
   fonts.packages = with pkgs; [
     nerd-fonts.jetbrains-mono
   ];
-  # Desktop Portals
-  xdg.portal = {
-    enable = true;
-    wlr.enable = true;
-    extraPortals = [
-      pkgs.kdePackages.xdg-desktop-portal-kde
-      pkgs.xdg-desktop-portal-gtk
-    ];
-  };
 
   xdg.mime = {
     enable = true;
