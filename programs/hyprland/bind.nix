@@ -1,5 +1,5 @@
 {
-  wayland.windowManager.hyprland.settings."$mod" = "SUPER";
+  wayland.windowManager.hyprland.settings."$mod" = "CAPS";
 
   wayland.windowManager.hyprland.settings.bind = [
     "$mod, F, exec, zen"
@@ -7,7 +7,7 @@
 
     "$mod, H, movefocus, l"
     "$mod, L, movefocus, r"
-    "$mod, J, movefocus, u"
-    "$mod, K, movefocus, d"
+    "$mod, J, movefocus, d"
+    "$mod, K, movefocus, u"
   ];
 }
