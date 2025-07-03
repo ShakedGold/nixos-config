@@ -1,5 +1,5 @@
 {
-  wayland.windowManager.hyprland.settings."$mod" = "HYPER";
+  wayland.windowManager.hyprland.settings."$mod" = "CTRL";
 
   wayland.windowManager.hyprland.settings.bind = [
     "$mod, F, exec, zen"
