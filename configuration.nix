@@ -406,7 +406,7 @@
     python3
     clang-tools
     gitflow
-    git
+    git # TODO: remove this line when done configuring data43
     inputs.kwin-effects-forceblur.packages.${pkgs.system}.default
     kdePackages.xdg-desktop-portal-kde
     slurp
