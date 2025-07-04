@@ -406,6 +406,7 @@
     python3
     clang-tools
     gitflow
+    git
     inputs.kwin-effects-forceblur.packages.${pkgs.system}.default
     kdePackages.xdg-desktop-portal-kde
     slurp
