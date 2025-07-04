@@ -212,7 +212,7 @@
     uid = 1001;
     isNormalUser = true;
     description = "Data43";
-    shell = pkgs.bash;
+    shell = pkgs.zsh;
     useDefaultShell = true;
     extraGroups = [
       "networkmanager"
