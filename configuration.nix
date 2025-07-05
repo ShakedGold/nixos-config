@@ -208,42 +208,6 @@
     ];
   };
 
-  users.users.test = {
-    uid = 1002;
-    isNormalUser = true;
-    description = "Data43";
-    shell = pkgs.zsh;
-    useDefaultShell = true;
-    extraGroups = [
-      "networkmanager"
-      "wheel"
-      "geoclue"
-      "input"
-      "kvm"
-    ];
-    packages = with pkgs; [
-      kdePackages.kate
-    ];
-  };
-
-  users.users.data43 = {
-    uid = 1001;
-    isNormalUser = true;
-    description = "Data43";
-    shell = pkgs.zsh;
-    useDefaultShell = true;
-    extraGroups = [
-      "networkmanager"
-      "wheel"
-      "geoclue"
-      "input"
-      "kvm"
-    ];
-    packages = with pkgs; [
-      kdePackages.kate
-    ];
-  };
-
   # Install firefox.
   programs.firefox = {
     enable = true;
