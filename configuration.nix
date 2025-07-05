@@ -209,7 +209,7 @@
   };
 
   users.users.test = {
-    uid = 1001;
+    uid = 1002;
     isNormalUser = true;
     description = "Data43";
     shell = pkgs.zsh;
