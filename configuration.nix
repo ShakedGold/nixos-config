@@ -407,6 +407,7 @@
     bear
     cmake
     obsidian
+    syncthingtray
   ];
 
   programs.noisetorch.enable = true;
