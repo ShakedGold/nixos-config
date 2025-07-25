@@ -406,7 +406,7 @@
     whatsie
     bear
     cmake
-    obisidian
+    obsidian
   ];
 
   programs.noisetorch.enable = true;
