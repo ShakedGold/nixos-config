@@ -407,6 +407,7 @@
     bear
     cmake
     obsidian
+    syncthing
     syncthingtray
   ];
 
