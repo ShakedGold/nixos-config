@@ -239,6 +239,7 @@
   # Fonts
   fonts.packages = with pkgs; [
     nerd-fonts.jetbrains-mono
+    corefonts
   ];
 
   xdg.mime = {
@@ -407,6 +408,7 @@
     bear
     cmake
     obsidian
+    onlyoffice-bin
   ];
 
   programs.noisetorch.enable = true;
