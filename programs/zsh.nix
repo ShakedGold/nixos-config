@@ -61,7 +61,7 @@ in {
     '';
 
     initContent = ''
-      echo 'eval "$(zellij setup --generate-auto-start zsh)"'
+      eval "$(zellij setup --generate-auto-start zsh)"
 
       [[ "$TERM" == "xterm-kitty" ]] && export TERM=xterm-256color
 
