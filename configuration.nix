@@ -358,7 +358,7 @@
     obs-studio
     nv-codec-headers-12
     wireplumber
-    (pkgs.callPackage ./davinci-resolve-paid.nix {})
+    # (pkgs.callPackage ./davinci-resolve-paid.nix {})
     r2modman
     waybar
     (pkgs.waybar.overrideAttrs (oldAttrs: {
