@@ -10,6 +10,7 @@
     ./ghostty.nix
     ./tmux.nix
     ./fastfetch.nix
+    ./zellij.nix
 
     ./nixvim
     ./hyprland
