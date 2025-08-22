@@ -407,7 +407,6 @@
     bear
     cmake
     obsidian
-    zellij
   ];
 
   programs.noisetorch.enable = true;
