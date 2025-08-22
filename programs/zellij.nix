@@ -59,6 +59,7 @@
     };
     settings = {
       theme = "catppuccin-mocha";
+      default_layout = "compact";
     };
     enableZshIntegration = true;
     exitShellOnExit = true;
