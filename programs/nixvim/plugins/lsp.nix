@@ -14,8 +14,11 @@
           settings.nix.flake.autoArchive = true;
         };
 
-        rust_analyzer.enable = true;
-        rust_analyzer.installRustc = true;
+        rust_analyzer = {
+          enable = true;
+          installRustc = true;
+          installCargo = true;
+        };
 
         pylsp.enable = true;
         pylsp.settings.plugins.pylsp_mypy.enabled = true;
