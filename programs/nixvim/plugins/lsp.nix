@@ -16,8 +16,8 @@
 
         rust_analyzer = {
           enable = true;
-          installRustc = true;
-          installCargo = true;
+          installRustc = false;
+          installCargo = false;
         };
 
         pylsp.enable = true;
