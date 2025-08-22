@@ -56,7 +56,6 @@ in {
     };
 
     envExtra = ''
-      ZSH_TMUX_AUTOSTART=true
       ZSH_TMUX_FIXTERM_WITH_256COLOR=true
       ZSH_TMUX_UNICODE=true
     '';
