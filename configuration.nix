@@ -391,7 +391,6 @@
     gitflow
     git # TODO: remove this line when done configuring data43
     inputs.kwin-effects-forceblur.packages.${pkgs.system}.default
-    kdePackages.xdg-desktop-portal-kde
     slurp
     jq
     openssl
