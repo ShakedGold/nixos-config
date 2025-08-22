@@ -58,11 +58,13 @@ in {
     envExtra = ''
       ZSH_TMUX_FIXTERM_WITH_256COLOR=true
       ZSH_TMUX_UNICODE=true
-      echo 'eval "$(zellij setup --generate-auto-start zsh)"'
     '';
 
     initContent = ''
+      echo 'eval "$(zellij setup --generate-auto-start zsh)"'
+
       [[ "$TERM" == "xterm-kitty" ]] && export TERM=xterm-256color
+
       ${lib.concatMapStrings (x: "${toString x}\n") (
         lib.mapAttrsToList (name: value: "export ${name}=${toString value}") config.home.sessionVariables
       )}
