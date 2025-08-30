@@ -66,6 +66,12 @@
         options.silent = true;
         action = "<cmd>noh<CR>";
       }
+      {
+        mode = "n";
+        key = "<leader>ld";
+        options.silent = true;
+        action = "<cmd>lua vim.diagnostics.open_float()<CR>";
+      }
     ];
   };
 }
