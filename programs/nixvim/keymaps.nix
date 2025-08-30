@@ -70,7 +70,7 @@
         mode = "n";
         key = "<leader>ld";
         options.silent = true;
-        action = "<cmd>lua vim.diagnostics.open_float()<CR>";
+        action = "<cmd>lua vim.diagnostic.open_float()<CR>";
       }
     ];
   };
