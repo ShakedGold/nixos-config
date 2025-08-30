@@ -20,6 +20,5 @@
     ./lazygit.nix
     ./better-escape.nix
     ./yanky.nix
-    ./lsp-lines.nix
   ];
 }
