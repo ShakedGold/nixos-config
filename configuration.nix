@@ -300,8 +300,6 @@
   environment.systemPackages = with pkgs; [
     nix-search-cli
     wget
-    colloid-kde
-    colloid-gtk-theme
     home-manager
     kitty
     zsh
