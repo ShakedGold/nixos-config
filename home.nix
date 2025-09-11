@@ -242,9 +242,6 @@ in {
     XDG_CURRENT_DESKTOP = "KDE";
   };
 
-  home-manager.useGlobalPkgs = true;
-  home-manager.useUserPackages = true;
-
   xdg.desktopEntries = {
     "1password" = {
       name = "1Password";
