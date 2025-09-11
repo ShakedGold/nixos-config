@@ -400,7 +400,6 @@
     kdotool
     neovim
     zip
-    whatsie
     bear
     cmake
     obsidian

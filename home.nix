@@ -266,17 +266,6 @@ in {
       name = "Davinci Resolve Studio";
       type = "Application";
     };
-
-    whatsie = {
-      name = "Whatsie";
-      comment = "WhatsApp messaging client for linux";
-      genericName = "Whatsapp";
-      exec = "QT_QPA_PLATFORM=xcb whatsie";
-      icon = "whatsapp";
-      categories = [
-        "Network"
-      ];
-    };
   };
 
   # Let Home Manager install and manage itself.
