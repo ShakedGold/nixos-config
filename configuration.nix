@@ -347,7 +347,6 @@
     btop
     bat
     vlc
-    chromium
     kdePackages.bluedevil
     busybox
     # rpcs3
