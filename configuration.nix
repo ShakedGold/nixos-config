@@ -253,9 +253,6 @@
     };
   };
 
-  services.tailscale.enable = true;
-  services.tailscale.useRoutingFeatures = "client";
-
   services.zerotierone = {
     enable = true;
     joinNetworks = [
