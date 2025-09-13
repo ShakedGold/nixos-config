@@ -356,10 +356,6 @@
     wireplumber
     # (pkgs.callPackage ./davinci-resolve-paid.nix {})
     r2modman
-    waybar
-    (pkgs.waybar.overrideAttrs (oldAttrs: {
-      mesonFlags = oldAttrs.mesonFlags ++ ["-Dexperimental=true"];
-    }))
     rofi
     eza
     ghostty
