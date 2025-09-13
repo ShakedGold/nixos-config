@@ -290,6 +290,7 @@
       libxkbcommon
       alsa-lib
       mesa
+      libGL
     ]);
 
   # List packages installed in system profile. To search, run:
