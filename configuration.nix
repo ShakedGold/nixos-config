@@ -398,6 +398,7 @@
     cmake
     obsidian
     onlyoffice-bin
+    pkg-config
   ];
 
   programs.noisetorch.enable = true;
