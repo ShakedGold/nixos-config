@@ -399,6 +399,7 @@
     obsidian
     onlyoffice-bin
     pkg-config
+    ftb-app
   ];
 
   programs.noisetorch.enable = true;
