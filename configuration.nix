@@ -252,16 +252,10 @@
       "x-scheme-handler/unknown" = "/run/current-system/sw/share/applications/zen-beta.desktop";
     };
   };
-
-  services.zerotierone = {
-    enable = true;
-    joinNetworks = [
-      "233ccaac27ac343e"
-    ];
-  };
-
   programs.gamescope.enable = true;
   programs.gamemode.enable = true;
+
+  programs.hyprland.enable = true;
 
   # nix-ld
   programs.nix-ld.enable = true;
