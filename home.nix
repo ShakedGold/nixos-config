@@ -237,7 +237,7 @@ in {
     EDITOR = "nvim";
     BROWSER = "zen-beta";
     TERMINAL = "ghostty";
-    # XDG_CURRENT_DESKTOP = "KDE";
+    XDG_CURRENT_DESKTOP = "KDE";
   };
 
   xdg.desktopEntries = {
