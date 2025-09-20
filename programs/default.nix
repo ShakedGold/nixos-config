@@ -13,6 +13,5 @@
     ./zellij.nix
 
     ./nixvim
-    ./hyprland
   ];
 }
