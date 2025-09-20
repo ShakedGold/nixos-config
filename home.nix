@@ -182,7 +182,6 @@ in {
   home.packages = with pkgs; [
     nixos-build
     run-or-raise
-    hyprland
     papirus-icon-theme
   ];
 
@@ -192,7 +191,6 @@ in {
     extraPortals = with pkgs; [
       xdg-desktop-portal-gtk
       kdePackages.xdg-desktop-portal-kde
-      xdg-desktop-portal-hyprland
     ];
     xdgOpenUsePortal = true;
   };
