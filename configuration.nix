@@ -229,7 +229,6 @@
   # Allow unfree packages
   nixpkgs.config = {
     allowUnfree = true;
-    cudaSupport = true;
   };
   nixpkgs.config.allowUnsupportedSystem = true;
   nixpkgs.config.permittedInsecurePackages = [
