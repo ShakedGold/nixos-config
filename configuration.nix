@@ -14,7 +14,7 @@ with lib; let
   hypr-plugin-dir = pkgs.symlinkJoin {
     name = "hyrpland-plugins";
     paths = with hyprPluginPkgs; [
-      split-monitor-workspaces
+      split-monitor-workspaces.packages.${pkgs.system}.split-monitor-workspaces
     ];
   };
 in {
