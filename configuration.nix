@@ -8,16 +8,7 @@
   lib,
   inputs,
   ...
-}:
-with lib; let
-  hyprPluginPkgs = inputs.hyprland-plugins.packages.${pkgs.system};
-  hypr-plugin-dir = pkgs.symlinkJoin {
-    name = "hyrpland-plugins";
-    paths = with hyprPluginPkgs; [
-      split-monitor-workspaces.packages.${pkgs.system}.split-monitor-workspaces
-    ];
-  };
-in {
+}: {
   imports = [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
