@@ -394,6 +394,8 @@
     pkg-config
     ftb-app
     wofi
+
+    waybar
   ];
 
   programs.noisetorch.enable = true;
