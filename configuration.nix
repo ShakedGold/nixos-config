@@ -395,6 +395,8 @@
     pkg-config
     ftb-app
     wofi
+
+    hyprpaper
   ];
 
   programs.noisetorch.enable = true;
