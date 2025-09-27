@@ -393,6 +393,7 @@
     onlyoffice-bin
     pkg-config
     ftb-app
+    wofi
   ];
 
   programs.noisetorch.enable = true;
