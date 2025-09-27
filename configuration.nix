@@ -255,6 +255,7 @@
   programs.gamemode.enable = true;
 
   programs.hyprland.enable = true;
+  programs.waybar.enable = true;
 
   # nix-ld
   programs.nix-ld.enable = true;
@@ -394,8 +395,6 @@
     pkg-config
     ftb-app
     wofi
-
-    waybar
   ];
 
   programs.noisetorch.enable = true;
