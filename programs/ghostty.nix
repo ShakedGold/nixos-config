@@ -11,7 +11,7 @@
       background-opacity = 0.9;
       background-blur = true;
       confirm-close-surface = false;
-      theme = "catppuccin-mocha";
+      theme = "Catppuccin Mocha";
     };
   };
 }
