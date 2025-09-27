@@ -397,6 +397,7 @@
     wofi
 
     hyprpaper
+    hyprlock
   ];
 
   programs.noisetorch.enable = true;
