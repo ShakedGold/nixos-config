@@ -65,9 +65,7 @@
       theme = "catppuccin-mocha";
       default_layout = "compact";
       show_startup_tips = false;
-      ui = {
-        pane_frames = false;
-      };
+      pane_frames = false;
     };
     enableZshIntegration = true;
     exitShellOnExit = true;
