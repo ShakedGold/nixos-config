@@ -12,6 +12,7 @@
       background-blur = true;
       confirm-close-surface = false;
       theme = "Catppuccin Mocha";
+      gtk-single-instance = true;
     };
   };
 }
