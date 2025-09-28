@@ -1,5 +1,4 @@
-{pkgs, ...}
-: {
+{pkgs, ...}: {
   programs.fastfetch = {
     enable = true;
     settings = {
@@ -21,8 +20,8 @@
         };
         bar = {
           width = 10;
-          charElapsed = "■";
-          charTotal = "-";
+          char.elapsed = "■";
+          char.total = "-";
         };
         percent = {
           type = 9;
