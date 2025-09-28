@@ -11,7 +11,7 @@ in {
       cursor.theme = "macOS";
       iconTheme = "Papirus-Dark";
       colorScheme = "BreezeDark";
-      wallpaper = "${config.home.homeDirectory}/.config/home-manager/wallpaper.png";
+      wallpaper = "${config.home.homeDirectory}/.config/nixos/wallpaper.png";
       enableMiddleClickPaste = false;
 
       windowDecorations = {
