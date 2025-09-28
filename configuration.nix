@@ -394,11 +394,12 @@
     onlyoffice-bin
     pkg-config
     ftb-app
-    wofi
+    playerctl
+    spotify-tui
 
     hyprpaper
     hyprlock
-    playerctl
+    wofi
   ];
 
   programs.noisetorch.enable = true;
