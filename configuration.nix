@@ -395,7 +395,7 @@
     pkg-config
     ftb-app
     playerctl
-    spotify-tui
+    spotify-player
 
     hyprpaper
     hyprlock
