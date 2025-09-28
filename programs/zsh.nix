@@ -71,6 +71,7 @@ in {
       source ${prompt}
 
       [[ ! -d /tmp/.nvim-undo-dir ]] && mkdir /tmp/.nvim-undo-dir
+      fastfetch
     '';
 
     oh-my-zsh = {
