@@ -1,6 +1,6 @@
 {pkgs, ...}: let
   nixos-build = pkgs.writeShellScriptBin "nixos-build" ''
-    pushd $HOME/.config/home-manager
+    pushd $HOME/.config/nixos
     $EDITOR configuration.nix
     alejandra . &>/dev/false
     git --no-pager diff -U0 main

@@ -398,6 +398,7 @@
 
     hyprpaper
     hyprlock
+    playerctl
   ];
 
   programs.noisetorch.enable = true;
