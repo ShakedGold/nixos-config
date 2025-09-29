@@ -61,7 +61,7 @@ in {
       ZVM_VI_INSERT_ESCAPE_BINDKEY=jk
       ZVM_SYSTEM_CLIPBOARD_ENABLED=true
       ZVM_VI_HIGHLIGHT_FOREGROUND=#888888           # Hex value
-      ZVM_VI_HIGHLIGHT_BACKGROUND=#333300           # Hex value
+      ZVM_VI_HIGHLIGHT_BACKGROUND=#a17d64           # Hex value
     '';
 
     initContent = ''
