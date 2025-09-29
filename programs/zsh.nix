@@ -58,6 +58,10 @@ in {
     envExtra = ''
       ZSH_TMUX_FIXTERM_WITH_256COLOR=true
       ZSH_TMUX_UNICODE=true
+      VI_MODE_SET_CURSOR=true
+
+      MODE_INDICATOR="%F{white}+%f"
+      INSERT_MODE_INDICATOR="%F{yellow}+%f"
     '';
 
     initContent = ''
@@ -71,6 +75,8 @@ in {
       source ${prompt}
 
       [[ ! -d /tmp/.nvim-undo-dir ]] && mkdir /tmp/.nvim-undo-dir
+
+
       fastfetch
     '';
 
@@ -79,6 +85,7 @@ in {
       plugins = [
         "git"
         "tmux"
+        "vi-mode"
       ];
     };
 
