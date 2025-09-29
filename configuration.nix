@@ -127,7 +127,7 @@
   services.displayManager.sddm.wayland.enable = true;
   services.displayManager.autoLogin.enable = true;
   services.displayManager.autoLogin.user = "shaked";
-  services.xserver.displayManager.defaultSession = "hyprland";
+  services.displayManager.defaultSession = "hyprland";
   services.desktopManager.plasma6.enable = true;
   environment.plasma6.excludePackages = with pkgs.kdePackages; [
     konsole
