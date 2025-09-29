@@ -60,9 +60,8 @@ in {
       ZSH_TMUX_UNICODE=true
       ZVM_VI_INSERT_ESCAPE_BINDKEY=jk
       ZVM_SYSTEM_CLIPBOARD_ENABLED=true
-      ZVM_VI_HIGHLIGHT_FOREGROUND=#008800           # Hex value
-      ZVM_VI_HIGHLIGHT_BACKGROUND=#888800           # Hex value
-      ZVM_VI_HIGHLIGHT_EXTRASTYLE=bold,underline    # bold and underline
+      ZVM_VI_HIGHLIGHT_FOREGROUND=#888888           # Hex value
+      ZVM_VI_HIGHLIGHT_BACKGROUND=#333300           # Hex value
     '';
 
     initContent = ''
