@@ -401,6 +401,7 @@
     hyprpaper
     hyprlock
     wofi
+    wofi-power-menu.packages.${system}.default
   ];
 
   programs.noisetorch.enable = true;
