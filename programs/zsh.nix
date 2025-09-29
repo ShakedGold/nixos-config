@@ -58,10 +58,7 @@ in {
     envExtra = ''
       ZSH_TMUX_FIXTERM_WITH_256COLOR=true
       ZSH_TMUX_UNICODE=true
-      VI_MODE_SET_CURSOR=true
-
-      MODE_INDICATOR="%F{white}+%f"
-      INSERT_MODE_INDICATOR="%F{yellow}+%f"
+      ZVM_VI_INSERT_ESCAPE_BINDKEY=jk
     '';
 
     initContent = ''
@@ -76,7 +73,6 @@ in {
 
       [[ ! -d /tmp/.nvim-undo-dir ]] && mkdir /tmp/.nvim-undo-dir
 
-
       fastfetch
     '';
 
@@ -85,7 +81,6 @@ in {
       plugins = [
         "git"
         "tmux"
-        "vi-mode"
       ];
     };
 
@@ -99,6 +94,11 @@ in {
           rev = "v0.8.0";
           sha256 = "1lzrn0n4fxfcgg65v0qhnj7wnybybqzs4adz7xsrkgmcsr0ii8b7";
         };
+      }
+      {
+        name = "vi-mode";
+        src = pkgs.zsh-vi-mode;
+        file = "share/zsh-vi-mode/zsh-vi-mode.plugin.zsh";
       }
     ];
   };
