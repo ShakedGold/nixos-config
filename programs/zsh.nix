@@ -53,6 +53,7 @@ in {
       nix-shell = "export NIX_SHELL=1; nix-shell";
       c = "wl-copy";
       v = "wl-paste";
+      vim = "nvim";
     };
 
     envExtra = ''
