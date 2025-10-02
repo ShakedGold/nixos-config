@@ -21,7 +21,7 @@
         ],
       )
     '';
-    extraConfigFiles."keybindings".text = ''
+    extraConfigFiles."keybindings.ron".text = ''
       Keybindings(
         next: "Ctrl+J",
         previous: "Ctrl+K",
