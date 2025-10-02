@@ -21,6 +21,12 @@
         ],
       )
     '';
+    extraConfig = ''
+      Keybindings(
+        next: "Ctrl+J",
+        previous: "Ctrl+K",
+      )
+    '';
     extraCss =
       # css
       ''
