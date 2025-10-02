@@ -36,6 +36,7 @@
     };
 
     wofi-power-menu.url = "github:szaffarano/wofi-power-menu";
+    anyrun.url = "github:anyrun-org/anyrun";
   };
 
   outputs = inputs @ {
@@ -56,6 +57,14 @@
       specialArgs = {inherit inputs;};
       modules = [
         ./configuration.nix
+
+        (
+          {modulesPath, ...}: {
+            # Important! We disable home-manager's module to avoid option
+            # definition collisions
+            disabledModules = ["${modulesPath}/programs/anyrun.nix"];
+          }
+        )
 
         # Import the previous configuration.nix we used,
         # so the old configuration file still takes effect
