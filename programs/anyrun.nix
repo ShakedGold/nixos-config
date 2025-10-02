@@ -3,7 +3,6 @@
     enable = true;
     config = {
       hidePluginInfo = false;
-      showResultsImmediately = true;
       plugins = [
         "${pkgs.anyrun}/lib/libapplications.so"
         "${pkgs.anyrun}/lib/librink.so"
@@ -35,6 +34,16 @@
           ),
         ],
       )
+    '';
+    extraConfigFiles."keybinds.ron".text = ''
+      keybinds: [
+        Keybind(
+          ctrl: true,
+          alt: false,
+          key: "j",
+          action: down
+        )
+      ],
     '';
     extraCss =
       # css
