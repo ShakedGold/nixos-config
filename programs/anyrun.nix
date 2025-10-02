@@ -16,7 +16,7 @@
         engines: [
           Custom(
             name: "Startpage",
-            url: "https://www.startpage.com/do/dsearch?q={}"
+            url: "www.startpage.com/do/dsearch?q={}"
           ),
         ],
       )
