@@ -35,17 +35,15 @@
         ],
       )
     '';
-    extraConfigFiles."keybinds.ron".text = ''
-      Config(
-        keybinds: [
-          Keybind(
-            ctrl: true,
-            alt: false,
-            key: "J",
-            action: DOWN
-          )
-        ]
-      )
+    extraLines = ''
+      keybinds: [
+        Keybind(
+          ctrl: true,
+          alt: false,
+          key: "j",
+          action: DOWN
+        )
+      ]
     '';
     extraCss =
       # css
