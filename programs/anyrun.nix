@@ -1,7 +1,6 @@
 {pkgs, ...}: {
   programs.anyrun = {
     enable = true;
-    keyboardMode = true;
     config = {
       hidePluginInfo = false;
       plugins = [
@@ -37,14 +36,16 @@
       )
     '';
     extraConfigFiles."keybinds.ron".text = ''
-      keybinds: [
-        Keybind(
-          ctrl: true,
-          alt: false,
-          key: "J",
-          action: DOWN
-        )
-      ],
+      Config(
+        keybinds: [
+          Keybind(
+            ctrl: true,
+            alt: false,
+            key: "J",
+            action: DOWN
+          )
+        ]
+      )
     '';
     extraCss =
       # css
