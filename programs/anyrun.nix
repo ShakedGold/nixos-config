@@ -1,6 +1,7 @@
 {pkgs, ...}: {
   programs.anyrun = {
     enable = true;
+    keyboardMode = true;
     config = {
       hidePluginInfo = false;
       plugins = [
@@ -9,7 +10,6 @@
         "${pkgs.anyrun}/lib/libkidex.so"
         "${pkgs.anyrun}/lib/libwebsearch.so"
       ];
-      keyboardMode = true;
       # keybinds = [
       #   {
       #     ctrl = true;
