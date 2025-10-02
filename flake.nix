@@ -75,5 +75,24 @@
         }
       ];
     };
+    homeConfigurations.user = inputs.home-manager.lib.homeManagerConfiguration {
+      modules = [
+        (
+          {modulesPath, ...}: {
+            # Important! We disable home-manager's module to avoid option
+            # definition collisions
+            disabledModules = ["${modulesPath}/programs/anyrun.nix"];
+          }
+        )
+        inputs.anyrun.homeManagerModules.default
+        {
+          programs.anyrun = {
+            # ...
+          };
+        }
+
+        ./home.nix
+      ];
+    };
   };
 }

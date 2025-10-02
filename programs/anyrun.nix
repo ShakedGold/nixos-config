@@ -1,12 +1,6 @@
-{
-  inputs,
-  pkgs,
-  system,
-  ...
-}: {
+{pkgs, ...}: {
   programs.anyrun = {
     enable = true;
-    package = inputs.anyrun.packages.${system}.default;
     config = {
       hidePluginInfo = false;
       plugins = [
