@@ -14,11 +14,9 @@
       Config(
         prefix: "?",
         engines: [
-          Google,
-          DuckDuckGo,
           Custom(
-            name: "MySearch",
-            url: "mysearch.example.com/?q={}"
+            name: "Startpage",
+            url: "https://www.startpage.com/do/dsearch?q={}"
           ),
         ],
       )
