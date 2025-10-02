@@ -40,7 +40,7 @@
         Keybind(
           ctrl: true,
           alt: false,
-          key: "j",
+          key: "J",
           action: DOWN
         )
       ],
