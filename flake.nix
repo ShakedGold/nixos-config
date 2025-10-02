@@ -58,14 +58,6 @@
       modules = [
         ./configuration.nix
 
-        (
-          {modulesPath, ...}: {
-            # Important! We disable home-manager's module to avoid option
-            # definition collisions
-            disabledModules = ["${modulesPath}/programs/anyrun.nix"];
-          }
-        )
-
         # Import the previous configuration.nix we used,
         # so the old configuration file still takes effect
         home-manager.nixosModules.home-manager

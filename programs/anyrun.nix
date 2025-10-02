@@ -1,6 +1,12 @@
-{pkgs, ...}: {
-  inputs.anyrun.homeManagerModules.default = {
+{
+  inputs,
+  pkgs,
+  system,
+  ...
+}: {
+  programs.anyrun = {
     enable = true;
+    package = inputs.anyrun.packages.${system}.default;
     config = {
       hidePluginInfo = false;
       plugins = [
