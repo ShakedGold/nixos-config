@@ -9,6 +9,20 @@
         "${pkgs.anyrun}/lib/libkidex.so"
         "${pkgs.anyrun}/lib/libwebsearch.so"
       ];
+      keybinds = [
+        {
+          ctrl = true;
+          alt = false;
+          key = "j";
+          action = "down";
+        }
+        {
+          ctrl = true;
+          alt = false;
+          key = "k";
+          action = "up";
+        }
+      ];
     };
     extraConfigFiles."websearch.ron".text = ''
       Config(
@@ -19,12 +33,6 @@
             url: "www.startpage.com/do/dsearch?q={}"
           ),
         ],
-      )
-    '';
-    extraConfigFiles."keybindings.ron".text = ''
-      Keybindings(
-        next: "Ctrl+J",
-        previous: "Ctrl+K",
       )
     '';
     extraCss =
