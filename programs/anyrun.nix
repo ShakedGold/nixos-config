@@ -9,6 +9,7 @@
         "${pkgs.anyrun}/lib/libkidex.so"
         "${pkgs.anyrun}/lib/libwebsearch.so"
       ];
+      keyboardMode = true;
       # keybinds = [
       #   {
       #     ctrl = true;
