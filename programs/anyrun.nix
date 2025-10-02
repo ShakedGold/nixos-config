@@ -10,6 +10,21 @@
         "${pkgs.anyrun}/lib/libwebsearch.so"
       ];
     };
+    extraConfigFiles."websearch.ron".text = ''
+      Config(
+        prefix: "?",
+        // Options: Google, Ecosia, Bing, DuckDuckGo, Custom
+        //
+        // Custom engines can be defined as such:
+        Custom(
+          name: "Startpage",
+          url: "www.startpage.com/do/dsearch?q={}",
+        )
+        //
+        // NOTE: `{}` is replaced by the search query and `https://` is automatically added in front.
+        engines: [Startpage]
+      )
+    '';
     extraCss =
       # css
       ''
