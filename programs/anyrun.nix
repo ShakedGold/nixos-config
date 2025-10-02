@@ -41,16 +41,16 @@
         ],
       )
     '';
-    extraLines = ''
-      keybinds: [
-        Keybind(
-          ctrl: true,
-          alt: false,
-          key: "j",
-          action: DOWN
-        )
-      ]
-    '';
+    # extraLines = ''
+    #   keybinds: [
+    #     Keybind(
+    #       ctrl: true,
+    #       alt: false,
+    #       key: "j",
+    #       action: DOWN
+    #     )
+    #   ]
+    # '';
     extraCss =
       # css
       ''
