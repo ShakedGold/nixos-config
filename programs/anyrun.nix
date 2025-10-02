@@ -1,5 +1,5 @@
 {pkgs, ...}: {
-  programs.anyrun = {
+  inputs.anyrun.homeManagerModules.default = {
     enable = true;
     config = {
       hidePluginInfo = false;
