@@ -21,7 +21,7 @@
         ],
       )
     '';
-    extraConfig = ''
+    extraConfigFiles."keybindings".text = ''
       Keybindings(
         next: "Ctrl+J",
         previous: "Ctrl+K",
