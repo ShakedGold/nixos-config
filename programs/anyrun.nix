@@ -12,7 +12,7 @@
     };
     extraConfigFiles."websearch.ron".text = ''
       Config(
-        prefix: "?",
+        prefix: "",
         engines: [
           Custom(
             name: "Startpage",
