@@ -12,12 +12,15 @@
     };
     extraConfigFiles."websearch.ron".text = ''
       Config(
-        prefix: "!",
-        Custom(
-          name: "Startpage",
-          url: "www.startpage.com/do/dsearch?q={}",
-        ),
-        engines: [Startpage]
+        prefix: "?",
+        engines: [
+          Google,
+          DuckDuckGo,
+          Custom(
+            name: "MySearch",
+            url: "mysearch.example.com/?q={}"
+          ),
+        ],
       )
     '';
     extraCss =
