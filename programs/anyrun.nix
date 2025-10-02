@@ -41,7 +41,7 @@
           ctrl: true,
           alt: false,
           key: "j",
-          action: down
+          action: DOWN
         )
       ],
     '';
