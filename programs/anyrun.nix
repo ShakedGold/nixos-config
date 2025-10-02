@@ -12,7 +12,7 @@
     };
     extraConfigFiles."websearch.ron".text = ''
       Config(
-        prefix: "?",
+        prefix: "!",
         // Options: Google, Ecosia, Bing, DuckDuckGo, Custom
         //
         // Custom engines can be defined as such:
