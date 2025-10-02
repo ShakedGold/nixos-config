@@ -2,7 +2,7 @@
   programs.anyrun = {
     enable = true;
     config = {
-      hidePluginInfo = true;
+      hidePluginInfo = false;
       plugins = [
         "${pkgs.anyrun}/lib/libapplications.so"
         "${pkgs.anyrun}/lib/librink.so"
