@@ -29,6 +29,7 @@
         clangd.enable = true;
         dockerls.enable = true;
         cmake.enable = true;
+        csharp_ls.enable = true;
       };
 
       keymaps = {
