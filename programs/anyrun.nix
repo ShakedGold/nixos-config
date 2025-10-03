@@ -1,4 +1,5 @@
-{pkgs, ...}: {
+{ pkgs, ... }:
+{
   programs.anyrun = {
     enable = true;
     config = {
@@ -8,21 +9,8 @@
         "${pkgs.anyrun}/lib/librink.so"
         "${pkgs.anyrun}/lib/libkidex.so"
         "${pkgs.anyrun}/lib/libwebsearch.so"
+        "${pkgs.anyrun}/lib/libshell.so"
       ];
-      # keybinds = [
-      #   {
-      #     ctrl = true;
-      #     alt = false;
-      #     key = "j";
-      #     action = "down";
-      #   }
-      #   {
-      #     ctrl = true;
-      #     alt = false;
-      #     key = "k";
-      #     action = "up";
-      #   }
-      # ];
     };
     extraConfigFiles."websearch.ron".text = ''
       Config(
@@ -35,16 +23,6 @@
         ],
       )
     '';
-    # extraLines = ''
-    #   keybinds: [
-    #     Keybind(
-    #       ctrl: true,
-    #       alt: false,
-    #       key: "j",
-    #       action: DOWN
-    #     )
-    #   ]
-    # '';
     extraCss =
       # css
       ''
