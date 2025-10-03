@@ -23,6 +23,12 @@
         ],
       )
     '';
+    extraConfigFiles."shell.ron".text = ''
+      Config(
+        prefix: "",
+        shell: "/usr/bin/env zsh"
+      )
+    '';
     extraCss =
       # css
       ''
