@@ -399,6 +399,7 @@
     playerctl
     spotify-player
     godot-mono
+    dotnet-sdk
 
     hyprpaper
     hyprlock
