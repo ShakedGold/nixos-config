@@ -1,4 +1,5 @@
-{pkgs, ...}: let
+{ pkgs, ... }:
+let
   nixos-build = pkgs.writeShellScriptBin "nixos-build" ''
     pushd $HOME/.config/nixos
     $EDITOR configuration.nix
@@ -154,7 +155,8 @@
       $COMMAND &
     fi
   '';
-in {
+in
+{
   imports = [
     ./programs
     ./services
@@ -191,6 +193,7 @@ in {
     extraPortals = with pkgs; [
       xdg-desktop-portal-gtk
       kdePackages.xdg-desktop-portal-kde
+      xdg-desktop-portal-hyprland
     ];
     xdgOpenUsePortal = true;
   };
@@ -247,8 +250,8 @@ in {
       type = "Application";
       icon = "1password";
       comment = "Password manager and secure wallet";
-      mimeType = ["x-scheme-handler/onepassword"];
-      categories = ["Office"];
+      mimeType = [ "x-scheme-handler/onepassword" ];
+      categories = [ "Office" ];
       terminal = false;
     };
     "davinci-resolve-studio" = {
