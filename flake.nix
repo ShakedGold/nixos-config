@@ -60,38 +60,19 @@
 
         # Import the previous configuration.nix we used,
         # so the old configuration file still takes effect
-        # home-manager.nixosModules.home-manager
-        # {
-        #   home-manager.useUserPackages = true;
-        #   home-manager.sharedModules = [
-        #     plasma-manager.homeModules.plasma-manager
-        #     inputs.nixvim.homeModules.nixvim
-        #   ];
-        #   home-manager.backupFileExtension = "backup";
-
-        #   # This should point to your home.nix path of course. For an example
-        #   # of this see ./home.nix in this directory.
-        #   home-manager.users."${username}" = import ./home.nix;
-        # }
-      ];
-    };
-    homeConfigurations.user = inputs.home-manager.lib.homeManagerConfiguration {
-      modules = [
-        (
-          {modulesPath, ...}: {
-            # Important! We disable home-manager's module to avoid option
-            # definition collisions
-            disabledModules = ["${modulesPath}/programs/anyrun.nix"];
-          }
-        )
-        inputs.anyrun.homeManagerModules.default
+        home-manager.nixosModules.home-manager
         {
-          programs.anyrun = {
-            # ...
-          };
-        }
+          home-manager.useUserPackages = true;
+          home-manager.sharedModules = [
+            plasma-manager.homeModules.plasma-manager
+            inputs.nixvim.homeModules.nixvim
+          ];
+          home-manager.backupFileExtension = "backup";
 
-        ./home.nix
+          # This should point to your home.nix path of course. For an example
+          # of this see ./home.nix in this directory.
+          home-manager.users."${username}" = import ./home.nix;
+        }
       ];
     };
   };
