@@ -10,6 +10,7 @@
         "${pkgs.anyrun}/lib/libkidex.so"
         "${pkgs.anyrun}/lib/libwebsearch.so"
         "${pkgs.anyrun}/lib/libshell.so"
+        "${pkgs.anyrun}/lib/randr.so"
       ];
     };
     extraConfigFiles."websearch.ron".text = ''
