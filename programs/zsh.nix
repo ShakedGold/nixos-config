@@ -3,7 +3,8 @@
   lib,
   pkgs,
   ...
-}: let
+}:
+let
   prompt = pkgs.writers.writeBash "prompt" ''
     get_git_nix_prompt2() {
       local nix_prompt=""
@@ -33,7 +34,8 @@
     ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}%{$fg[red]%}] "
     ZSH_THEME_GIT_PROMPT_DIRTY=" %{$fg[red]%}⚡%{$reset_color%}"
   '';
-in {
+in
+{
   programs.zsh = {
     enable = true;
     enableCompletion = true;
@@ -103,6 +105,9 @@ in {
         name = "vi-mode";
         src = pkgs.zsh-vi-mode;
         file = "share/zsh-vi-mode/zsh-vi-mode.plugin.zsh";
+      }
+      {
+        name = "zsh-fzf-history-search";
       }
     ];
   };
