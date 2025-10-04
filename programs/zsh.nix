@@ -93,7 +93,7 @@ in
     zplug = {
       enable = true;
       plugins = [
-        { name = "joshskidmore/zsh-fzf-history-search" }
+        { name = "joshskidmore/zsh-fzf-history-search"; }
       ];
     };
 
