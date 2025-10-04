@@ -400,6 +400,7 @@
     spotify-player
     godot-mono
     dotnet-sdk_9
+    unityhub
 
     hyprpaper
     hyprlock
