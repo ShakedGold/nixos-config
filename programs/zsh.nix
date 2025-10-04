@@ -87,14 +87,6 @@ in
       plugins = [
         "git"
         "tmux"
-        "zsh-fzf-history-search"
-      ];
-    };
-
-    zplug = {
-      enable = true;
-      plugins = [
-        { name = "joshskidmore/zsh-fzf-history-search"; }
       ];
     };
 
