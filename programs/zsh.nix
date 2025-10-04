@@ -90,6 +90,13 @@ in
       ];
     };
 
+    zplug = {
+      enable = true;
+      plugins = [
+        { name = "joshskidmore/zsh-fzf-history-search" }
+      ];
+    };
+
     plugins = [
       {
         name = "zsh-nix-shell";
@@ -105,9 +112,6 @@ in
         name = "vi-mode";
         src = pkgs.zsh-vi-mode;
         file = "share/zsh-vi-mode/zsh-vi-mode.plugin.zsh";
-      }
-      {
-        name = "zsh-fzf-history-search";
       }
     ];
   };
