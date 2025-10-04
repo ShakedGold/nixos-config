@@ -30,6 +30,7 @@
         dockerls.enable = true;
         cmake.enable = true;
         csharp_ls.enable = true;
+        vimls.enable = true;
       };
 
       keymaps = {
