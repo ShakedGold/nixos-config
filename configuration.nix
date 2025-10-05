@@ -401,6 +401,7 @@
     godot-mono
     dotnet-sdk_9
     unityhub
+    jetbrains.rider
 
     hyprpaper
     hyprlock
