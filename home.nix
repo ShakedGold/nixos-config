@@ -187,15 +187,18 @@ in
     papirus-icon-theme
   ];
 
-  xdg.portal = {
-    enable = true;
-    config.common.default = "*";
-    wlr.enable = true;
-    extraPortals = with pkgs; [
-      xdg-desktop-portal-gtk
-      kdePackages.xdg-desktop-portal-kde
-      # xdg-desktop-portal-hyprland
-    ];
+  xdg = {
+    portal = {
+      enable = true;
+      xdgOpenUsePortal = true;
+      config.common.default = "*";
+      wlr.enable = true;
+      extraPortals = with pkgs; [
+        xdg-desktop-portal-gtk
+        kdePackages.xdg-desktop-portal-kde
+        # xdg-desktop-portal-hyprland
+      ];
+    };
     mime.enable = true;
     mimeApps = {
       enable = true;
@@ -208,7 +211,6 @@ in
       enable = true;
       createDirectories = true;
     };
-    xdgOpenUsePortal = true;
   };
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
