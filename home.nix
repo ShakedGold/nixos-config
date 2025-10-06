@@ -190,11 +190,24 @@ in
   xdg.portal = {
     enable = true;
     config.common.default = "*";
+    wlr.enable = true;
     extraPortals = with pkgs; [
       xdg-desktop-portal-gtk
       kdePackages.xdg-desktop-portal-kde
       # xdg-desktop-portal-hyprland
     ];
+    mime.enable = true;
+    mimeApps = {
+      enable = true;
+      defaultApplications = {
+        "x-scheme-handler/http" = [ "firefox.desktop" ];
+        "x-scheme-handler/https" = "firefox.desktop";
+      };
+    };
+    userDirs = {
+      enable = true;
+      createDirectories = true;
+    };
     xdgOpenUsePortal = true;
   };
 

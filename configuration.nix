@@ -243,16 +243,6 @@
     corefonts
   ];
 
-  xdg.mime = {
-    enable = true;
-    defaultApplications = {
-      "text/html" = "/run/current-system/sw/share/applications/firefox.desktop";
-      "x-scheme-handler/http" = "/run/current-system/sw/share/applications/firefox.desktop";
-      "x-scheme-handler/https" = "/run/current-system/sw/share/applications/firefox.desktop";
-      "x-scheme-handler/about" = "/run/current-system/sw/share/applications/firefox.desktop";
-      "x-scheme-handler/unknown" = "/run/current-system/sw/share/applications/firefox.desktop";
-    };
-  };
   programs.gamescope.enable = true;
   programs.gamemode.enable = true;
 
