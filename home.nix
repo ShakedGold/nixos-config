@@ -192,7 +192,6 @@ in
       enable = true;
       xdgOpenUsePortal = true;
       config.common.default = "*";
-      wlr.enable = true;
       extraPortals = with pkgs; [
         xdg-desktop-portal-gtk
         kdePackages.xdg-desktop-portal-kde
