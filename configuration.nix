@@ -392,6 +392,7 @@
     dotnet-sdk_9
     unityhub
     jetbrains.rider
+    localsend
 
     hyprpaper
     hyprlock
