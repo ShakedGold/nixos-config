@@ -396,6 +396,7 @@
     unityhub
     jetbrains.rider
     localsend
+    zerotierone
 
     hyprpaper
     hyprlock
