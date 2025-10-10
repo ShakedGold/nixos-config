@@ -396,7 +396,6 @@
     unityhub
     jetbrains.rider
     localsend
-    zerotierone
 
     hyprpaper
     hyprlock
@@ -428,6 +427,11 @@
   ];
 
   programs.kdeconnect.enable = true;
+
+  services.zerotierone = {
+  enable = true;
+};
+
 
   services.kanata = {
     enable = true;
