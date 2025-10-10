@@ -90,6 +90,9 @@
     allowedUDPPortRanges = allowedTCPPortRanges;
   };
 
+  # Tailscale
+  services.tailscale.enable = true;
+
   # Set your time zone.
   time.timeZone = "Asia/Jerusalem";
 
