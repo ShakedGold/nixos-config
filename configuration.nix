@@ -399,6 +399,7 @@
     grim
     slurp
 
+    hyprpolkitagent
     hyprpaper
     hyprlock
     wofi
