@@ -194,8 +194,9 @@ in
       config.common.default = "*";
       extraPortals = with pkgs; [
         xdg-desktop-portal-gtk
-        kdePackages.xdg-desktop-portal-kde
-        # xdg-desktop-portal-hyprland
+        # kdePackages.xdg-desktop-portal-kde
+        xdg-desktop-portal-hyprland
+        xdg-desktop-portal
       ];
     };
     mime.enable = true;

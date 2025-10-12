@@ -396,6 +396,8 @@
     unityhub
     jetbrains.rider
     localsend
+    grim
+    slurp
 
     hyprpaper
     hyprlock
