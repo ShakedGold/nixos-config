@@ -398,6 +398,7 @@
     localsend
     grim
     slurp
+    kdePackages.qt6ct
 
     hyprpolkitagent
     hyprpaper
