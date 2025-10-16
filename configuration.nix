@@ -399,7 +399,6 @@
     grim
     slurp
     kdePackages.qt6ct
-    ida-free
 
     hyprpolkitagent
     hyprpaper
@@ -434,9 +433,8 @@
   programs.kdeconnect.enable = true;
 
   services.zerotierone = {
-  enable = true;
-};
-
+    enable = true;
+  };
 
   services.kanata = {
     enable = true;
