@@ -31,6 +31,16 @@ let
     popd
   '';
 
+  toggle-monitor = pkgs.writeShellScriptBin "toggle-monitor" ''
+    mode=$1
+    if [[ mode == "ON" ]]; then
+      hyprctl keyword monitor "HDMI-A-2,1920x1080@75,2560x0,1,transform,3"
+    fi
+    if [[ mode == "OFF" ]]; then
+      hyprctl keyword monitor "HDMI-A-2,disable"
+    fi
+  '';
+
   run-or-raise = pkgs.writeShellScriptBin "run-or-raise" ''
     #!/usr/bin/env bash
     # Usage: ww -f "window class filter" -c "run if not found"
@@ -184,6 +194,7 @@ in
   home.packages = with pkgs; [
     nixos-build
     run-or-raise
+    toggle-monitor
     papirus-icon-theme
   ];
 
