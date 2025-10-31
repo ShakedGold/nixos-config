@@ -399,7 +399,6 @@
     grim
     slurp
     kdePackages.qt6ct
-    ida-free
 
     hyprpolkitagent
     hyprpaper
