@@ -31,6 +31,7 @@
         cmake.enable = true;
         csharp_ls.enable = true;
         vimls.enable = true;
+        ts_ls.enable = true;
       };
 
       keymaps = {
