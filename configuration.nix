@@ -135,7 +135,6 @@
   services.desktopManager.plasma6.enable = true;
   environment.plasma6.excludePackages = with pkgs.kdePackages; [
     konsole
-    xwaylandvideobridge
     plasma-browser-integration
   ];
   programs.dconf.enable = true;
