@@ -369,7 +369,6 @@
     clang-tools
     gitflow
     git # TODO: remove this line when done configuring data43
-    inputs.kwin-effects-forceblur.packages.${pkgs.system}.default
     slurp
     jq
     openssl
