@@ -8,8 +8,7 @@
   lib,
   inputs,
   ...
-}:
-{
+}: {
   imports = [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
@@ -18,7 +17,7 @@
   # boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
   boot.loader.grub.enable = true;
-  boot.loader.grub.devices = [ "nodev" ];
+  boot.loader.grub.devices = ["nodev"];
   boot.loader.grub.efiSupport = true;
   boot.loader.grub.useOSProber = true;
   boot.kernelPackages = pkgs.linuxPackages_zen;
@@ -37,6 +36,11 @@
     Defaults pwfeedback # password input feedback - makes typed password visible as asterisks
   '';
 
+  services.udev.extraRules = ''
+    SUBSYSTEM=="usb", ATTRS{idVendor}=="057e", ATTRS{idProduct}=="3000", MODE="0666"
+    SUBSYSTEM=="usb", ATTRS{idVendor}=="0955", ATTRS{idProduct}=="7321", MODE="0666"
+  '';
+
   system.autoUpgrade = {
     enable = true;
     flags = [
@@ -53,7 +57,7 @@
     "snd-rawmidi"
     "v4l2loopback"
   ];
-  boot.extraModulePackages = with config.boot.kernelPackages; [ v4l2loopback ];
+  boot.extraModulePackages = with config.boot.kernelPackages; [v4l2loopback];
   security.polkit.enable = true;
 
   nix.settings.experimental-features = [
@@ -142,15 +146,15 @@
   nixpkgs.config.packageOverrides = pkgs: {
     nur =
       import
-        (builtins.fetchTarball {
-          # Get the revision by choosing a version from https://github.com/nix-community/NUR/commits/main
-          url = "https://github.com/nix-community/NUR/archive/33df6fc789f71aa6e203ee8053260ddc61d09174.tar.gz";
-          # Get the hash by running `nix-prefetch-url --unpack <url>` on the above url
-          sha256 = "02kzwkf914my1sshwzhg12hvqahp3x00ggfj0p166lqdajjg57bh";
-        })
-        {
-          inherit pkgs;
-        };
+      (builtins.fetchTarball {
+        # Get the revision by choosing a version from https://github.com/nix-community/NUR/commits/main
+        url = "https://github.com/nix-community/NUR/archive/33df6fc789f71aa6e203ee8053260ddc61d09174.tar.gz";
+        # Get the hash by running `nix-prefetch-url --unpack <url>` on the above url
+        sha256 = "02kzwkf914my1sshwzhg12hvqahp3x00ggfj0p166lqdajjg57bh";
+      })
+      {
+        inherit pkgs;
+      };
   };
 
   environment.sessionVariables = {
@@ -219,7 +223,7 @@
       "widget.use-xdg-desktop-portal.file-picker" = 1;
     };
     package = pkgs.firefox;
-    nativeMessagingHosts.packages = [ pkgs.firefoxpwa ];
+    nativeMessagingHosts.packages = [pkgs.firefoxpwa];
   };
 
   programs._1password.enable = true;
@@ -227,7 +231,7 @@
     enable = true;
     # Certain features, including CLI integration and system authentication support,
     # require enabling PolKit integration on some desktop environments (e.g. Plasma).
-    polkitPolicyOwners = [ "shaked" ];
+    polkitPolicyOwners = ["shaked"];
   };
 
   # Allow unfree packages
@@ -295,8 +299,8 @@
     protonup-qt
     steam-run
     (steam.override {
-      extraPkgs =
-        pkgs: with pkgs; [
+      extraPkgs = pkgs:
+        with pkgs; [
           gtk3
           mono
           libgdiplus
@@ -407,20 +411,20 @@
 
   programs.noisetorch.enable = true;
   programs.virt-manager.enable = true;
-  users.groups.libvirtd.members = [ "shaked" ];
+  users.groups.libvirtd.members = ["shaked"];
   virtualisation = {
     docker.enable = true;
     libvirtd.enable = true;
   };
   virtualisation.spiceUSBRedirection.enable = true;
-  virtualisation.libvirtd.qemu.vhostUserPackages = [ pkgs.virtiofsd ];
+  virtualisation.libvirtd.qemu.vhostUserPackages = [pkgs.virtiofsd];
 
   # add directx -> vulcan
   nixpkgs.overlays = [
     (self: super: {
       steam = super.steam.override {
-        extraPkgs =
-          pkgs: with pkgs; [
+        extraPkgs = pkgs:
+          with pkgs; [
             vkd3d
             dxvk
           ];
