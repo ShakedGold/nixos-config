@@ -210,6 +210,7 @@
       "geoclue"
       "input"
       "kvm"
+      "plugdev"
     ];
     packages = with pkgs; [
       kdePackages.kate
