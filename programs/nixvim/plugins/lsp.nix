@@ -27,7 +27,6 @@
         golangci_lint_ls.enable = true;
         lua_ls.enable = true;
         clangd.enable = true;
-        dockerls.enable = true;
         cmake.enable = true;
         csharp_ls.enable = true;
         vimls.enable = true;
