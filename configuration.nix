@@ -403,6 +403,7 @@
     slurp
     kdePackages.qt6ct
     ns-usbloader
+    jdk
 
     hyprpolkitagent
     hyprpaper
