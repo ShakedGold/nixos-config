@@ -156,6 +156,9 @@
         inherit pkgs;
       };
   };
+  nixpkgs.config.permittedInsecurePackages = [
+    "gradle-7.6.6"
+  ];
 
   environment.sessionVariables = {
     NIXOS_OZONE_WL = "1";
