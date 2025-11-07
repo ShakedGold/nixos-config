@@ -402,6 +402,7 @@
     grim
     slurp
     kdePackages.qt6ct
+    ns-usbloader
 
     hyprpolkitagent
     hyprpaper
