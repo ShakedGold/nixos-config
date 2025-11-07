@@ -7,7 +7,8 @@
   pkgs,
   modulesPath,
   ...
-}: {
+}:
+{
   imports = [
     (modulesPath + "/installer/scan/not-detected.nix")
   ];
@@ -18,9 +19,9 @@
     "ahci"
     "usbhid"
   ];
-  boot.initrd.kernelModules = [];
-  boot.kernelModules = ["kvm-amd"];
-  boot.extraModulePackages = [];
+  boot.initrd.kernelModules = [ ];
+  boot.kernelModules = [ "kvm-amd" ];
+  boot.extraModulePackages = [ ];
 
   fileSystems."/" = {
     device = "/dev/disk/by-uuid/dd701c4c-f638-4d6d-b3ab-ea3e2e0bc96f";
@@ -42,7 +43,7 @@
   };
 
   swapDevices = [
-    {device = "/dev/disk/by-uuid/ffc7c37b-d2d9-4ee8-b83d-0c0276d648f6";}
+    { device = "/dev/disk/by-uuid/ffc7c37b-d2d9-4ee8-b83d-0c0276d648f6"; }
   ];
 
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
@@ -63,7 +64,7 @@
   hardware.graphics.enable = true;
 
   # Load nvidia driver for Xorg and Wayland
-  services.xserver.videoDrivers = ["nvidia"];
+  services.xserver.videoDrivers = [ "nvidia" ];
 
   hardware.nvidia = {
     # Modesetting is required.
@@ -93,6 +94,6 @@
     nvidiaSettings = true;
 
     # Optionally, you may need to select the appropriate driver version for your specific GPU.
-    package = config.boot.kernelPackages.nvidiaPackages.beta;
+    package = config.boot.kernelPackages.nvidiaPackages.stable;
   };
 }
