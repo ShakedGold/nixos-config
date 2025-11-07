@@ -21,7 +21,7 @@
   boot.loader.grub.devices = [ "nodev" ];
   boot.loader.grub.efiSupport = true;
   boot.loader.grub.useOSProber = true;
-  boot.kernelPackages = pkgs.linuxPackages_latest;
+  boot.kernelPackages = pkgs.linuxPackages_zen;
   boot.kernelParams = lib.mkAfter [
     "nvidia-drm.modeset=1"
     "nvidia-drm.fbdev=0"
