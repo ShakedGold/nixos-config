@@ -429,6 +429,7 @@
           repo = "gamescope";
           rev = "5c58b15c0c2d609271151141a1ad7e97911cf10f";
           hash = "sha256-Xh6+wwhqeVM+9eVuHsnXOTOWR04ivxRMZ/SYWYD0gdI=";
+          fetchSubmodules = true;
         };
       });
     })
