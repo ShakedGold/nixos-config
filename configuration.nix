@@ -250,7 +250,11 @@
     corefonts
   ];
 
-  programs.gamescope.enable = true;
+  programs.gamescope = {
+    enable = true;
+    capSysNice = false;
+    package = pkgs.gamescope;
+  };
   programs.gamemode.enable = true;
 
   programs.hyprland.enable = true;
