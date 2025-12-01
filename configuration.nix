@@ -401,6 +401,7 @@
     jdk
     mangohud
     gamescope
+    nurl
 
     hyprpolkitagent
     hyprpaper
@@ -426,8 +427,8 @@
         src = prev.fetchFromGitHub {
           owner = "ValveSoftware";
           repo = "gamescope";
-          rev = "8045786067f7a7fd9fd3fff98c29588f314218a9";
-          sha256 = "sha256-...";
+          rev = "5c58b15c0c2d609271151141a1ad7e97911cf10f";
+          hash = "sha256-Xh6+wwhqeVM+9eVuHsnXOTOWR04ivxRMZ/SYWYD0gdI=";
         };
       });
     })
