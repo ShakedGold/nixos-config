@@ -299,15 +299,6 @@
     nodejs
     protonup-qt
     steam-run
-    (steam.override {
-      extraPkgs = pkgs:
-        with pkgs; [
-          gtk3
-          mono
-          libgdiplus
-          zlib
-        ];
-    })
     spotify
     vscode
     go
@@ -423,19 +414,6 @@
   };
   virtualisation.spiceUSBRedirection.enable = true;
   virtualisation.libvirtd.qemu.vhostUserPackages = [pkgs.virtiofsd];
-
-  # add directx -> vulcan
-  nixpkgs.overlays = [
-    (self: super: {
-      steam = super.steam.override {
-        extraPkgs = pkgs:
-          with pkgs; [
-            vkd3d
-            dxvk
-          ];
-      };
-    })
-  ];
 
   programs.kdeconnect.enable = true;
 
