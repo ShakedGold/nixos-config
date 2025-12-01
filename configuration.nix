@@ -404,6 +404,7 @@
     kdePackages.qt6ct
     ns-usbloader
     jdk
+    mangohud
 
     hyprpolkitagent
     hyprpaper
