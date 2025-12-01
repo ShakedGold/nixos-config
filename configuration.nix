@@ -157,6 +157,8 @@
           stdenv.cc.cc.lib
           libkrb5
           keyutils
+          vulkan-loader
+          vulkan-tools
         ];
     };
     nur =
