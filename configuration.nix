@@ -144,6 +144,21 @@
   programs.dconf.enable = true;
 
   nixpkgs.config.packageOverrides = pkgs: {
+    steam = pkgs.steam.override {
+      extraPkgs = pkgs:
+        with pkgs; [
+          xorg.libXcursor
+          xorg.libXi
+          xorg.libXinerama
+          xorg.libXScrnSaver
+          libpng
+          libpulseaudio
+          libvorbis
+          stdenv.cc.cc.lib
+          libkrb5
+          keyutils
+        ];
+    };
     nur =
       import
       (builtins.fetchTarball {
@@ -419,21 +434,6 @@
   };
   virtualisation.spiceUSBRedirection.enable = true;
   virtualisation.libvirtd.qemu.vhostUserPackages = [pkgs.virtiofsd];
-
-  nixpkgs.overlays = [
-    (final: prev: {
-      gamescope = prev.gamescope.overrideAttrs (old: {
-        version = "5c58b15c0c2d609271151141a1ad7e97911cf10f";
-        src = prev.fetchFromGitHub {
-          owner = "ValveSoftware";
-          repo = "gamescope";
-          rev = "5c58b15c0c2d609271151141a1ad7e97911cf10f";
-          sha256 = "sha256-Xh6+wwhqeVM+9eVuHsnXOTOWR04ivxRMZ/SYWYD0gdI=";
-          fetchSubmodules = true;
-        };
-      });
-    })
-  ];
 
   programs.kdeconnect.enable = true;
 
