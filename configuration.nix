@@ -423,7 +423,7 @@
   nixpkgs.overlays = [
     (final: prev: {
       gamescope = prev.gamescope.overrideAttrs (old: {
-        version = "8045786067f7a7fd9fd3fff98c29588f314218a9";
+        version = "5c58b15c0c2d609271151141a1ad7e97911cf10f";
         src = prev.fetchFromGitHub {
           owner = "ValveSoftware";
           repo = "gamescope";
