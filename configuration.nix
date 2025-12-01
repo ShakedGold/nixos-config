@@ -419,6 +419,20 @@
   virtualisation.spiceUSBRedirection.enable = true;
   virtualisation.libvirtd.qemu.vhostUserPackages = [pkgs.virtiofsd];
 
+  nixpkgs.overlays = [
+    (final: prev: {
+      gamescope = prev.gamescope.overrideAttrs (old: {
+        version = "8045786067f7a7fd9fd3fff98c29588f314218a9";
+        src = prev.fetchFromGitHub {
+          owner = "ValveSoftware";
+          repo = "gamescope";
+          rev = "8045786067f7a7fd9fd3fff98c29588f314218a9";
+          sha256 = "sha256-...";
+        };
+      });
+    })
+  ];
+
   programs.kdeconnect.enable = true;
 
   programs.steam = {
