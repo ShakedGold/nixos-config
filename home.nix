@@ -1,5 +1,4 @@
-{ pkgs, ... }:
-let
+{pkgs, ...}: let
   nixos-build = pkgs.writeShellScriptBin "nixos-build" ''
     pushd $HOME/.config/nixos
     $EDITOR configuration.nix
@@ -165,8 +164,7 @@ let
       $COMMAND &
     fi
   '';
-in
-{
+in {
   imports = [
     ./programs
     ./services
@@ -205,7 +203,7 @@ in
       config.common.default = "*";
       extraPortals = with pkgs; [
         xdg-desktop-portal-gtk
-        # kdePackages.xdg-desktop-portal-kde
+        kdePackages.xdg-desktop-portal-kde
         xdg-desktop-portal-hyprland
         xdg-desktop-portal
       ];
@@ -214,7 +212,7 @@ in
     mimeApps = {
       enable = true;
       defaultApplications = {
-        "x-scheme-handler/http" = [ "zen-beta.desktop" ];
+        "x-scheme-handler/http" = ["zen-beta.desktop"];
         "x-scheme-handler/https" = "zen-beta.desktop";
       };
     };
@@ -276,8 +274,8 @@ in
       type = "Application";
       icon = "1password";
       comment = "Password manager and secure wallet";
-      mimeType = [ "x-scheme-handler/onepassword" ];
-      categories = [ "Office" ];
+      mimeType = ["x-scheme-handler/onepassword"];
+      categories = ["Office"];
       terminal = false;
     };
     "davinci-resolve-studio" = {
