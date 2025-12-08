@@ -204,7 +204,7 @@ in {
       extraPortals = with pkgs; [
         xdg-desktop-portal-gtk
         kdePackages.xdg-desktop-portal-kde
-        xdg-desktop-portal-hyprland
+        # xdg-desktop-portal-hyprland
         xdg-desktop-portal
       ];
     };
