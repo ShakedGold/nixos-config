@@ -20,7 +20,7 @@
           installCargo = false;
         };
 
-        basedpyright.enabled = true;
+        basedpyright.enable = true;
         golangci_lint_ls.enable = true;
         lua_ls.enable = true;
         clangd.enable = true;
