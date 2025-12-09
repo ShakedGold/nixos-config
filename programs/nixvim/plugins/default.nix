@@ -20,5 +20,6 @@
     ./lazygit.nix
     ./better-escape.nix
     ./yanky.nix
+    ./markdown.nix
   ];
 }
