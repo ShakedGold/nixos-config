@@ -21,5 +21,6 @@
     ./better-escape.nix
     ./yanky.nix
     ./markdown.nix
+    ./zk.nix
   ];
 }

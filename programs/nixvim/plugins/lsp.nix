@@ -28,6 +28,7 @@
         csharp_ls.enable = true;
         vimls.enable = true;
         ts_ls.enable = true;
+        zk.enable = true;
       };
 
       keymaps = {
