@@ -54,6 +54,7 @@ in {
       c = "wl-copy";
       v = "wl-paste";
       vim = "nvim";
+      zj = "zellij";
     };
 
     envExtra = ''
