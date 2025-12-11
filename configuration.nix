@@ -277,7 +277,6 @@
   programs.gamemode.enable = true;
 
   programs.hyprland.enable = true;
-  programs.waybar.enable = true;
 
   # nix-ld
   programs.nix-ld.enable = true;
@@ -427,6 +426,7 @@
     hyprlock
     wofi
     wofi-power-menu
+    waybar
   ];
 
   programs.noisetorch.enable = true;
