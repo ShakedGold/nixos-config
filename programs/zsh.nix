@@ -3,8 +3,7 @@
   lib,
   pkgs,
   ...
-}:
-let
+}: let
   prompt = pkgs.writers.writeBash "prompt" ''
     get_git_nix_prompt2() {
       local nix_prompt=""
@@ -34,8 +33,7 @@ let
     ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}%{$fg[red]%}] "
     ZSH_THEME_GIT_PROMPT_DIRTY=" %{$fg[red]%}⚡%{$reset_color%}"
   '';
-in
-{
+in {
   programs.zsh = {
     enable = true;
     enableCompletion = true;
@@ -78,8 +76,6 @@ in
       source ${prompt}
 
       [[ ! -d /tmp/.nvim-undo-dir ]] && mkdir /tmp/.nvim-undo-dir
-
-      fastfetch
     '';
 
     oh-my-zsh = {
