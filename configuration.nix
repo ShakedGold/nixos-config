@@ -420,6 +420,7 @@
     mangohud
     gamescope
     nurl
+    wasistlos
 
     hyprpolkitagent
     hyprpaper
