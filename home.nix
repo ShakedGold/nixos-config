@@ -291,6 +291,15 @@ in {
       name = "Davinci Resolve Studio";
       type = "Application";
     };
+    "whatsapp" = {
+      name = "Whatsapp";
+      exec = "WEBKIT_DISABLE_COMPOSITING_MODE=1 wasistlos";
+      type = "Application";
+      icon = "Whatsapp";
+      comment = "An unofficial WhatsApp desktop application for Linux";
+      categories = ["Internet"];
+      terminal = false;
+    };
   };
 
   # Let Home Manager install and manage itself.
