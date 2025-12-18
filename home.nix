@@ -297,7 +297,6 @@ in {
       type = "Application";
       icon = "Whatsapp";
       comment = "An unofficial WhatsApp desktop application for Linux";
-      categories = ["Internet"];
       terminal = false;
     };
   };
