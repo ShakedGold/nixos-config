@@ -69,6 +69,6 @@
       session_name = "MAIN";
       # attach_to_session = true;
     };
-    enableZshIntegration = true;
+    # enableZshIntegration = true;
   };
 }
