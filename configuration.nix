@@ -421,6 +421,7 @@
     gamescope
     nurl
     wasistlos
+    nautilus
 
     hyprpolkitagent
     hyprpaper
