@@ -67,8 +67,6 @@ in {
     '';
 
     initContent = ''
-      eval "$(zellij setup --generate-auto-start zsh)"
-
       [[ "$TERM" == "xterm-kitty" ]] && export TERM=xterm-256color
 
       ${lib.concatMapStrings (x: "${toString x}\n") (
