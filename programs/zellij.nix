@@ -70,6 +70,5 @@
       attach_to_session = true;
     };
     enableZshIntegration = true;
-    exitShellOnExit = true;
   };
 }
