@@ -422,7 +422,7 @@
     nurl
     wasistlos
     nautilus
-    bob
+    bob-nvim
 
     hyprpolkitagent
     hyprpaper
