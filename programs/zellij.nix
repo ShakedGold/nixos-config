@@ -67,7 +67,7 @@
       show_startup_tips = false;
       pane_frames = false;
       session_name = "MAIN";
-      attach_to_session = true;
+      # attach_to_session = true;
     };
     enableZshIntegration = true;
   };
