@@ -457,7 +457,7 @@
     dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
   };
 
-  services.vicinae = {
+  services.vicinae = with pkgs; {
     packages = inputs.vicinae.packages."${system}".default;
   };
 
