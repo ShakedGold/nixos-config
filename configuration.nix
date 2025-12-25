@@ -457,8 +457,8 @@
     dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
   };
 
-  services.zerotierone = {
-    enable = true;
+  services.vicinae = {
+    packages = pkgs.vicinae;
   };
 
   services.kanata = {
