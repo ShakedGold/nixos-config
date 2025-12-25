@@ -458,7 +458,7 @@
   };
 
   services.vicinae = {
-    packages = pkgs.vicinae;
+    packages = inputs.vicinae.packages."${system}".default;
   };
 
   services.kanata = {
