@@ -177,10 +177,15 @@ in
       #   key = "Alt+Space";
       #   command = "albert toggle";
       # };
-      "anyrun" = {
-        name = "Anyrun";
+      # "anyrun" = {
+      #   name = "Anyrun";
+      #   key = "Alt+Space";
+      #   command = "anyrun";
+      # };
+      "vicinae" = {
+        name = "Vicinae";
         key = "Alt+Space";
-        command = "anyrun";
+        command = "vicinae toggle";
       };
     };
 
