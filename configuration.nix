@@ -422,7 +422,7 @@
     nurl
     wasistlos
     nautilus
-    vicinae
+    inputs.vicinae.packages."${system}".default
 
     hyprpolkitagent
     hyprpaper
