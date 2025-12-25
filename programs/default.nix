@@ -13,6 +13,6 @@
     ./zellij.nix
     ./anyrun.nix
 
-    # ./nixvim
+    ./nixvim
   ];
 }
