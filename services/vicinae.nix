@@ -1,19 +1,20 @@
-{
-  pkgs,
-  inputs,
-  ...
-} : {
-  # ...
+{pkgs, ...}: {
+  systemd.user.services.albert = {
+    Install = {
+      WantedBy = ["default.target"];
+    };
 
-  services.vicinae = {
-    enable = true; # default: false
-    package = inputs.vicinae.packages.nixos.default;
-    systemd = {
-      enable = true; # default: false
-      autoStart = true; # default: false
-      environment = {
-        USE_LAYER_SHELL = 1;
-      };
+    Unit = {
+      "Description" = "Vicinae Application Launcher";
+      "Documentation" = [];
+      After = ["network.target"];
+    };
+
+    Service = {
+      Type = "simple";
+      Restart = "always";
+      RestartSec = 1;
+      ExecStart = pkgs.writeShellScript "vicinae-server.sh" "vicinae server --replace";
     };
   };
 }
