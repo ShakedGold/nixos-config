@@ -295,7 +295,7 @@ in {
       name = "Whatsapp";
       exec = "WEBKIT_DISABLE_COMPOSITING_MODE=1 wasistlos";
       type = "Application";
-      icon = "Whatsapp";
+      icon = "whatsapp";
       comment = "An unofficial WhatsApp desktop application for Linux";
       terminal = false;
     };
