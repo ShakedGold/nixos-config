@@ -1,11 +1,13 @@
 {
   pkgs,
+  inputs,
   ...
 } : {
   # ...
 
   services.vicinae = {
     enable = true; # default: false
+    package = inputs.vicinae.packages."${system}".default;
     systemd = {
       enable = true; # default: false
       autoStart = true; # default: false
