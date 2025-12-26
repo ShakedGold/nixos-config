@@ -7,7 +7,7 @@
 
   services.vicinae = {
     enable = true; # default: false
-    package = inputs.vicinae.packages."${system}".default;
+    package = inputs.vicinae.packages.nixos.default;
     systemd = {
       enable = true; # default: false
       autoStart = true; # default: false
