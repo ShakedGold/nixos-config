@@ -293,7 +293,7 @@ in {
     };
     "whatsapp" = {
       name = "Whatsapp";
-      exec = "WEBKIT_DISABLE_COMPOSITING_MODE=1 wasistlos";
+      exec = "wasistlos";
       type = "Application";
       icon = "whatsapp";
       comment = "An unofficial WhatsApp desktop application for Linux";
