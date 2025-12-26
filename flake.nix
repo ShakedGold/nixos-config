@@ -66,6 +66,7 @@
             home-manager.sharedModules = [
               plasma-manager.homeModules.plasma-manager
               inputs.nixvim.homeModules.nixvim
+              inputs.vicinae.homeManagerModules.default
             ];
             home-manager.backupFileExtension = "backup";
 
