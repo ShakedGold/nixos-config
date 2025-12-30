@@ -146,7 +146,7 @@ in
               General = {
                 launchers = [
                   "applications:systemsettings.desktop"
-                  "applications:org.kde.dolphin.desktop"
+                  "applications:org.gnome.Nautilus.desktop"
                   "applications:zen-beta.desktop"
                   "applications:com.mitchellh.ghostty.desktop"
                   "applications:vesktop.desktop"
