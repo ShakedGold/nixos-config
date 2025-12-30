@@ -1,8 +1,6 @@
-{ config, ... }:
-let
+{config, ...}: let
   hyperkey = ''Shift+Ctrl+Alt+Meta'';
-in
-{
+in {
   programs.plasma = {
     enable = true;
 
@@ -44,7 +42,7 @@ in
             value = "ulauncher";
             type = "substring";
           };
-          window-types = [ "normal" ];
+          window-types = ["normal"];
         };
         apply = {
           noborder = true;
@@ -172,16 +170,6 @@ in
         key = "Meta+L";
         command = "dbus-send --dest=org.freedesktop.ScreenSaver --type=method_call /ScreenSaver org.freedesktop.ScreenSaver.Lock";
       };
-      # "albert-toggle" = {
-      #   name = "Albert Toggle";
-      #   key = "Alt+Space";
-      #   command = "albert toggle";
-      # };
-      # "anyrun" = {
-      #   name = "Anyrun";
-      #   key = "Alt+Space";
-      #   command = "anyrun";
-      # };
       "vicinae" = {
         name = "Vicinae";
         key = "Alt+Space";

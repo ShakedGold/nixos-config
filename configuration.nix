@@ -424,7 +424,6 @@
     wasistlos
     nautilus
     inputs.vicinae.packages."${system}".default
-    # inputs.kwin-effects-forceblur-dx.packages.${pkgs.system}.default
 
     hyprpolkitagent
     hyprpaper
