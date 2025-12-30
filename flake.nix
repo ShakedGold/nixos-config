@@ -16,7 +16,7 @@
       inputs.home-manager.follows = "home-manager";
     };
     kwin-effects-forceblur = {
-      url = "github:taj-ny/kwin-effects-forceblur";
+      url = "github:xarblu/kwin-effects-better-blur-dx";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     zen-browser.url = "github:0xc000022070/zen-browser-flake";
