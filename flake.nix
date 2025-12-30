@@ -15,6 +15,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.home-manager.follows = "home-manager";
     };
+    kwin-effects-forceblur = {
+      url = "github:taj-ny/kwin-effects-forceblur";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     zen-browser.url = "github:0xc000022070/zen-browser-flake";
 
     nur = {
@@ -36,45 +40,42 @@
     vicinae.url = "github:vicinaehq/vicinae";
   };
 
-  outputs =
-    inputs@{
-      self,
-      nixpkgs,
-      home-manager,
-      plasma-manager,
-      ...
-    }:
-    let
-      # Replace with your username
-      username = "shaked";
+  outputs = inputs @ {
+    self,
+    nixpkgs,
+    home-manager,
+    plasma-manager,
+    ...
+  }: let
+    # Replace with your username
+    username = "shaked";
 
-      # Replace with the fitting architecture
-      system = "x86_64-linux";
-    in
-    {
-      nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
-        inherit system;
-        specialArgs = { inherit inputs; };
-        modules = [
-          ./configuration.nix
+    # Replace with the fitting architecture
+    system = "x86_64-linux";
+  in {
+    nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
+      inherit system;
+      specialArgs = {inherit inputs;};
+      modules = [
+        ./configuration.nix
 
-          # Import the previous configuration.nix we used,
-          # so the old configuration file still takes effect
-          home-manager.nixosModules.home-manager
-          {
-            home-manager.useUserPackages = true;
-            home-manager.sharedModules = [
-              plasma-manager.homeModules.plasma-manager
-              inputs.nixvim.homeModules.nixvim
-              inputs.vicinae.homeManagerModules.default
-            ];
-            home-manager.backupFileExtension = "backup";
+        # Import the previous configuration.nix we used,
+        # so the old configuration file still takes effect
+        home-manager.nixosModules.home-manager
+        {
+          home-manager.useUserPackages = true;
+          home-manager.sharedModules = [
+            plasma-manager.homeModules.plasma-manager
+            inputs.nixvim.homeModules.nixvim
+            inputs.vicinae.homeManagerModules.default
+          ];
+          home-manager.backupFileExtension = "backup";
 
-            # This should point to your home.nix path of course. For an example
-            # of this see ./home.nix in this directory.
-            home-manager.users."${username}" = import ./home.nix;
-          }
-        ];
-      };
+          # This should point to your home.nix path of course. For an example
+          # of this see ./home.nix in this directory.
+          home-manager.users."${username}" = import ./home.nix;
+        }
+      ];
     };
+  };
 }
