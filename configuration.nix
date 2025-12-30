@@ -261,6 +261,7 @@
   nixpkgs.config.allowUnsupportedSystem = true;
   nixpkgs.config.permittedInsecurePackages = [
     "gradle-7.6.6"
+    "electron-36.9.5"
   ];
 
   # Fonts
