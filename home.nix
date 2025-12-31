@@ -1,7 +1,4 @@
-{
-  pkgs,
-  ...
-}: let
+{pkgs, ...}: let
   nixos-build = pkgs.writeShellScriptBin "nixos-build" ''
     pushd $HOME/.config/nixos
     $EDITOR configuration.nix
@@ -308,7 +305,7 @@ in {
   programs.home-manager.enable = true;
   programs.zellij.enable = true;
 
-programs.zen-browser.nativeMessagingHosts = [pkgs.firefoxpwa];
+  programs.zen-browser.nativeMessagingHosts = [pkgs.firefoxpwa];
 
   home.file.".clangd".text = ''
     CompileFlags:
