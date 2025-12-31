@@ -37,7 +37,6 @@
     };
 
     wofi-power-menu.url = "github:szaffarano/wofi-power-menu";
-    anyrun.url = "github:anyrun-org/anyrun";
 
     vicinae.url = "github:vicinaehq/vicinae";
   };

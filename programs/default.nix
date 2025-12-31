@@ -10,7 +10,6 @@
     ./tmux.nix
     ./fastfetch.nix
     ./zellij.nix
-    ./anyrun.nix
 
     ./nixvim
   ];
