@@ -1,6 +1,5 @@
 {
   pkgs,
-  inputs,
   ...
 }: let
   nixos-build = pkgs.writeShellScriptBin "nixos-build" ''
