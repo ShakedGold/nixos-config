@@ -198,11 +198,6 @@ in {
     run-or-raise
     toggle-monitor
     papirus-icon-theme
-    (
-      inputs.zen-browser.packages."${system}".default.override {
-        nativeMessagingHosts = [pkgs.firefoxpwa];
-      }
-    )
   ];
 
   xdg = {
