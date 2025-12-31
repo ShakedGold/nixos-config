@@ -70,6 +70,7 @@
             plasma-manager.homeModules.plasma-manager
             inputs.nixvim.homeModules.nixvim
             inputs.vicinae.homeManagerModules.default
+            inputs.zen-browser.homeModules.twilight
           ];
           home-manager.backupFileExtension = "backup";
 
