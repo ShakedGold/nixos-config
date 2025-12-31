@@ -308,10 +308,7 @@ in {
   programs.home-manager.enable = true;
   programs.zellij.enable = true;
 
-  programs.zen-browser = {
-    enable = true;
-    nativeMessagingHosts.packages = [pkgs.firefoxpwa];
-  };
+programs.zen-browser.nativeMessagingHosts = [pkgs.firefoxpwa];
 
   home.file.".clangd".text = ''
     CompileFlags:
