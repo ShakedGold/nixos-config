@@ -66,7 +66,6 @@
         {
           home-manager.useUserPackages = true;
           home-manager.sharedModules = [
-            inputs
             plasma-manager.homeModules.plasma-manager
             inputs.nixvim.homeModules.nixvim
             inputs.vicinae.homeManagerModules.default
