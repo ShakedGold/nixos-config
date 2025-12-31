@@ -1,4 +1,4 @@
-{pkgs, ...}: let
+{pkgs, inputs, ...}: let
   nixos-build = pkgs.writeShellScriptBin "nixos-build" ''
     pushd $HOME/.config/nixos
     $EDITOR configuration.nix
@@ -168,6 +168,7 @@ in {
   imports = [
     ./programs
     ./services
+    inputs.zen-browser.homeModules.twilight
   ];
 
   # Home Manager needs a bit of information about you and the paths it should
