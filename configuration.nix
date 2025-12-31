@@ -421,7 +421,6 @@
     mangohud
     gamescope
     nurl
-    wasistlos
     nautilus
     inputs.vicinae.packages."${system}".default
 

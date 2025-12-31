@@ -293,7 +293,7 @@ in {
     };
     "whatsapp" = {
       name = "Whatsapp";
-      exec = "wasistlos";
+      exec = "";
       type = "Application";
       icon = "whatsapp";
       comment = "An unofficial WhatsApp desktop application for Linux";
@@ -304,6 +304,11 @@ in {
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
   programs.zellij.enable = true;
+
+  programs.zen-browser = {
+      enable = true;
+      nativeMessagingHosts.packages = [ pkgs.firefoxpwa ];
+  };
 
   home.file.".clangd".text = ''
     CompileFlags:
