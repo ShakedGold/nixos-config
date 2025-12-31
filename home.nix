@@ -1,4 +1,8 @@
-{pkgs, ...}: let
+{
+  pkgs,
+  inputs,
+  ...
+}: let
   nixos-build = pkgs.writeShellScriptBin "nixos-build" ''
     pushd $HOME/.config/nixos
     $EDITOR configuration.nix
@@ -194,6 +198,11 @@ in {
     run-or-raise
     toggle-monitor
     papirus-icon-theme
+    (
+      inputs.zen-browser.packages."${system}".default.override {
+        nativeMessagingHosts = [pkgs.firefoxpwa];
+      }
+    )
   ];
 
   xdg = {
