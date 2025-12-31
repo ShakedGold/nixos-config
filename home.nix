@@ -193,13 +193,14 @@ in {
 
   # The home.packages option allows you to install Nix packages into your
   # environment.
-  home.packages = with pkgs; [
+  home.packages = with pkgs;
+  with inputs; [
     nixos-build
     run-or-raise
     toggle-monitor
     papirus-icon-theme
     (
-      inputs.zen-browser.packages."${system}".default.override {
+      zen-browser.packages."${system}".default.override {
         nativeMessagingHosts = [pkgs.firefoxpwa];
       }
     )
