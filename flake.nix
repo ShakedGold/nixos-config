@@ -7,7 +7,7 @@
 
     # home-manager, used for managing user configuration
     home-manager = {
-      url = "github:nix-community/home-manager/release-25.05";
+      url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     plasma-manager = {
@@ -29,9 +29,9 @@
     };
 
     nixvim = {
-      # url = "github:nix-community/nixvim";
+      url = "github:nix-community/nixvim";
       # If you are not running an unstable channel of nixpkgs, select the corresponding branch of nixvim.
-      url = "github:nix-community/nixvim/nixos-25.05";
+      # url = "github:nix-community/nixvim/nixos-25.05";
 
       inputs.nixpkgs.follows = "nixpkgs";
     };
