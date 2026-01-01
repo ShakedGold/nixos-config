@@ -326,7 +326,6 @@
     vscode
     go
     gopls
-    postman
     ludusavi
     rclone
     linux-wallpaperengine
@@ -336,7 +335,6 @@
     anydesk
     firefoxpwa
     util-linux
-    gparted
     wmctrl
     wl-clipboard
     rustup
@@ -375,7 +373,6 @@
         pkgs.gamescope
       ];
     })
-    superTuxKart
     vesktop
     tmux
     gnumake
