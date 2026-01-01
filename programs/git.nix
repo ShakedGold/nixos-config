@@ -1,10 +1,16 @@
 {
   programs.git = {
     enable = true;
-    userName = "Shaked Gold";
-    userEmail = "shakedgold2005@gmail.com";
-    extraConfig.init.defaultBranch = "main";
-    extraConfig.push.autoSetupRemote = true;
+
+    settings = {
+      user = {
+        email = "shakedgold2005@gmail.com";
+        name = "Shaked Gold";
+      };
+      init.defaultBranch = "main";
+      push.autoSetupRemote = true;
+    };
+
     ignores = [
       "shell.nix"
       "compile_commands.json"

@@ -357,7 +357,7 @@
     rpcs3
     zoom-us
     prismlauncher
-    inputs.zen-browser.packages."${system}".default
+    inputs.zen-browser.packages."${stdenv.hostPlatform.system}".default
     obs-studio
     nv-codec-headers-12
     wireplumber
@@ -403,7 +403,7 @@
     bear
     cmake
     obsidian
-    onlyoffice-bin
+    onlyoffice-desktopeditors
     pkg-config
     ftb-app
     playerctl
@@ -422,7 +422,7 @@
     gamescope
     nurl
     nautilus
-    inputs.vicinae.packages."${system}".default
+    inputs.vicinae.packages."${stdenv.hostPlatform.system}".default
 
     hyprpolkitagent
     hyprpaper
