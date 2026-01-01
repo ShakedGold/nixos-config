@@ -335,7 +335,6 @@
     qbittorrent
     anydesk
     firefoxpwa
-    stremio
     util-linux
     gparted
     wmctrl
