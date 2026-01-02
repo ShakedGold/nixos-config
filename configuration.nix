@@ -8,7 +8,8 @@
   lib,
   inputs,
   ...
-}: {
+}:
+{
   imports = [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
@@ -17,7 +18,7 @@
   # boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
   boot.loader.grub.enable = true;
-  boot.loader.grub.devices = ["nodev"];
+  boot.loader.grub.devices = [ "nodev" ];
   boot.loader.grub.efiSupport = true;
   boot.loader.grub.useOSProber = true;
   boot.kernelPackages = pkgs.linuxPackages_zen;
@@ -57,7 +58,7 @@
     "snd-rawmidi"
     "v4l2loopback"
   ];
-  boot.extraModulePackages = with config.boot.kernelPackages; [v4l2loopback];
+  boot.extraModulePackages = with config.boot.kernelPackages; [ v4l2loopback ];
   security.polkit.enable = true;
 
   nix.settings.experimental-features = [
@@ -145,8 +146,8 @@
 
   nixpkgs.config.packageOverrides = pkgs: {
     steam = pkgs.steam.override {
-      extraPkgs = pkgs:
-        with pkgs; [
+      extraPkgs =
+        pkgs: with pkgs; [
           xorg.libXcursor
           xorg.libXi
           xorg.libXinerama
@@ -163,15 +164,15 @@
     };
     nur =
       import
-      (builtins.fetchTarball {
-        # Get the revision by choosing a version from https://github.com/nix-community/NUR/commits/main
-        url = "https://github.com/nix-community/NUR/archive/33df6fc789f71aa6e203ee8053260ddc61d09174.tar.gz";
-        # Get the hash by running `nix-prefetch-url --unpack <url>` on the above url
-        sha256 = "02kzwkf914my1sshwzhg12hvqahp3x00ggfj0p166lqdajjg57bh";
-      })
-      {
-        inherit pkgs;
-      };
+        (builtins.fetchTarball {
+          # Get the revision by choosing a version from https://github.com/nix-community/NUR/commits/main
+          url = "https://github.com/nix-community/NUR/archive/33df6fc789f71aa6e203ee8053260ddc61d09174.tar.gz";
+          # Get the hash by running `nix-prefetch-url --unpack <url>` on the above url
+          sha256 = "02kzwkf914my1sshwzhg12hvqahp3x00ggfj0p166lqdajjg57bh";
+        })
+        {
+          inherit pkgs;
+        };
   };
 
   environment.sessionVariables = {
@@ -241,7 +242,7 @@
       "widget.use-xdg-desktop-portal.file-picker" = 1;
     };
     package = pkgs.firefox;
-    nativeMessagingHosts.packages = [pkgs.firefoxpwa];
+    nativeMessagingHosts.packages = [ pkgs.firefoxpwa ];
   };
 
   programs.localsend.enable = true;
@@ -251,7 +252,7 @@
     enable = true;
     # Certain features, including CLI integration and system authentication support,
     # require enabling PolKit integration on some desktop environments (e.g. Plasma).
-    polkitPolicyOwners = ["shaked"];
+    polkitPolicyOwners = [ "shaked" ];
   };
 
   # Allow unfree packages
@@ -353,7 +354,7 @@
     busybox
     rpcs3
     zoom-us
-    prismlauncher
+    (prismlauncher.override { withWaylandGLFW = true; })
     inputs.zen-browser.packages."${stdenv.hostPlatform.system}".default
     obs-studio
     nv-codec-headers-12
@@ -430,20 +431,20 @@
 
   programs.noisetorch.enable = true;
   programs.virt-manager.enable = true;
-  users.groups.libvirtd.members = ["shaked"];
+  users.groups.libvirtd.members = [ "shaked" ];
   virtualisation = {
     docker.enable = true;
     libvirtd.enable = true;
   };
   virtualisation.spiceUSBRedirection.enable = true;
-  virtualisation.libvirtd.qemu.vhostUserPackages = [pkgs.virtiofsd];
+  virtualisation.libvirtd.qemu.vhostUserPackages = [ pkgs.virtiofsd ];
 
   programs.kdeconnect.enable = true;
 
   programs.steam = {
     enable = true;
     package = pkgs.steam.override {
-      extraLibraries = pkgs: [pkgs.xorg.libxcb];
+      extraLibraries = pkgs: [ pkgs.xorg.libxcb ];
     };
     extraCompatPackages = with pkgs; [
       proton-ge-bin
