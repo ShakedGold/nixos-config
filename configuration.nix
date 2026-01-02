@@ -354,18 +354,7 @@
     busybox
     rpcs3
     zoom-us
-    (prismlauncher.override {
-      # Add binary required by some mod
-      additionalPrograms = [ ];
-
-      # Change Java runtimes available to Prism Launcher
-      jdks = [
-        graalvmPackages.graalvm-ce
-        zulu8
-        zulu17
-        zulu
-      ];
-    })
+    prismlauncher
     inputs.zen-browser.packages."${stdenv.hostPlatform.system}".default
     obs-studio
     nv-codec-headers-12
