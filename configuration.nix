@@ -354,6 +354,7 @@
     busybox
     rpcs3
     zoom-us
+    glfw-wayland-minecraft
     prismlauncher
     inputs.zen-browser.packages."${stdenv.hostPlatform.system}".default
     obs-studio
