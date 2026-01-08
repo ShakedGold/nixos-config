@@ -9,7 +9,5 @@
     ./ghostty.nix
     ./tmux.nix
     ./fastfetch.nix
-
-    ./nixvim
   ];
 }
