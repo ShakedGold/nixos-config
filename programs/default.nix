@@ -7,7 +7,6 @@
     ./plasma.nix
     ./obs-studio.nix
     ./ghostty.nix
-    ./tmux.nix
     ./fastfetch.nix
   ];
 }
