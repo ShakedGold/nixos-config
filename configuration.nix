@@ -341,7 +341,9 @@
     wl-clipboard
     rustup
     tlp
+    fzf
     copyq
+    fd
     alejandra
     waylock
     man-pages
@@ -362,6 +364,7 @@
     # (pkgs.callPackage ./davinci-resolve-paid.nix {})
     r2modman
     rofi
+    eza
     ghostty
     hyprlock
     pamixer
