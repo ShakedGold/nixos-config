@@ -47,6 +47,7 @@
     nixpkgs,
     home-manager,
     plasma-manager,
+    nix-flatpak,
     ...
   }: let
     # Replace with your username
