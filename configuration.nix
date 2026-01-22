@@ -432,9 +432,7 @@
 
   services.flatpak = {
     enable = true;
-    packages = [
-      "com.hypixel.HytaleLauncher"
-    ];
+    packages = [];
   };
 
   programs.noisetorch.enable = true;
