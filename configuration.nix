@@ -435,7 +435,7 @@
     packages = [
       "com.hypixel.HytaleLauncher"
     ];
-  }
+  };
 
   programs.noisetorch.enable = true;
   programs.virt-manager.enable = true;
