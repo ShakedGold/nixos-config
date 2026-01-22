@@ -281,8 +281,6 @@
 
   programs.hyprland.enable = true;
 
-  services.flatpak.enable = true;
-
   # nix-ld
   programs.nix-ld.enable = true;
   programs.nix-ld.libraries =
@@ -388,7 +386,6 @@
     python3
     clang-tools
     gitflow
-    git # TODO: remove this line when done configuring data43
     slurp
     jq
     openssl
@@ -432,6 +429,13 @@
     wofi-power-menu
     waybar
   ];
+
+  services.flatpak = {
+    enable = true;
+    packages = [
+      "com.hypixel.HytaleLauncher"
+    ];
+  }
 
   programs.noisetorch.enable = true;
   programs.virt-manager.enable = true;

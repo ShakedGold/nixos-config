@@ -39,6 +39,7 @@
     wofi-power-menu.url = "github:szaffarano/wofi-power-menu";
 
     vicinae.url = "github:vicinaehq/vicinae";
+    nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=latest";
   };
 
   outputs = inputs @ {
@@ -58,6 +59,7 @@
       inherit system;
       specialArgs = {inherit inputs;};
       modules = [
+        nix-flatpak.nixosModules.nix-flatpak
         ./configuration.nix
 
         # Import the previous configuration.nix we used,
