@@ -269,6 +269,7 @@ in {
     BROWSER = "zen-beta";
     TERMINAL = "ghostty";
     XDG_CURRENT_DESKTOP = "KDE";
+    TZ = "Asia/Jerusalem";
   };
 
   xdg.desktopEntries = {
