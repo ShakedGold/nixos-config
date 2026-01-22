@@ -281,6 +281,8 @@
 
   programs.hyprland.enable = true;
 
+  services.flatpak.enable = true;
+
   # nix-ld
   programs.nix-ld.enable = true;
   programs.nix-ld.libraries =
