@@ -31,7 +31,6 @@
           "editor.smoothScrolling" = true;
           "editor.cursorBlinking" = "smooth";
           "editor.formatOnSave" = true;
-          "workbench.colorTheme" = "";
           "workbench.colorTheme" = "Vira Carbon";
           "editor.cursorSmoothCaretAnimation" = "on";
           "window.menuBarVisibility" = "visible";
