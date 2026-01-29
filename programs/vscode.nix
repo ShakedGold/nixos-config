@@ -31,11 +31,12 @@
           "editor.smoothScrolling" = true;
           "editor.cursorBlinking" = "smooth";
           "editor.formatOnSave" = true;
-          "workbench.colorTheme" = "Material Theme Ocean High Contrast";
-          "workbench.iconTheme" = "material-icon-theme";
+          "workbench.colorTheme" = "";
+          "workbench.colorTheme" = "Vira Carbon";
           "editor.cursorSmoothCaretAnimation" = "on";
           "window.menuBarVisibility" = "visible";
           "window.titleBarStyle" = "custom";
+          "editor.mouseWheelZoom" = true;
         };
       };
     };
