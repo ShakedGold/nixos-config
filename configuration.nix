@@ -395,7 +395,6 @@
     superTuxKart
     insomnia
     gef
-    kdotool
     neovim
     zip
     bear
