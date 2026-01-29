@@ -38,6 +38,7 @@
           "editor.mouseWheelZoom" = true;
           "workbench.iconTheme" = "material-icon-theme";
           "editor.mouseWheelScrollSensitivity" = 2;
+          "editor.fontFamily" = "'JetBrainsMono Nerd Font'";
         };
       };
     };
