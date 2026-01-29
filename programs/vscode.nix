@@ -36,6 +36,7 @@
           "window.menuBarVisibility" = "visible";
           "window.titleBarStyle" = "custom";
           "editor.mouseWheelZoom" = true;
+          "workbench.iconTheme" = "material-icon-theme";
         };
       };
     };
