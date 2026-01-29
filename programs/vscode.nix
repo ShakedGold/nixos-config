@@ -39,6 +39,7 @@
           "workbench.iconTheme" = "material-icon-theme";
           "editor.mouseWheelScrollSensitivity" = 2;
           "editor.fontFamily" = "'JetBrainsMono Nerd Font'";
+          "editor.fontLigatures" = true;
         };
       };
     };
