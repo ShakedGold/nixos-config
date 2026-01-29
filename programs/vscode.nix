@@ -37,6 +37,7 @@
           "window.titleBarStyle" = "custom";
           "editor.mouseWheelZoom" = true;
           "workbench.iconTheme" = "material-icon-theme";
+          "editor.mouseWheelScrollSensitivity" = 2;
         };
       };
     };
